@@ -4,6 +4,7 @@
 //
 //  Created by P. Megan on 26/1/21.
 //
+import Foundation
 import CoreData
 import UIKit
 
