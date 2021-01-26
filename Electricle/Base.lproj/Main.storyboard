@@ -28,6 +28,7 @@
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
                                 <connections>
+                                    <action selector="signUpButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tzs-EO-EEG"/>
                                     <segue destination="261-dO-APn" kind="show" id="5Fk-H9-K8S"/>
                                 </connections>
                             </button>
@@ -40,6 +41,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="loginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2XJ-gF-0J8"/>
                                     <segue destination="awQ-Lu-GnP" kind="show" id="yql-aY-IcV"/>
                                 </connections>
                             </button>
@@ -162,10 +164,64 @@
             </objects>
             <point key="canvasLocation" x="989.85507246376824" y="-123.21428571428571"/>
         </scene>
+        <!--Item 2-->
+        <scene sceneID="GG1-9f-Htj">
+            <objects>
+                <viewController id="YMj-kr-eSL" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UjV-ah-x5c">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="YnW-Be-JXI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="OHh-2V-8SX"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9ZQ-8k-Rif" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2710" y="290"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="4AD-Mk-HLM">
+            <objects>
+                <viewController id="f3t-v6-g39" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EII-uX-dhJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Jtu-mK-gk5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="R0e-u4-Ine"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8gI-DS-Gwb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2711" y="-429"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="6Yy-n2-jId">
+            <objects>
+                <tabBarController id="Ffh-6A-xuw" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LE8-Sn-8oe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="f3t-v6-g39" kind="relationship" relationship="viewControllers" id="05q-2x-Mb5"/>
+                        <segue destination="YMj-kr-eSL" kind="relationship" relationship="viewControllers" id="bxs-cx-IMw"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SUN-Mg-quk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1819" y="-123"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="house" catalog="system" width="128" height="106"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
