@@ -1,0 +1,592 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FD02B10E25C04E8A00980E45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD02B10D25C04E8A00980E45 /* AppDelegate.swift */; };
+		FD02B11025C04E8A00980E45 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD02B10F25C04E8A00980E45 /* SceneDelegate.swift */; };
+		FD02B11225C04E8A00980E45 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD02B11125C04E8A00980E45 /* ViewController.swift */; };
+		FD02B11525C04E8A00980E45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD02B11325C04E8A00980E45 /* Main.storyboard */; };
+		FD02B11725C04E8B00980E45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD02B11625C04E8B00980E45 /* Assets.xcassets */; };
+		FD02B11A25C04E8B00980E45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD02B11825C04E8B00980E45 /* LaunchScreen.storyboard */; };
+		FD02B12525C04E8B00980E45 /* ElectricleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD02B12425C04E8B00980E45 /* ElectricleTests.swift */; };
+		FD02B13025C04E8B00980E45 /* ElectricleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD02B12F25C04E8B00980E45 /* ElectricleUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FD02B12125C04E8B00980E45 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD02B10225C04E8A00980E45 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD02B10925C04E8A00980E45;
+			remoteInfo = Electricle;
+		};
+		FD02B12C25C04E8B00980E45 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD02B10225C04E8A00980E45 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD02B10925C04E8A00980E45;
+			remoteInfo = Electricle;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FD02B10A25C04E8A00980E45 /* Electricle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Electricle.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD02B10D25C04E8A00980E45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FD02B10F25C04E8A00980E45 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FD02B11125C04E8A00980E45 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FD02B11425C04E8A00980E45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FD02B11625C04E8B00980E45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FD02B11925C04E8B00980E45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FD02B11B25C04E8B00980E45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD02B12025C04E8B00980E45 /* ElectricleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ElectricleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD02B12425C04E8B00980E45 /* ElectricleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectricleTests.swift; sourceTree = "<group>"; };
+		FD02B12625C04E8B00980E45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD02B12B25C04E8B00980E45 /* ElectricleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ElectricleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD02B12F25C04E8B00980E45 /* ElectricleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectricleUITests.swift; sourceTree = "<group>"; };
+		FD02B13125C04E8B00980E45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FD02B10725C04E8A00980E45 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD02B11D25C04E8B00980E45 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD02B12825C04E8B00980E45 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FD02B10125C04E8A00980E45 = {
+			isa = PBXGroup;
+			children = (
+				FD02B10C25C04E8A00980E45 /* Electricle */,
+				FD02B12325C04E8B00980E45 /* ElectricleTests */,
+				FD02B12E25C04E8B00980E45 /* ElectricleUITests */,
+				FD02B10B25C04E8A00980E45 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FD02B10B25C04E8A00980E45 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FD02B10A25C04E8A00980E45 /* Electricle.app */,
+				FD02B12025C04E8B00980E45 /* ElectricleTests.xctest */,
+				FD02B12B25C04E8B00980E45 /* ElectricleUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FD02B10C25C04E8A00980E45 /* Electricle */ = {
+			isa = PBXGroup;
+			children = (
+				FD02B10D25C04E8A00980E45 /* AppDelegate.swift */,
+				FD02B10F25C04E8A00980E45 /* SceneDelegate.swift */,
+				FD02B11125C04E8A00980E45 /* ViewController.swift */,
+				FD02B11325C04E8A00980E45 /* Main.storyboard */,
+				FD02B11625C04E8B00980E45 /* Assets.xcassets */,
+				FD02B11825C04E8B00980E45 /* LaunchScreen.storyboard */,
+				FD02B11B25C04E8B00980E45 /* Info.plist */,
+			);
+			path = Electricle;
+			sourceTree = "<group>";
+		};
+		FD02B12325C04E8B00980E45 /* ElectricleTests */ = {
+			isa = PBXGroup;
+			children = (
+				FD02B12425C04E8B00980E45 /* ElectricleTests.swift */,
+				FD02B12625C04E8B00980E45 /* Info.plist */,
+			);
+			path = ElectricleTests;
+			sourceTree = "<group>";
+		};
+		FD02B12E25C04E8B00980E45 /* ElectricleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FD02B12F25C04E8B00980E45 /* ElectricleUITests.swift */,
+				FD02B13125C04E8B00980E45 /* Info.plist */,
+			);
+			path = ElectricleUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FD02B10925C04E8A00980E45 /* Electricle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD02B13425C04E8B00980E45 /* Build configuration list for PBXNativeTarget "Electricle" */;
+			buildPhases = (
+				FD02B10625C04E8A00980E45 /* Sources */,
+				FD02B10725C04E8A00980E45 /* Frameworks */,
+				FD02B10825C04E8A00980E45 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Electricle;
+			productName = Electricle;
+			productReference = FD02B10A25C04E8A00980E45 /* Electricle.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FD02B11F25C04E8B00980E45 /* ElectricleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD02B13725C04E8B00980E45 /* Build configuration list for PBXNativeTarget "ElectricleTests" */;
+			buildPhases = (
+				FD02B11C25C04E8B00980E45 /* Sources */,
+				FD02B11D25C04E8B00980E45 /* Frameworks */,
+				FD02B11E25C04E8B00980E45 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FD02B12225C04E8B00980E45 /* PBXTargetDependency */,
+			);
+			name = ElectricleTests;
+			productName = ElectricleTests;
+			productReference = FD02B12025C04E8B00980E45 /* ElectricleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FD02B12A25C04E8B00980E45 /* ElectricleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD02B13A25C04E8B00980E45 /* Build configuration list for PBXNativeTarget "ElectricleUITests" */;
+			buildPhases = (
+				FD02B12725C04E8B00980E45 /* Sources */,
+				FD02B12825C04E8B00980E45 /* Frameworks */,
+				FD02B12925C04E8B00980E45 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FD02B12D25C04E8B00980E45 /* PBXTargetDependency */,
+			);
+			name = ElectricleUITests;
+			productName = ElectricleUITests;
+			productReference = FD02B12B25C04E8B00980E45 /* ElectricleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FD02B10225C04E8A00980E45 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1220;
+				LastUpgradeCheck = 1220;
+				TargetAttributes = {
+					FD02B10925C04E8A00980E45 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					FD02B11F25C04E8B00980E45 = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = FD02B10925C04E8A00980E45;
+					};
+					FD02B12A25C04E8B00980E45 = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = FD02B10925C04E8A00980E45;
+					};
+				};
+			};
+			buildConfigurationList = FD02B10525C04E8A00980E45 /* Build configuration list for PBXProject "Electricle" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FD02B10125C04E8A00980E45;
+			productRefGroup = FD02B10B25C04E8A00980E45 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FD02B10925C04E8A00980E45 /* Electricle */,
+				FD02B11F25C04E8B00980E45 /* ElectricleTests */,
+				FD02B12A25C04E8B00980E45 /* ElectricleUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FD02B10825C04E8A00980E45 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD02B11A25C04E8B00980E45 /* LaunchScreen.storyboard in Resources */,
+				FD02B11725C04E8B00980E45 /* Assets.xcassets in Resources */,
+				FD02B11525C04E8A00980E45 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD02B11E25C04E8B00980E45 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD02B12925C04E8B00980E45 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FD02B10625C04E8A00980E45 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD02B11225C04E8A00980E45 /* ViewController.swift in Sources */,
+				FD02B10E25C04E8A00980E45 /* AppDelegate.swift in Sources */,
+				FD02B11025C04E8A00980E45 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD02B11C25C04E8B00980E45 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD02B12525C04E8B00980E45 /* ElectricleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD02B12725C04E8B00980E45 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD02B13025C04E8B00980E45 /* ElectricleUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FD02B12225C04E8B00980E45 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD02B10925C04E8A00980E45 /* Electricle */;
+			targetProxy = FD02B12125C04E8B00980E45 /* PBXContainerItemProxy */;
+		};
+		FD02B12D25C04E8B00980E45 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD02B10925C04E8A00980E45 /* Electricle */;
+			targetProxy = FD02B12C25C04E8B00980E45 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FD02B11325C04E8A00980E45 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FD02B11425C04E8A00980E45 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FD02B11825C04E8B00980E45 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FD02B11925C04E8B00980E45 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FD02B13225C04E8B00980E45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FD02B13325C04E8B00980E45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FD02B13525C04E8B00980E45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Electricle/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = sg.mad2.Electricle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FD02B13625C04E8B00980E45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Electricle/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = sg.mad2.Electricle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FD02B13825C04E8B00980E45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ElectricleTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = sg.mad2.ElectricleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Electricle.app/Electricle";
+			};
+			name = Debug;
+		};
+		FD02B13925C04E8B00980E45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ElectricleTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = sg.mad2.ElectricleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Electricle.app/Electricle";
+			};
+			name = Release;
+		};
+		FD02B13B25C04E8B00980E45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ElectricleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = sg.mad2.ElectricleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Electricle;
+			};
+			name = Debug;
+		};
+		FD02B13C25C04E8B00980E45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ElectricleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = sg.mad2.ElectricleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Electricle;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FD02B10525C04E8A00980E45 /* Build configuration list for PBXProject "Electricle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD02B13225C04E8B00980E45 /* Debug */,
+				FD02B13325C04E8B00980E45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD02B13425C04E8B00980E45 /* Build configuration list for PBXNativeTarget "Electricle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD02B13525C04E8B00980E45 /* Debug */,
+				FD02B13625C04E8B00980E45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD02B13725C04E8B00980E45 /* Build configuration list for PBXNativeTarget "ElectricleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD02B13825C04E8B00980E45 /* Debug */,
+				FD02B13925C04E8B00980E45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD02B13A25C04E8B00980E45 /* Build configuration list for PBXNativeTarget "ElectricleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD02B13B25C04E8B00980E45 /* Debug */,
+				FD02B13C25C04E8B00980E45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FD02B10225C04E8A00980E45 /* Project object */;
+}
