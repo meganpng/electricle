@@ -18,6 +18,8 @@
 		FDB13E3125C191E500633D9A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB13E3025C191E500633D9A /* User.swift */; };
 		FDB13E3725C1946A00633D9A /* Electricle.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FDB13E3525C1946A00633D9A /* Electricle.xcdatamodeld */; };
 		FDB13E3C25C1983E00633D9A /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB13E3B25C1983E00633D9A /* UserController.swift */; };
+		FDB13E4425C1CE0600633D9A /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB13E4325C1CE0600633D9A /* LoginController.swift */; };
+		FDB13E4925C1CE6900633D9A /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB13E4825C1CE6900633D9A /* SignUpController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		FDB13E3025C191E500633D9A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FDB13E3625C1946A00633D9A /* Electricle.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Electricle.xcdatamodel; sourceTree = "<group>"; };
 		FDB13E3B25C1983E00633D9A /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		FDB13E4325C1CE0600633D9A /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		FDB13E4825C1CE6900633D9A /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,8 @@
 				FD02B10D25C04E8A00980E45 /* AppDelegate.swift */,
 				FD02B10F25C04E8A00980E45 /* SceneDelegate.swift */,
 				FD02B11125C04E8A00980E45 /* ViewController.swift */,
+				FDB13E4325C1CE0600633D9A /* LoginController.swift */,
+				FDB13E4825C1CE6900633D9A /* SignUpController.swift */,
 				FD02B11325C04E8A00980E45 /* Main.storyboard */,
 				FD02B11625C04E8B00980E45 /* Assets.xcassets */,
 				FD02B11825C04E8B00980E45 /* LaunchScreen.storyboard */,
@@ -270,9 +276,11 @@
 				FDB13E3C25C1983E00633D9A /* UserController.swift in Sources */,
 				FDB13E3125C191E500633D9A /* User.swift in Sources */,
 				FD02B11225C04E8A00980E45 /* ViewController.swift in Sources */,
+				FDB13E4925C1CE6900633D9A /* SignUpController.swift in Sources */,
 				FD02B10E25C04E8A00980E45 /* AppDelegate.swift in Sources */,
 				FD02B11025C04E8A00980E45 /* SceneDelegate.swift in Sources */,
 				FDB13E3725C1946A00633D9A /* Electricle.xcdatamodeld in Sources */,
+				FDB13E4425C1CE0600633D9A /* LoginController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
