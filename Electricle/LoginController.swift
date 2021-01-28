@@ -28,7 +28,7 @@ class LoginController: UIViewController{
         let emptyBool:Bool = checkFields(email: email, pwd: pwd)
         let flag:Bool = userController.validateUserEmail(input: email)
         let flagtwo:Bool = userController.validateUserPassword(input: pwd)
-        if(emptyBool == false){
+        if(email == "" && pwd == ""){
             let dialogMessage = UIAlertController(title: "Empty Fields", message: "Please fill up all fields.", preferredStyle: .alert)
              
              // Create OK button with action handler
