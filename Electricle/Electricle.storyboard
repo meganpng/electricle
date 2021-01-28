@@ -24,7 +24,7 @@
             </objects>
             <point key="canvasLocation" x="50" y="-64"/>
         </scene>
-        <!--Item 1-->
+        <!--Home-->
         <scene sceneID="2Ps-Bo-WML">
             <objects>
                 <viewController id="VPp-fz-gi4" customClass="HomeController" customModule="Electricle" customModuleProvider="target" sceneMemberID="viewController">
@@ -34,7 +34,7 @@
                         <viewLayoutGuide key="safeArea" id="sI8-Nb-Yda"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="QZg-eR-IWo"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="QZg-eR-IWo"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hxy-K0-doG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -60,6 +60,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
