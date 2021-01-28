@@ -21,6 +21,10 @@ class LoginController: UIViewController{
     }
     
     
+    @IBAction func Cancel(_ sender: Any) {
+        
+        self.dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func onSubmit(_ sender: Any) {
         let email = emailField.text!

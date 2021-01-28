@@ -15,14 +15,91 @@
                     <view key="view" contentMode="scaleToFill" id="ymq-ma-c7M">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="List an Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GHg-J0-0Ty">
+                                <rect key="frame" x="20" y="68" width="151" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="26"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Product Image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vMy-da-NE2">
+                                <rect key="frame" x="20" y="116" width="140" height="42"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="coo-IJ-0Wc">
+                                <rect key="frame" x="20" y="166" width="200" height="200"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Listing Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEj-dz-F4Z">
+                                <rect key="frame" x="20" y="397" width="112" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name your Listing" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rvX-Q2-7gY">
+                                <rect key="frame" x="20" y="440" width="374" height="34"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" tag="1" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="fill" borderStyle="roundedRect" placeholder="Describe what your item is and include any detials users might be interested in." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6zy-Oe-hgI">
+                                <rect key="frame" x="20" y="545" width="374" height="34"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jlN-JH-Emd">
+                                <rect key="frame" x="20" y="507" width="111" height="26"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Pick-up Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a5F-KG-vc0">
+                                <rect key="frame" x="20" y="610" width="168.5" height="27"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aAq-9H-Su0">
+                                <rect key="frame" x="20" y="645" width="374" height="34"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAZ-a8-Sof">
+                                <rect key="frame" x="20" y="738" width="374" height="42"/>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <state key="normal" title="List It!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="ZIc-eb-hTS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZIc-eb-hTS" firstAttribute="trailing" secondItem="cAZ-a8-Sof" secondAttribute="trailing" constant="20" id="5aY-Fi-du0"/>
+                            <constraint firstItem="vMy-da-NE2" firstAttribute="leading" secondItem="ZIc-eb-hTS" secondAttribute="leading" constant="20" id="6Se-Sl-BkM"/>
+                            <constraint firstItem="ZIc-eb-hTS" firstAttribute="trailing" secondItem="6zy-Oe-hgI" secondAttribute="trailing" constant="20" id="72L-5y-ph5"/>
+                            <constraint firstItem="6zy-Oe-hgI" firstAttribute="leading" secondItem="ZIc-eb-hTS" secondAttribute="leading" constant="20" id="9jq-21-kVL"/>
+                            <constraint firstItem="ZIc-eb-hTS" firstAttribute="trailing" secondItem="aAq-9H-Su0" secondAttribute="trailing" constant="20" id="HfI-Qy-NSr"/>
+                            <constraint firstItem="rvX-Q2-7gY" firstAttribute="leading" secondItem="ZIc-eb-hTS" secondAttribute="leading" constant="20" id="NWQ-oO-R8w"/>
+                            <constraint firstItem="a5F-KG-vc0" firstAttribute="leading" secondItem="ZIc-eb-hTS" secondAttribute="leading" constant="20" id="SDV-Li-L9I"/>
+                            <constraint firstItem="aAq-9H-Su0" firstAttribute="leading" secondItem="ZIc-eb-hTS" secondAttribute="leading" constant="20" id="Sqq-lc-t8b"/>
+                            <constraint firstItem="ZIc-eb-hTS" firstAttribute="trailing" secondItem="rvX-Q2-7gY" secondAttribute="trailing" constant="20" id="YV8-Xn-RYJ"/>
+                            <constraint firstItem="jlN-JH-Emd" firstAttribute="leading" secondItem="ZIc-eb-hTS" secondAttribute="leading" constant="20" id="bm5-Fh-c2B"/>
+                            <constraint firstItem="cAZ-a8-Sof" firstAttribute="leading" secondItem="ZIc-eb-hTS" secondAttribute="leading" constant="20" id="cdI-BD-SrI"/>
+                            <constraint firstItem="GHg-J0-0Ty" firstAttribute="leading" secondItem="ZIc-eb-hTS" secondAttribute="leading" constant="20" id="eoD-wd-yNV"/>
+                            <constraint firstItem="coo-IJ-0Wc" firstAttribute="leading" secondItem="ZIc-eb-hTS" secondAttribute="leading" constant="20" id="rXp-rg-vyq"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Add Listing" image="plus.circle.fill" catalog="system" id="sat-na-18n"/>
+                    <tabBarItem key="tabBarItem" title="Add Listing" image="plus.app.fill" catalog="system" id="sat-na-18n"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p6G-tt-q7l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="50" y="-64"/>
+            <point key="canvasLocation" x="49.275362318840585" y="-64.285714285714278"/>
         </scene>
         <!--Profile-->
         <scene sceneID="J4D-0a-Boq">
@@ -60,7 +137,7 @@
             </objects>
             <point key="canvasLocation" x="-839.13043478260875" y="503.57142857142856"/>
         </scene>
-        <!--Home-->
+        <!--Explore-->
         <scene sceneID="2Ps-Bo-WML">
             <objects>
                 <viewController id="VPp-fz-gi4" customClass="HomeController" customModule="Electricle" customModuleProvider="target" sceneMemberID="viewController">
@@ -70,7 +147,7 @@
                         <viewLayoutGuide key="safeArea" id="sI8-Nb-Yda"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="QZg-eR-IWo"/>
+                    <tabBarItem key="tabBarItem" title="Explore" image="magnifyingglass" catalog="system" id="QZg-eR-IWo"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hxy-K0-doG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -97,11 +174,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="person.crop.circle.fill" catalog="system" width="128" height="121"/>
-        <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="plus.app.fill" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
