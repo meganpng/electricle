@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--Add Listing-->
         <scene sceneID="ZLO-rD-0KU">
             <objects>
                 <viewController id="BHx-db-VH7" sceneMemberID="viewController">
@@ -18,11 +18,27 @@
                         <viewLayoutGuide key="safeArea" id="ZIc-eb-hTS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="sat-na-18n"/>
+                    <tabBarItem key="tabBarItem" title="Add Listing" image="plus.circle.fill" catalog="system" id="sat-na-18n"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p6G-tt-q7l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="50" y="-64"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="J4D-0a-Boq">
+            <objects>
+                <viewController id="gW6-kH-POL" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="M85-KF-R0L">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="ReB-R8-ND9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person.crop.circle.fill" catalog="system" id="GLH-Pn-lD0"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wid-li-58a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-839" y="504"/>
         </scene>
         <!--Home-->
         <scene sceneID="2Ps-Bo-WML">
@@ -52,6 +68,7 @@
                     <connections>
                         <segue destination="VPp-fz-gi4" kind="relationship" relationship="viewControllers" id="djh-Fe-vXg"/>
                         <segue destination="BHx-db-VH7" kind="relationship" relationship="viewControllers" id="BsL-BQ-MW8"/>
+                        <segue destination="gW6-kH-POL" kind="relationship" relationship="viewControllers" id="heI-Af-eKI"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="StD-Tb-d4B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -61,6 +78,8 @@
     </scenes>
     <resources>
         <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="person.crop.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
