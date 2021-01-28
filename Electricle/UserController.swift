@@ -12,7 +12,7 @@ class UserController{
     func AddUser(newUser: User){
         let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
-        let entity = NSEntityDescription.entity(forEntityName: "User", in: context)!
+        let entity = NSEntityDescription.entity(forEntityName: "CDUser", in: context)!
         
         let user = NSManagedObject(entity: entity, insertInto: context)
         
@@ -97,6 +97,30 @@ class UserController{
         return false
     }
     
+    func validateUserPassword(input:String) -> Bool{
+        var user:[NSManagedObject] = []
+        let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+
+        let fetchRequest =  NSFetchRequest<NSManagedObject>(entityName: "CDUser")
+        
+        do{
+            user = try context.fetch(fetchRequest)
+            
+            for u in user{
+                let pwd = u.value(forKeyPath: "password") as? String
+                print("\(pwd!)")
+                if(input == pwd){
+                    return true
+                }
+            }
+
+        } catch let error as NSError{
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+        return false
+    }
+
     func updateUser(email:String, newUser:User){
         //retrieve then set
         let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
