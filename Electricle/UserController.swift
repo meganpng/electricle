@@ -16,8 +16,10 @@ class UserController{
         
         let user = NSManagedObject(entity: entity, insertInto: context)
         
-        user.setValue(newUser.userName, forKey:"username")
         user.setValue(newUser.Email, forKey: "email")
+        user.setValue(newUser.userName, forKey:"username")
+        user.setValue(newUser.Name, forKey: "name")
+        user.setValue(newUser.phoneNo, forKey: "phoneno")
         user.setValue(newUser.Password, forKey: "password")
         
         appDelegate.saveContext()
@@ -35,16 +37,64 @@ class UserController{
             user = try context.fetch(fetchRequest)
             
             for u in user{
-                let username = u.value(forKeyPath: "username") as? String
                 let email = u.value(forKeyPath: "email") as? String
+                let username = u.value(forKeyPath: "username") as? String
+                let name = u.value(forKeyPath: "name") as? String
+                let phoneno = u.value(forKeyPath: "phoneno") as? String
                 let password = u.value(forKeyPath: "password") as? String
-                print("\(username!), \(email!), \(password!)")
-                userList.append(User(username: username!, email: email!, password: password!))
+                print("\(email!), \(username!), \(name!), \(phoneno!), \(password!)")
+                userList.append(User(email: email!, username: username!, name: name!, phoneno: phoneno!, password: password!))
             }
         } catch let error as NSError{
             print("Could not fetch. \(error), \(error.userInfo)")
         }
         return userList
+    }
+    
+    func retrieveAllEmail()->[String]{
+        var user:[NSManagedObject] = []
+        var userList:[String] = []
+        let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+
+        let fetchRequest =  NSFetchRequest<NSManagedObject>(entityName: "CDUser")
+        
+        do{
+            user = try context.fetch(fetchRequest)
+            
+            for u in user{
+                let email = u.value(forKeyPath: "email") as? String
+                print("\(email!)")
+                userList.append(email!)
+            }
+        } catch let error as NSError{
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+        return userList
+    }
+    
+    func validateUserEmail(input:String) -> Bool{
+        var user:[NSManagedObject] = []
+        let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+
+        let fetchRequest =  NSFetchRequest<NSManagedObject>(entityName: "CDUser")
+        
+        do{
+            user = try context.fetch(fetchRequest)
+            
+            for u in user{
+                let email = u.value(forKeyPath: "email") as? String
+                print("\(email!)")
+                if(input == email){
+                    return true
+                }
+            }
+
+        } catch let error as NSError{
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+        return false
     }
     
     func updateUser(email:String, newUser:User){
@@ -56,8 +106,10 @@ class UserController{
         do{
             let user = try context.fetch(fetchRequest)
             let userobject = user[0]
-            userobject.setValue(newUser.userName, forKey:"username")
             userobject.setValue(newUser.Email, forKey: "email")
+            userobject.setValue(newUser.userName, forKey:"username")
+            userobject.setValue(newUser.Name, forKey: "name")
+            userobject.setValue(newUser.phoneNo, forKey: "phoneno")
             userobject.setValue(newUser.Password, forKey: "password")
             //appDelegate.saveContext()
             do{

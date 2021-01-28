@@ -15,6 +15,8 @@
 		FD02B11A25C04E8B00980E45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD02B11825C04E8B00980E45 /* LaunchScreen.storyboard */; };
 		FD02B12525C04E8B00980E45 /* ElectricleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD02B12425C04E8B00980E45 /* ElectricleTests.swift */; };
 		FD02B13025C04E8B00980E45 /* ElectricleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD02B12F25C04E8B00980E45 /* ElectricleUITests.swift */; };
+		FD6B99F025C2BF51002C0C6C /* Electricle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD6B99EF25C2BF51002C0C6C /* Electricle.storyboard */; };
+		FD6B99F525C2BFFF002C0C6C /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6B99F425C2BFFF002C0C6C /* HomeController.swift */; };
 		FDB13E3125C191E500633D9A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB13E3025C191E500633D9A /* User.swift */; };
 		FDB13E3725C1946A00633D9A /* Electricle.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FDB13E3525C1946A00633D9A /* Electricle.xcdatamodeld */; };
 		FDB13E3C25C1983E00633D9A /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB13E3B25C1983E00633D9A /* UserController.swift */; };
@@ -54,6 +56,8 @@
 		FD02B12B25C04E8B00980E45 /* ElectricleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ElectricleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD02B12F25C04E8B00980E45 /* ElectricleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectricleUITests.swift; sourceTree = "<group>"; };
 		FD02B13125C04E8B00980E45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD6B99EF25C2BF51002C0C6C /* Electricle.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Electricle.storyboard; sourceTree = "<group>"; };
+		FD6B99F425C2BFFF002C0C6C /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		FDB13E3025C191E500633D9A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FDB13E3625C1946A00633D9A /* Electricle.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Electricle.xcdatamodel; sourceTree = "<group>"; };
 		FDB13E3B25C1983E00633D9A /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
@@ -113,8 +117,10 @@
 				FD02B10F25C04E8A00980E45 /* SceneDelegate.swift */,
 				FD02B11125C04E8A00980E45 /* ViewController.swift */,
 				FDB13E4325C1CE0600633D9A /* LoginController.swift */,
+				FD6B99F425C2BFFF002C0C6C /* HomeController.swift */,
 				FDB13E4825C1CE6900633D9A /* SignUpController.swift */,
 				FD02B11325C04E8A00980E45 /* Main.storyboard */,
+				FD6B99EF25C2BF51002C0C6C /* Electricle.storyboard */,
 				FD02B11625C04E8B00980E45 /* Assets.xcassets */,
 				FD02B11825C04E8B00980E45 /* LaunchScreen.storyboard */,
 				FD02B11B25C04E8B00980E45 /* Info.plist */,
@@ -246,6 +252,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD6B99F025C2BF51002C0C6C /* Electricle.storyboard in Resources */,
 				FD02B11A25C04E8B00980E45 /* LaunchScreen.storyboard in Resources */,
 				FD02B11725C04E8B00980E45 /* Assets.xcassets in Resources */,
 				FD02B11525C04E8A00980E45 /* Main.storyboard in Resources */,
@@ -278,6 +285,7 @@
 				FD02B11225C04E8A00980E45 /* ViewController.swift in Sources */,
 				FDB13E4925C1CE6900633D9A /* SignUpController.swift in Sources */,
 				FD02B10E25C04E8A00980E45 /* AppDelegate.swift in Sources */,
+				FD6B99F525C2BFFF002C0C6C /* HomeController.swift in Sources */,
 				FD02B11025C04E8A00980E45 /* SceneDelegate.swift in Sources */,
 				FDB13E3725C1946A00633D9A /* Electricle.xcdatamodeld in Sources */,
 				FDB13E4425C1CE0600633D9A /* LoginController.swift in Sources */,
