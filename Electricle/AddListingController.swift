@@ -12,11 +12,13 @@ import UIKit
 class AddListingController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate{
     
     
-    @IBOutlet weak var Pick: UIButton!
+    @IBOutlet weak var AddImgBtn: UIButton!
+    
     
     @IBOutlet weak var ListingTitle: UITextField!
     
-    @IBOutlet weak var LisitingDesc: UITextField!
+    @IBOutlet weak var ListingDesc: UITextField!
+    
     
     @IBOutlet weak var ListingLocation: UITextField!
     
@@ -26,7 +28,7 @@ class AddListingController: UIViewController, UIImagePickerControllerDelegate & 
     }
     
     
-    @IBAction func AddImageBtn(_ sender: Any) {
+    @IBAction func ClickImage(_ sender: Any) {
         let imagepckr = UIImagePickerController()
         imagepckr.sourceType = .photoLibrary
         imagepckr.delegate = self
@@ -34,10 +36,25 @@ class AddListingController: UIViewController, UIImagePickerControllerDelegate & 
         present(imagepckr, animated: true)
     }
     
+    
+    
+    @IBAction func ClickListItem(_ sender: Any) {
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
       
         if let image = info[UIImagePickerController.InfoKey(rawValue:"UIImagePickerControllerEditedImage")] as? UIImage {
-            Pick.setImage(image, for: .normal)
+            AddImgBtn.setImage(image, for: .normal)
             
         }
                         

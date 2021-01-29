@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -12,7 +13,7 @@
         <!--Add Listing-->
         <scene sceneID="ZLO-rD-0KU">
             <objects>
-                <viewController id="BHx-db-VH7" sceneMemberID="viewController">
+                <viewController id="BHx-db-VH7" customClass="AddListingController" customModule="Electricle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ymq-ma-c7M">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -29,41 +30,38 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="coo-IJ-0Wc">
-                                <rect key="frame" x="20" y="166" width="200" height="200"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Listing Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEj-dz-F4Z">
-                                <rect key="frame" x="20" y="397" width="111" height="26"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Listing Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEj-dz-F4Z">
+                                <rect key="frame" x="20" y="346" width="111.5" height="26"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name your Listing" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rvX-Q2-7gY">
-                                <rect key="frame" x="20" y="440" width="374" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name your Listing" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rvX-Q2-7gY">
+                                <rect key="frame" x="20" y="392" width="374" height="34"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" tag="1" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Describe what your item is and include any detials users might be interested in." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6zy-Oe-hgI">
-                                <rect key="frame" x="20" y="545" width="374" height="34"/>
+                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Describe what your item is and include any detials users might be interested in." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6zy-Oe-hgI">
+                                <rect key="frame" x="20" y="502" width="374" height="34"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jlN-JH-Emd">
-                                <rect key="frame" x="20" y="507" width="111" height="26"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jlN-JH-Emd">
+                                <rect key="frame" x="20" y="456" width="111" height="26"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Pick-up Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a5F-KG-vc0">
-                                <rect key="frame" x="20" y="610" width="168.5" height="27"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick-up Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a5F-KG-vc0">
+                                <rect key="frame" x="20" y="566" width="168.5" height="27"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aAq-9H-Su0">
-                                <rect key="frame" x="20" y="645" width="374" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aAq-9H-Su0">
+                                <rect key="frame" x="20" y="613" width="374" height="34"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -75,11 +73,30 @@
                                 <state key="normal" title="List It!">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="ClickListItem:" destination="BHx-db-VH7" eventType="touchUpInside" id="7fP-mi-m3w"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f7Y-sb-f45">
+                                <rect key="frame" x="20" y="166" width="150" height="150"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="uPX-Go-pv2"/>
+                                    <constraint firstAttribute="height" constant="150" id="z1K-vO-kPU"/>
+                                </constraints>
+                                <color key="tintColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="ClickImage:" destination="BHx-db-VH7" eventType="touchUpInside" id="yrq-RX-WgM"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZIc-eb-hTS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="f7Y-sb-f45" firstAttribute="top" secondItem="vMy-da-NE2" secondAttribute="bottom" constant="11" id="1SV-NN-VHq"/>
                             <constraint firstItem="aAq-9H-Su0" firstAttribute="top" secondItem="a5F-KG-vc0" secondAttribute="bottom" constant="20" id="5NL-Ei-A0z"/>
                             <constraint firstItem="ZIc-eb-hTS" firstAttribute="trailing" secondItem="cAZ-a8-Sof" secondAttribute="trailing" constant="20" id="5aY-Fi-du0"/>
                             <constraint firstItem="vMy-da-NE2" firstAttribute="leading" secondItem="ZIc-eb-hTS" secondAttribute="leading" constant="20" id="6Se-Sl-BkM"/>
@@ -89,24 +106,29 @@
                             <constraint firstItem="GHg-J0-0Ty" firstAttribute="top" secondItem="ZIc-eb-hTS" secondAttribute="top" constant="24" id="Cqy-i9-mUv"/>
                             <constraint firstItem="cEj-dz-F4Z" firstAttribute="leading" secondItem="ZIc-eb-hTS" secondAttribute="leading" constant="20" id="DbN-Kc-GQL"/>
                             <constraint firstItem="ZIc-eb-hTS" firstAttribute="trailing" secondItem="aAq-9H-Su0" secondAttribute="trailing" constant="20" id="HfI-Qy-NSr"/>
-                            <constraint firstItem="coo-IJ-0Wc" firstAttribute="top" secondItem="vMy-da-NE2" secondAttribute="bottom" constant="20" id="IoE-U1-6pd"/>
                             <constraint firstItem="rvX-Q2-7gY" firstAttribute="top" secondItem="cEj-dz-F4Z" secondAttribute="bottom" constant="20" id="KJt-gY-GPa"/>
                             <constraint firstItem="rvX-Q2-7gY" firstAttribute="leading" secondItem="ZIc-eb-hTS" secondAttribute="leading" constant="20" id="NWQ-oO-R8w"/>
                             <constraint firstItem="a5F-KG-vc0" firstAttribute="leading" secondItem="ZIc-eb-hTS" secondAttribute="leading" constant="20" id="SDV-Li-L9I"/>
                             <constraint firstItem="aAq-9H-Su0" firstAttribute="leading" secondItem="ZIc-eb-hTS" secondAttribute="leading" constant="20" id="Sqq-lc-t8b"/>
-                            <constraint firstItem="cEj-dz-F4Z" firstAttribute="top" secondItem="coo-IJ-0Wc" secondAttribute="bottom" constant="30" id="W1E-zc-lTz"/>
                             <constraint firstItem="ZIc-eb-hTS" firstAttribute="trailing" secondItem="rvX-Q2-7gY" secondAttribute="trailing" constant="20" id="YV8-Xn-RYJ"/>
                             <constraint firstItem="jlN-JH-Emd" firstAttribute="top" secondItem="rvX-Q2-7gY" secondAttribute="bottom" constant="30" id="bLc-un-BcW"/>
                             <constraint firstItem="jlN-JH-Emd" firstAttribute="leading" secondItem="ZIc-eb-hTS" secondAttribute="leading" constant="20" id="bm5-Fh-c2B"/>
                             <constraint firstItem="cAZ-a8-Sof" firstAttribute="leading" secondItem="ZIc-eb-hTS" secondAttribute="leading" constant="20" id="cdI-BD-SrI"/>
                             <constraint firstItem="GHg-J0-0Ty" firstAttribute="leading" secondItem="ZIc-eb-hTS" secondAttribute="leading" constant="20" id="eoD-wd-yNV"/>
+                            <constraint firstItem="cEj-dz-F4Z" firstAttribute="top" secondItem="f7Y-sb-f45" secondAttribute="bottom" constant="30" id="fTi-ED-xt9"/>
                             <constraint firstItem="a5F-KG-vc0" firstAttribute="top" secondItem="6zy-Oe-hgI" secondAttribute="bottom" constant="30" id="jY6-Nx-Wx0"/>
                             <constraint firstItem="ZIc-eb-hTS" firstAttribute="bottom" secondItem="cAZ-a8-Sof" secondAttribute="bottom" constant="30" id="qRH-2h-PN5"/>
-                            <constraint firstItem="coo-IJ-0Wc" firstAttribute="leading" secondItem="ZIc-eb-hTS" secondAttribute="leading" constant="20" id="rXp-rg-vyq"/>
+                            <constraint firstItem="f7Y-sb-f45" firstAttribute="leading" secondItem="ZIc-eb-hTS" secondAttribute="leading" constant="20" id="rgu-he-HZl"/>
                             <constraint firstItem="6zy-Oe-hgI" firstAttribute="top" secondItem="jlN-JH-Emd" secondAttribute="bottom" constant="20" id="tKF-7B-rIG"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Add Listing" image="plus.app.fill" catalog="system" id="sat-na-18n"/>
+                    <connections>
+                        <outlet property="AddImgBtn" destination="f7Y-sb-f45" id="eCt-ZB-e6A"/>
+                        <outlet property="ListingDesc" destination="6zy-Oe-hgI" id="jqA-5U-0IB"/>
+                        <outlet property="ListingLocation" destination="aAq-9H-Su0" id="QVd-wH-AaR"/>
+                        <outlet property="ListingTitle" destination="rvX-Q2-7gY" id="Wmv-V3-qp9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p6G-tt-q7l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -241,6 +263,7 @@
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="mappin" catalog="system" width="105" height="128"/>
         <image name="person.crop.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <image name="plus.app.fill" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

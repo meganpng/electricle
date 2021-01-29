@@ -14,10 +14,8 @@ class Listing{
     var Description:String
     var Image:UIImage
     var Location:CLLocation
-    var Email:String
-    var userName:String
-    var phoneNo:String
-    init(title:String, description:String, image:UIImage, location:CLLocation, email:String, username:String, phoneno:String) {
+   
+    init(title:String, description:String, image:UIImage, location:CLLocation) {
         Title = title
         Description = description
         Image = image
