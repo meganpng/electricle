@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A8F70D525C40C7100B738F2 /* AddListingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8F70D425C40C7100B738F2 /* AddListingController.swift */; };
 		FD02B10E25C04E8A00980E45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD02B10D25C04E8A00980E45 /* AppDelegate.swift */; };
 		FD02B11025C04E8A00980E45 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD02B10F25C04E8A00980E45 /* SceneDelegate.swift */; };
 		FD02B11225C04E8A00980E45 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD02B11125C04E8A00980E45 /* ViewController.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7A8F70D425C40C7100B738F2 /* AddListingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListingController.swift; sourceTree = "<group>"; };
 		FD02B10A25C04E8A00980E45 /* Electricle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Electricle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD02B10D25C04E8A00980E45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD02B10F25C04E8A00980E45 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				FDB13E4325C1CE0600633D9A /* LoginController.swift */,
 				FD6B99F425C2BFFF002C0C6C /* HomeController.swift */,
 				FDB13E4825C1CE6900633D9A /* SignUpController.swift */,
+				7A8F70D425C40C7100B738F2 /* AddListingController.swift */,
 				FD02B11325C04E8A00980E45 /* Main.storyboard */,
 				FD6B99EF25C2BF51002C0C6C /* Electricle.storyboard */,
 				FD02B11625C04E8B00980E45 /* Assets.xcassets */,
@@ -286,6 +289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A8F70D525C40C7100B738F2 /* AddListingController.swift in Sources */,
 				FD5E925325C2F11500F5CBE1 /* Listing.swift in Sources */,
 				FDB13E3C25C1983E00633D9A /* UserController.swift in Sources */,
 				FDB13E3125C191E500633D9A /* User.swift in Sources */,
