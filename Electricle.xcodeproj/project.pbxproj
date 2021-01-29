@@ -16,6 +16,7 @@
 		FD02B11A25C04E8B00980E45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD02B11825C04E8B00980E45 /* LaunchScreen.storyboard */; };
 		FD02B12525C04E8B00980E45 /* ElectricleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD02B12425C04E8B00980E45 /* ElectricleTests.swift */; };
 		FD02B13025C04E8B00980E45 /* ElectricleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD02B12F25C04E8B00980E45 /* ElectricleUITests.swift */; };
+		FD15BE0225C4122A000741DC /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD15BE0125C4122A000741DC /* ProfileController.swift */; };
 		FD5E925325C2F11500F5CBE1 /* Listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5E925225C2F11500F5CBE1 /* Listing.swift */; };
 		FD6B99F025C2BF51002C0C6C /* Electricle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD6B99EF25C2BF51002C0C6C /* Electricle.storyboard */; };
 		FD6B99F525C2BFFF002C0C6C /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6B99F425C2BFFF002C0C6C /* HomeController.swift */; };
@@ -60,6 +61,7 @@
 		FD02B12B25C04E8B00980E45 /* ElectricleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ElectricleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD02B12F25C04E8B00980E45 /* ElectricleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectricleUITests.swift; sourceTree = "<group>"; };
 		FD02B13125C04E8B00980E45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD15BE0125C4122A000741DC /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		FD5E925225C2F11500F5CBE1 /* Listing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listing.swift; sourceTree = "<group>"; };
 		FD6B99EF25C2BF51002C0C6C /* Electricle.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Electricle.storyboard; sourceTree = "<group>"; };
 		FD6B99F425C2BFFF002C0C6C /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				7A8F70D425C40C7100B738F2 /* AddListingController.swift */,
 				FD02B11325C04E8A00980E45 /* Main.storyboard */,
 				FD6B99EF25C2BF51002C0C6C /* Electricle.storyboard */,
+				FD15BE0125C4122A000741DC /* ProfileController.swift */,
 				FD02B11625C04E8B00980E45 /* Assets.xcassets */,
 				FD02B11825C04E8B00980E45 /* LaunchScreen.storyboard */,
 				FD02B11B25C04E8B00980E45 /* Info.plist */,
@@ -301,6 +304,7 @@
 				FD02B11025C04E8A00980E45 /* SceneDelegate.swift in Sources */,
 				FDB13E3725C1946A00633D9A /* Electricle.xcdatamodeld in Sources */,
 				FDB13E4425C1CE0600633D9A /* LoginController.swift in Sources */,
+				FD15BE0225C4122A000741DC /* ProfileController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
