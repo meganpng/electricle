@@ -29,7 +29,7 @@ class LoginController: UIViewController{
     @IBAction func onSubmit(_ sender: Any) {
         let email = emailField.text!
         let pwd = passwordField.text!
-        let emptyBool:Bool = checkFields(email: email, pwd: pwd)
+        //let emptyBool:Bool = checkFields(email: email, pwd: pwd)
         let flag:Bool = userController.validateUserEmail(input: email)
         let flagtwo:Bool = userController.validateUserPassword(input: pwd)
         if(email == "" && pwd == ""){
