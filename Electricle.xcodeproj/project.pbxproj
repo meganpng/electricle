@@ -25,6 +25,8 @@
 		FDB13E3C25C1983E00633D9A /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB13E3B25C1983E00633D9A /* UserController.swift */; };
 		FDB13E4425C1CE0600633D9A /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB13E4325C1CE0600633D9A /* LoginController.swift */; };
 		FDB13E4925C1CE6900633D9A /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB13E4825C1CE6900633D9A /* SignUpController.swift */; };
+		FDFA5B2125C4692D007D1E0E /* collectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFA5B1F25C4692D007D1E0E /* collectionViewCell.swift */; };
+		FDFA5B2225C4692D007D1E0E /* collectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDFA5B2025C4692D007D1E0E /* collectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		FDB13E3B25C1983E00633D9A /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		FDB13E4325C1CE0600633D9A /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		FDB13E4825C1CE6900633D9A /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
+		FDFA5B1F25C4692D007D1E0E /* collectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = collectionViewCell.swift; sourceTree = "<group>"; };
+		FDFA5B2025C4692D007D1E0E /* collectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = collectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +140,8 @@
 				FDAE6C1525C316E500523EBC /* ListingController.swift */,
 				FDB13E3B25C1983E00633D9A /* UserController.swift */,
 				FDB13E3525C1946A00633D9A /* Electricle.xcdatamodeld */,
+				FDFA5B1F25C4692D007D1E0E /* collectionViewCell.swift */,
+				FDFA5B2025C4692D007D1E0E /* collectionViewCell.xib */,
 			);
 			path = Electricle;
 			sourceTree = "<group>";
@@ -264,6 +270,7 @@
 				FD6B99F025C2BF51002C0C6C /* Electricle.storyboard in Resources */,
 				FD02B11A25C04E8B00980E45 /* LaunchScreen.storyboard in Resources */,
 				FD02B11725C04E8B00980E45 /* Assets.xcassets in Resources */,
+				FDFA5B2225C4692D007D1E0E /* collectionViewCell.xib in Resources */,
 				FD02B11525C04E8A00980E45 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,6 +296,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDFA5B2125C4692D007D1E0E /* collectionViewCell.swift in Sources */,
 				FD5E925325C2F11500F5CBE1 /* Listing.swift in Sources */,
 				FDB13E3C25C1983E00633D9A /* UserController.swift in Sources */,
 				FDB13E3125C191E500633D9A /* User.swift in Sources */,
