@@ -10,8 +10,8 @@ import CoreData
 import UIKit
 
 class AddListingController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate{
-    
-    
+    let listingController:ListingController = ListingController()
+    let userController:UserController = UserController()
     @IBOutlet weak var AddImgBtn: UIButton!
     
     
@@ -39,6 +39,8 @@ class AddListingController: UIViewController, UIImagePickerControllerDelegate & 
     
     
     @IBAction func ClickListItem(_ sender: Any) {
+        
+        //listingController.AddListing(listing: <#T##Listing#>, user: <#T##User#>)
     }
      
     

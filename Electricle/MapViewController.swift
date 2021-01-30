@@ -12,6 +12,7 @@ import Foundation
 class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate{
     @IBOutlet weak var mapView: MKMapView!
     let locationManager:CLLocationManager = CLLocationManager()
+    let userController:UserController = UserController()
     
     @IBAction func showLocation(_ sender: Any) {
         print(locationManager.location!)
