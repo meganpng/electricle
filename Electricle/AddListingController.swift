@@ -10,7 +10,8 @@ import CoreData
 import UIKit
 import CoreLocation
 
-class AddListingController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate{
+class AddListingController: UIViewController, UIImagePickerControllerDelegate , CLLocationManagerDelegate, UINavigationControllerDelegate{
+    
     let listingController:ListingController = ListingController()
     let userController:UserController = UserController()
     @IBOutlet weak var AddImgBtn: UIButton!
