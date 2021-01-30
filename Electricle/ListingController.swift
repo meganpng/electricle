@@ -10,6 +10,32 @@ import CoreData
 import Foundation
 
 class ListingController{
+    
+    /*func AddListingToUser(user:User, message:Message) {
+        let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: "CDMessage", in: context)!
+        let m = NSManagedObject(entity: entity, insertInto: context)
+        m.setValue(message.Text, forKey: "text")
+        m.setValue(message.isSender, forKey: "issender")
+        m.setValue(message.Date, forKey: "date")
+        
+        //This message belongs to a friend
+        //Hint: Fetch
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CDFriend")
+        fetchRequest.predicate = NSPredicate(format: "name = %@", friend.Name)
+        
+        do{
+            let friendlist = try context.fetch(fetchRequest)
+            let f = friendlist[0]
+            m.setValue(f, forKey: "friend") //Relationship
+        } catch{
+            print("Error")
+        }
+        appDelegate.saveContext()
+    }*/
+    
+    
     func deleteListing(id:String){
         let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext

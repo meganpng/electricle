@@ -17,6 +17,8 @@
 		FD02B12525C04E8B00980E45 /* ElectricleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD02B12425C04E8B00980E45 /* ElectricleTests.swift */; };
 		FD02B13025C04E8B00980E45 /* ElectricleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD02B12F25C04E8B00980E45 /* ElectricleUITests.swift */; };
 		FD15BE0225C4122A000741DC /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD15BE0125C4122A000741DC /* ProfileController.swift */; };
+		FD42A1FF25C5458E003C960E /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD42A1FE25C5458E003C960E /* CurrentUser.swift */; };
+		FD42A20A25C56D02003C960E /* DisplayListing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD42A20925C56D02003C960E /* DisplayListing.swift */; };
 		FD5E925325C2F11500F5CBE1 /* Listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5E925225C2F11500F5CBE1 /* Listing.swift */; };
 		FD6B99F025C2BF51002C0C6C /* Electricle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD6B99EF25C2BF51002C0C6C /* Electricle.storyboard */; };
 		FD6B99F525C2BFFF002C0C6C /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6B99F425C2BFFF002C0C6C /* HomeController.swift */; };
@@ -26,6 +28,7 @@
 		FDB13E3C25C1983E00633D9A /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB13E3B25C1983E00633D9A /* UserController.swift */; };
 		FDB13E4425C1CE0600633D9A /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB13E4325C1CE0600633D9A /* LoginController.swift */; };
 		FDB13E4925C1CE6900633D9A /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB13E4825C1CE6900633D9A /* SignUpController.swift */; };
+		FDFA5B2125C4692D007D1E0E /* collectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFA5B1F25C4692D007D1E0E /* collectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +65,8 @@
 		FD02B12F25C04E8B00980E45 /* ElectricleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectricleUITests.swift; sourceTree = "<group>"; };
 		FD02B13125C04E8B00980E45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD15BE0125C4122A000741DC /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		FD42A1FE25C5458E003C960E /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
+		FD42A20925C56D02003C960E /* DisplayListing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayListing.swift; sourceTree = "<group>"; };
 		FD5E925225C2F11500F5CBE1 /* Listing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listing.swift; sourceTree = "<group>"; };
 		FD6B99EF25C2BF51002C0C6C /* Electricle.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Electricle.storyboard; sourceTree = "<group>"; };
 		FD6B99F425C2BFFF002C0C6C /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -71,6 +76,7 @@
 		FDB13E3B25C1983E00633D9A /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		FDB13E4325C1CE0600633D9A /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		FDB13E4825C1CE6900633D9A /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
+		FDFA5B1F25C4692D007D1E0E /* collectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = collectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +127,7 @@
 		FD02B10C25C04E8A00980E45 /* Electricle */ = {
 			isa = PBXGroup;
 			children = (
+				FD42A1FE25C5458E003C960E /* CurrentUser.swift */,
 				FD02B10D25C04E8A00980E45 /* AppDelegate.swift */,
 				FD02B10F25C04E8A00980E45 /* SceneDelegate.swift */,
 				FD02B11125C04E8A00980E45 /* ViewController.swift */,
@@ -131,6 +138,7 @@
 				FD02B11325C04E8A00980E45 /* Main.storyboard */,
 				FD6B99EF25C2BF51002C0C6C /* Electricle.storyboard */,
 				FD15BE0125C4122A000741DC /* ProfileController.swift */,
+				FD42A20925C56D02003C960E /* DisplayListing.swift */,
 				FD02B11625C04E8B00980E45 /* Assets.xcassets */,
 				FD02B11825C04E8B00980E45 /* LaunchScreen.storyboard */,
 				FD02B11B25C04E8B00980E45 /* Info.plist */,
@@ -139,6 +147,7 @@
 				FDAE6C1525C316E500523EBC /* ListingController.swift */,
 				FDB13E3B25C1983E00633D9A /* UserController.swift */,
 				FDB13E3525C1946A00633D9A /* Electricle.xcdatamodeld */,
+				FDFA5B1F25C4692D007D1E0E /* collectionViewCell.swift */,
 			);
 			path = Electricle;
 			sourceTree = "<group>";
@@ -292,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDFA5B2125C4692D007D1E0E /* collectionViewCell.swift in Sources */,
 				7A8F70D525C40C7100B738F2 /* AddListingController.swift in Sources */,
 				FD5E925325C2F11500F5CBE1 /* Listing.swift in Sources */,
 				FDB13E3C25C1983E00633D9A /* UserController.swift in Sources */,
@@ -301,8 +311,10 @@
 				FDB13E4925C1CE6900633D9A /* SignUpController.swift in Sources */,
 				FD02B10E25C04E8A00980E45 /* AppDelegate.swift in Sources */,
 				FD6B99F525C2BFFF002C0C6C /* HomeController.swift in Sources */,
+				FD42A1FF25C5458E003C960E /* CurrentUser.swift in Sources */,
 				FD02B11025C04E8A00980E45 /* SceneDelegate.swift in Sources */,
 				FDB13E3725C1946A00633D9A /* Electricle.xcdatamodeld in Sources */,
+				FD42A20A25C56D02003C960E /* DisplayListing.swift in Sources */,
 				FDB13E4425C1CE0600633D9A /* LoginController.swift in Sources */,
 				FD15BE0225C4122A000741DC /* ProfileController.swift in Sources */,
 			);

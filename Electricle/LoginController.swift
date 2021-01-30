@@ -14,7 +14,6 @@ class LoginController: UIViewController{
     @IBOutlet weak var passwordField: UITextField!
     
     let userController:UserController = UserController()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -76,11 +75,13 @@ class LoginController: UIViewController{
         }
         else{// if username and password is correct
             print("\(email), \(pwd)")
+            let currentuser:CurrentUser = userController.retrieveCurrentUser(currentemail: email)
+            userController.AddCurrentUser(newCurrentUser: currentuser)
             let storyboard = UIStoryboard(name: "Electricle", bundle: nil)
             let vc = storyboard.instantiateViewController(identifier: "Electricle") as UIViewController
             vc.modalPresentationStyle = .fullScreen //try without fullscreen
             present(vc, animated: true, completion: nil)
-            
+
         }
         
     }
