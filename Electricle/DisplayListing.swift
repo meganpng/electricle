@@ -8,11 +8,18 @@
 import Foundation
 import UIKit
 
+
 struct DisplayListing{
     let Title:String
     let Content:String
     let Image:UIImage
     let Location:String
+    let UserName:String
 }
 
-let displayList:[Listing] = []
+let userController:UserController = UserController()
+var email:String = userController.retrieveCurrentEmail()
+
+var currentUser = userController.retrieveUser(currentemail: email)
+
+let displayList:[DisplayListing] = userController.retrieveDisplayListingsByUser(user: currentUser)

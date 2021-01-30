@@ -21,3 +21,5 @@ class Listing{
         Location = location
     }
 }
+
+

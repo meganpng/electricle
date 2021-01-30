@@ -363,6 +363,44 @@ class UserController{
         }
         return listingList
     }
+    
+    func retrieveDisplayListingsByUser(user:User) -> [DisplayListing] {
+        let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        //let entity = NSEntityDescription.entity(forEntityName: "CDMessage", in: context)!
+        //let m = NSManagedObject(entity: entity, insertInto: context)
+        var userList:[NSManagedObject] = []
+        var displayList:[DisplayListing] = []
+        //This message belongs to a friend
+        let username = user.userName
+        //Hint: Fetch
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CDUser")
+        fetchRequest.predicate = NSPredicate(format: "email = %@", user.Email)
+        let fetchUser = NSFetchRequest<NSManagedObject>(entityName: "CDListing")
+        //fetchMessage.predicate = NSPredicate(format: "isSender = %@", friend.messages!.text!)
+        
+        do{
+            userList = try context.fetch(fetchRequest)
+            let u = userList[0]
+            //contact = try context.fetch(fetchRequest)
+            let listings = try context.fetch(fetchUser)
+            for l in listings{
+                let user = l.value(forKeyPath: "owner")
+                if(u == user as! NSObject){
+                    let Title = l.value(forKeyPath: "title")  as! String
+                    let Content = l.value(forKeyPath: "content") as! String
+                    let Image = l.value(forKeyPath: "image") as! UIImage
+                    let location = l.value(forKeyPath: "location") as! String
+                    displayList.append(DisplayListing(Title: Title, Content: Content, Image: Image, Location: location, UserName: username))
+                }
+            }
+            
+        }
+        catch let error as NSError{
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+        return displayList
+    }
 
     func retrieveListingCountByCurrentUser(user:User) -> Int {
         var count:Int = 0

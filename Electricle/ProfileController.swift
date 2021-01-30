@@ -21,12 +21,11 @@ class ProfileController: UIViewController{
         super.viewDidLoad()
         
         let layout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
-        layout.minimumLineSpacing = spacing
-        layout.minimumInteritemSpacing = spacing
-        layout.itemSize = CGSize(width: 165, height: 253)
+        //layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
+        //layout.minimumLineSpacing = spacing
+        //layout.minimumInteritemSpacing = spacing
+        //layout.itemSize = CGSize(width: 200, height: 300)
         collectionView.collectionViewLayout = layout
-        collectionView.register(collectionViewCell.nib(), forCellWithReuseIdentifier: collectionViewCell.identifier)
         collectionView.delegate = self
         collectionView.dataSource = self //done
         // Added code
@@ -42,21 +41,21 @@ class ProfileController: UIViewController{
 
 extension ProfileController:UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return displayList.count
     }
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
+    /*func numberOfSections(in collectionView: UICollectionView) -> Int {
         let email = userController.retrieveCurrentEmail()
         let currentuser = userController.retrieveUser(currentemail: email)
         let count = userController.retrieveListingCountByCurrentUser(user: currentuser)
         return count
-    }
+    }*/
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionViewCell.identifier, for: indexPath) as! collectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewCell", for: indexPath) as! collectionViewCell
         
         //cell.configure()
-        
+        cell.setUp(with: displayList[indexPath.row])
         return cell
     }
 }
@@ -64,12 +63,12 @@ extension ProfileController:UICollectionViewDataSource{
 
 extension ProfileController:UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        //return CGSize(width: 165, height: 253)
+        return CGSize(width: 200, height: 300)
         // Change private let spacing: CGFloat = 20 to
 
 
         
-        let totalwidth = collectionView.bounds.size.width;
+        /*let totalwidth = collectionView.bounds.size.width;
         let numberOfCellsPerRow = 2
         let oddEven = indexPath.row / numberOfCellsPerRow % 2
         let dimensions = CGFloat(Int(totalwidth) / numberOfCellsPerRow)
@@ -77,8 +76,14 @@ extension ProfileController:UICollectionViewDelegateFlowLayout{
             return CGSize(width: dimensions, height: dimensions)
         } else {
             return CGSize(width: dimensions, height: dimensions/2)
-        }
+        }*/
     
     }
 
 }
+
+/*extension ProfileController: UICollectionViewDelegate{
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        <#code#>
+    }
+}*/
