@@ -23,7 +23,6 @@ class SignUpController: UIViewController{
     @IBOutlet weak var confirmField: UITextField!
     
     let userController:UserController = UserController()
-    let currentUserController:CurrentUserController = CurrentUserController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -114,7 +113,7 @@ class SignUpController: UIViewController{
             let userobject = User(email: email, username: username, name: name, phoneno: phoneno, password: password)
             let currentobject = CurrentUser(email: email, username: username, name: name, phoneno: phoneno, password: password)
             userController.AddUser(newUser: userobject)
-            currentUserController.AddCurrentUser(newCurrentUser: currentobject)
+            userController.AddCurrentUser(newCurrentUser: currentobject)
             let storyboard = UIStoryboard(name: "Electricle", bundle: nil)
             let vc = storyboard.instantiateViewController(identifier: "Electricle") as UIViewController
             vc.modalPresentationStyle = .fullScreen //try without fullscreen

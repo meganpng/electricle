@@ -25,6 +25,22 @@ class UserController{
         appDelegate.saveContext()
     }
     
+    func AddCurrentUser(newCurrentUser: CurrentUser){
+        let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: "CDCurrentUser", in: context)!
+        
+        let cuser = NSManagedObject(entity: entity, insertInto: context)
+        
+        cuser.setValue(newCurrentUser.Email, forKey: "email")
+        cuser.setValue(newCurrentUser.userName, forKey:"username")
+        cuser.setValue(newCurrentUser.Name, forKey: "name")
+        cuser.setValue(newCurrentUser.phoneNo, forKey: "phoneno")
+        cuser.setValue(newCurrentUser.Password, forKey: "password")
+        
+        appDelegate.saveContext()
+    }
+    
     func retrieveAllUser()->[User]{
         var user:[NSManagedObject] = []
         var userList:[User] = []
@@ -102,6 +118,55 @@ class UserController{
         
     }
     
+    func retrieveUser(currentemail:String)-> User{
+        var user:[NSManagedObject] = []
+        var currentUser:User
+        let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest =  NSFetchRequest<NSManagedObject>(entityName: "CDUser")
+        
+        do{
+            user = try context.fetch(fetchRequest)
+            
+            for u in user{
+                let email = u.value(forKeyPath: "email") as? String
+                let username = u.value(forKeyPath: "username") as? String
+                let name = u.value(forKeyPath: "name") as? String
+                let phoneno = u.value(forKeyPath: "phoneno") as? String
+                let password = u.value(forKeyPath: "password") as? String
+                print("\(email!)")
+                if(currentemail == email){
+                    currentUser = User(email: email!, username: username!, name: name!, phoneno: phoneno!, password: password!)
+                    return currentUser
+                }
+            }
+        } catch let error as NSError{
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+        
+    }
+    
+    func retrieveCurrentEmail() -> String{
+        var cuser:[NSManagedObject] = []
+        var email:String = ""
+        let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+
+        let fetchRequest =  NSFetchRequest<NSManagedObject>(entityName: "CDCurrentUser")
+        
+        do{
+            cuser = try context.fetch(fetchRequest)
+            
+            for cu in cuser{
+                email = (cu.value(forKeyPath: "email") as? String)!
+                print("\(email)")
+            }
+        } catch let error as NSError{
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+        return email
+    }
     
     func validateUserEmail(input:String) -> Bool{
         var user:[NSManagedObject] = []
@@ -187,6 +252,30 @@ class UserController{
         let context = appDelegate.persistentContainer.viewContext
 
         let fetchRequest =  NSFetchRequest<NSManagedObject>(entityName: "CDUser")
+        fetchRequest.predicate = NSPredicate(format: "email = %@", email)
+        
+        do{
+            let user = try context.fetch(fetchRequest)
+            let deleteuser = user[0]
+            context.delete(deleteuser)
+            //appDelegate.saveContext()
+            do{
+                try appDelegate.saveContext()
+            }
+            catch{
+                print(error)
+            }
+        }
+        catch let error as NSError{
+            print("Could not delete. \(error), \(error.userInfo)")
+        }
+    }
+    
+    func deleteCurrentUser(email:String){
+        let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+
+        let fetchRequest =  NSFetchRequest<NSManagedObject>(entityName: "CDCurrentUser")
         fetchRequest.predicate = NSPredicate(format: "email = %@", email)
         
         do{
