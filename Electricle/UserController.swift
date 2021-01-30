@@ -351,7 +351,8 @@ class UserController{
                 if(u == user as! NSObject){
                     let Title = l.value(forKeyPath: "title")  as! String
                     let Content = l.value(forKeyPath: "content") as! String
-                    let Image = l.value(forKeyPath: "image") as! UIImage
+                    let imgData = l.value(forKeyPath: "image") as! Data
+                    let Image:UIImage = UIImage(data: imgData)!
                     let location = l.value(forKeyPath: "location") as! String
                     listingList.append(Listing(title: Title, content: Content, image: Image, location: location))
                 }
@@ -389,7 +390,8 @@ class UserController{
                 if(u == user as! NSObject){
                     let Title = l.value(forKeyPath: "title")  as! String
                     let Content = l.value(forKeyPath: "content") as! String
-                    let Image = l.value(forKeyPath: "image") as! UIImage
+                    let imgData = l.value(forKeyPath: "image") as! Data
+                    let Image:UIImage = UIImage(data: imgData)!
                     let location = l.value(forKeyPath: "location") as! String
                     displayList.append(DisplayListing(Title: Title, Content: Content, Image: Image, Location: location, UserName: username))
                 }

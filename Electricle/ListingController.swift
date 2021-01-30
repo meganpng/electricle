@@ -11,6 +11,7 @@ import Foundation
 
 class ListingController{
     
+    let userController:UserController = UserController()
     /*func AddListingToUser(user:User, message:Message) {
         let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
@@ -36,16 +37,22 @@ class ListingController{
     }*/
     
     
-    func AddListing(listing:Listing, user:User){
+    func AddListing(listing:Listing){
         let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: "CDListing", in: context)!
         
+        let imageData = listing.Image.pngData()!
+        
         let item = NSManagedObject(entity: entity, insertInto: context)
-        item.setValue(listing.Content, forKey: "desc")
-        item.setValue(listing.Image, forKey: "image")
+        item.setValue(listing.Content, forKey: "content")
+        item.setValue(imageData, forKey: "image")
         item.setValue(listing.Location, forKey: "location")
         item.setValue(listing.Title, forKey: "title")
+
+        let email = userController.retrieveCurrentEmail()
+        
+        let user = userController.retrieveUser(currentemail: email)
         
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CDUser")
         fetchRequest.predicate = NSPredicate(format: "name = %@", user.Name)
@@ -61,39 +68,47 @@ class ListingController{
         appDelegate.saveContext()
     }
     
-    func retrieveListingsByUser(user:User) -> [Listing]{
-        let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        
-        var userList:[NSManagedObject]=[]
-        var listingsList:[Listing]=[]
-        
-        let fetchrequest = NSFetchRequest<NSManagedObject>(entityName: "CDUser")
-        fetchrequest.predicate = NSPredicate(format: "name = %@", user.Name)
-        let fetchListings = NSFetchRequest<NSManagedObject>(entityName: "CDListing")
-        
-        do{
-            userList = try context.fetch(fetchrequest)
-            let u = userList[0]
-            
-            let listings = try context.fetch(fetchListings)
-            for l in listings{
-                let user = l.value(forKeyPath:"owner")
-                if(u == user as! NSObject){
-                    let content = l.value(forKeyPath:"desc") as! String
-                    let image = l.value(forKeyPath: "image") as! UIImage
-                    let location = l.value(forKeyPath: "location") as! String
-                    let title = l.value(forKeyPath:"title") as! String
-                    listingsList.append(Listing(title: title, content: content, image: image, location: location))
-                }
-            }
-         
-            }
-        catch let error as NSError{
-            print("Could not fetch. \(error), \(error.userInfo)")
-        }
-        return listingsList
-    }
+//    func retrieveAllListings() -> [Listing]{
+//        var listing:[NSManagedObject] = []
+//        var listingList:[Listing] = []
+//
+//        let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
+//        let context = appDelegate.persistentContainer.viewContext
+//
+//
+//
+//    }
+    
+//    func retrieveListingsByUser(user:User) -> [Listing]{
+//        let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
+//        let context = appDelegate.persistentContainer.viewContext
+//
+//        var userList:[NSManagedObject]=[]
+//        var listingsList:[Listing]=[]
+//
+//        let fetchrequest = NSFetchRequest<NSManagedObject>(entityName: "CDUser")
+//        fetchrequest.predicate = NSPredicate(format: "name = %@", user.Name)
+//        let fetchListings = NSFetchRequest<NSManagedObject>(entityName: "CDListing")
+//
+//        do{
+//            userList = try context.fetch(fetchrequest)
+//            let u = userList[0]
+//
+//            let listings = try context.fetch(fetchListings)
+//            for l in listings{
+//                let user = l.value(forKeyPath:"owner")
+//                if(u == user as! NSObject){
+//
+//
+//                }
+//            }
+//
+//            }
+//        catch let error as NSError{
+//            print("Could not fetch. \(error), \(error.userInfo)")
+//        }
+//        return listingsList
+//    }
     
     func deleteListing(id:String){
         let appDelegate = (UIApplication.shared.delegate) as! AppDelegate

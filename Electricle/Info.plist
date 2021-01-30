@@ -64,5 +64,7 @@
 	</array>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Please allow permission to select image for product.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Please allow permissions to show location.</string>
 </dict>
 </plist>
