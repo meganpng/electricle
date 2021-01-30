@@ -12,7 +12,10 @@ import Foundation
 class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate{
     @IBOutlet weak var mapView: MKMapView!
     let locationManager:CLLocationManager = CLLocationManager()
+    let userController:UserController = UserController()
+    let listingController:ListingController = ListingController()
     
+    var location:String = ""
     @IBAction func showLocation(_ sender: Any) {
         print(locationManager.location!)
         centreMapOnLocation(location: locationManager.location!.coordinate)

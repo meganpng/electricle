@@ -14,6 +14,13 @@ class ShowListingController: UIViewController{
         super.viewDidLoad()
     }
     
+    @IBOutlet weak var locationLbl: UILabel!
     
+    
+    
+    @IBAction func viewLocationBtn(_ sender: Any) {
+        let location:String = locationLbl.text!
+        
+    }
 }
 
