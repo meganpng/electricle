@@ -17,6 +17,8 @@
 		FD02B12525C04E8B00980E45 /* ElectricleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD02B12425C04E8B00980E45 /* ElectricleTests.swift */; };
 		FD02B13025C04E8B00980E45 /* ElectricleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD02B12F25C04E8B00980E45 /* ElectricleUITests.swift */; };
 		FD15BE0225C4122A000741DC /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD15BE0125C4122A000741DC /* ProfileController.swift */; };
+		FD20661C25C593880076EF6B /* ShowListingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD20661B25C593880076EF6B /* ShowListingController.swift */; };
+		FD20662125C596090076EF6B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD20662025C596090076EF6B /* MapViewController.swift */; };
 		FD42A1FF25C5458E003C960E /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD42A1FE25C5458E003C960E /* CurrentUser.swift */; };
 		FD42A20A25C56D02003C960E /* DisplayListing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD42A20925C56D02003C960E /* DisplayListing.swift */; };
 		FD5E925325C2F11500F5CBE1 /* Listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5E925225C2F11500F5CBE1 /* Listing.swift */; };
@@ -65,6 +67,8 @@
 		FD02B12F25C04E8B00980E45 /* ElectricleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectricleUITests.swift; sourceTree = "<group>"; };
 		FD02B13125C04E8B00980E45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD15BE0125C4122A000741DC /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		FD20661B25C593880076EF6B /* ShowListingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowListingController.swift; sourceTree = "<group>"; };
+		FD20662025C596090076EF6B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		FD42A1FE25C5458E003C960E /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		FD42A20925C56D02003C960E /* DisplayListing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayListing.swift; sourceTree = "<group>"; };
 		FD5E925225C2F11500F5CBE1 /* Listing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listing.swift; sourceTree = "<group>"; };
@@ -137,6 +141,8 @@
 				7A8F70D425C40C7100B738F2 /* AddListingController.swift */,
 				FD02B11325C04E8A00980E45 /* Main.storyboard */,
 				FD6B99EF25C2BF51002C0C6C /* Electricle.storyboard */,
+				FD20661B25C593880076EF6B /* ShowListingController.swift */,
+				FD20662025C596090076EF6B /* MapViewController.swift */,
 				FD15BE0125C4122A000741DC /* ProfileController.swift */,
 				FD42A20925C56D02003C960E /* DisplayListing.swift */,
 				FD02B11625C04E8B00980E45 /* Assets.xcassets */,
@@ -313,9 +319,11 @@
 				FD6B99F525C2BFFF002C0C6C /* HomeController.swift in Sources */,
 				FD42A1FF25C5458E003C960E /* CurrentUser.swift in Sources */,
 				FD02B11025C04E8A00980E45 /* SceneDelegate.swift in Sources */,
+				FD20661C25C593880076EF6B /* ShowListingController.swift in Sources */,
 				FDB13E3725C1946A00633D9A /* Electricle.xcdatamodeld in Sources */,
 				FD42A20A25C56D02003C960E /* DisplayListing.swift in Sources */,
 				FDB13E4425C1CE0600633D9A /* LoginController.swift in Sources */,
+				FD20662125C596090076EF6B /* MapViewController.swift in Sources */,
 				FD15BE0225C4122A000741DC /* ProfileController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
