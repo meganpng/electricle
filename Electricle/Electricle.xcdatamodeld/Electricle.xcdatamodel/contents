@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="19H2" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CDCurrentUser" representedClassName="CDCurrentUser" syncable="YES" codeGenerationType="class">
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="password" optional="YES" attributeType="String"/>
+        <attribute name="phoneno" optional="YES" attributeType="String"/>
+        <attribute name="username" optional="YES" attributeType="String"/>
+    </entity>
     <entity name="CDListing" representedClassName="CDListing" syncable="YES" codeGenerationType="class">
         <attribute name="content" attributeType="String"/>
         <attribute name="image" attributeType="Binary"/>
@@ -18,5 +25,6 @@
     <elements>
         <element name="CDListing" positionX="-63" positionY="18" width="128" height="118"/>
         <element name="CDUser" positionX="-337.671875" positionY="-30.0078125" width="128" height="133"/>
+        <element name="CDCurrentUser" positionX="-198" positionY="36" width="128" height="118"/>
     </elements>
 </model>

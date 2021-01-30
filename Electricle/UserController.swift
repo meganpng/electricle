@@ -73,6 +73,36 @@ class UserController{
         return userList
     }
     
+    func retrieveCurrentUser(currentemail:String)-> CurrentUser{
+        var user:[NSManagedObject] = []
+        var currentUser:CurrentUser
+        let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest =  NSFetchRequest<NSManagedObject>(entityName: "CDUser")
+        
+        do{
+            user = try context.fetch(fetchRequest)
+            
+            for u in user{
+                let email = u.value(forKeyPath: "email") as? String
+                let username = u.value(forKeyPath: "username") as? String
+                let name = u.value(forKeyPath: "name") as? String
+                let phoneno = u.value(forKeyPath: "phoneno") as? String
+                let password = u.value(forKeyPath: "password") as? String
+                print("\(email!)")
+                if(currentemail == email){
+                    currentUser = CurrentUser(email: email!, username: username!, name: name!, phoneno: phoneno!, password: password!)
+                    return currentUser
+                }
+            }
+        } catch let error as NSError{
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+        
+    }
+    
+    
     func validateUserEmail(input:String) -> Bool{
         var user:[NSManagedObject] = []
         let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
@@ -211,6 +241,44 @@ class UserController{
             print("Could not fetch. \(error), \(error.userInfo)")
         }
         return listingList
+    }
+
+    func retrieveListingCountByUser(user:User) -> Int {
+        var count:Int = 0
+        let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        //let entity = NSEntityDescription.entity(forEntityName: "CDMessage", in: context)!
+        //let m = NSManagedObject(entity: entity, insertInto: context)
+        var userList:[NSManagedObject] = []
+        var listingList:[Listing] = []
+        //This message belongs to a friend
+        //Hint: Fetch
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CDUser")
+        fetchRequest.predicate = NSPredicate(format: "email = %@", user.Email)
+        let fetchUser = NSFetchRequest<NSManagedObject>(entityName: "CDListing")
+        //fetchMessage.predicate = NSPredicate(format: "isSender = %@", friend.messages!.text!)
+        
+        do{
+            userList = try context.fetch(fetchRequest)
+            let u = userList[0]
+            //contact = try context.fetch(fetchRequest)
+            let listings = try context.fetch(fetchUser)
+            for l in listings{
+                let user = l.value(forKeyPath: "owner")
+                if(u == user as! NSObject){
+                    let Title = l.value(forKeyPath: "title")  as! String
+                    let Content = l.value(forKeyPath: "content") as! String
+                    let Image = l.value(forKeyPath: "image") as! UIImage
+                    let location = l.value(forKeyPath: "location") as! String
+                    listingList.append(Listing(title: Title, content: Content, image: Image, location: location))
+                }
+            }
+            
+        }
+        catch let error as NSError{
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+        return count
     }
 
 }
