@@ -66,13 +66,6 @@
                 <constraint firstItem="gLL-QD-BUI" firstAttribute="top" secondItem="vZ4-KP-jNw" secondAttribute="bottom" constant="7" id="wl6-GU-t5L"/>
             </constraints>
             <size key="customSize" width="165" height="247"/>
-            <connections>
-                <outlet property="imageView" destination="vZ4-KP-jNw" id="sUa-B4-PNB"/>
-                <outlet property="listingTitle" destination="gLL-QD-BUI" id="V5i-ec-ZS0"/>
-                <outlet property="locationDistance" destination="2yL-HX-T43" id="NFm-y5-9Hu"/>
-                <outlet property="locationIcon" destination="DC7-uH-j0X" id="d02-eK-KbQ"/>
-                <outlet property="userName" destination="CN1-0T-wda" id="yIa-ad-Ws1"/>
-            </connections>
             <point key="canvasLocation" x="-163.04347826086959" y="109.48660714285714"/>
         </collectionViewCell>
     </objects>

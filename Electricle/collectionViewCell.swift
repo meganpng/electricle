@@ -15,7 +15,7 @@ class collectionViewCell: UICollectionViewCell {
     @IBOutlet weak var locationIcon: UIImageView!
     @IBOutlet weak var locationDistance: UILabel!
     
-    static let identifier = "collectionViewCell"
+    /*static let identifier = "collectionViewCell"
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,5 +32,5 @@ class collectionViewCell: UICollectionViewCell {
     
     static func nib() -> UINib{
         return UINib(nibName: "collectionViewCell", bundle: nil)
-    }
+    }*/
 }

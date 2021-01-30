@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 class UserController{
+    
     func AddUser(newUser: User){
         let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
@@ -91,7 +92,7 @@ class UserController{
     
     func retrieveCurrentUser(currentemail:String)-> CurrentUser{
         var user:[NSManagedObject] = []
-        var currentUser:CurrentUser
+        var currentUser:CurrentUser = CurrentUser(email: "", username: "", name: "", phoneno: "", password: "")
         let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         
@@ -109,18 +110,18 @@ class UserController{
                 print("\(email!)")
                 if(currentemail == email){
                     currentUser = CurrentUser(email: email!, username: username!, name: name!, phoneno: phoneno!, password: password!)
-                    return currentUser
+                    break
                 }
             }
         } catch let error as NSError{
             print("Could not fetch. \(error), \(error.userInfo)")
         }
-        
+        return currentUser
     }
     
     func retrieveUser(currentemail:String)-> User{
         var user:[NSManagedObject] = []
-        var currentUser:User
+        var currentUser:User = User(email: "", username: "", name: "", phoneno: "", password: "")
         let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         
@@ -138,13 +139,13 @@ class UserController{
                 print("\(email!)")
                 if(currentemail == email){
                     currentUser = User(email: email!, username: username!, name: name!, phoneno: phoneno!, password: password!)
-                    return currentUser
+                    break
                 }
             }
         } catch let error as NSError{
             print("Could not fetch. \(error), \(error.userInfo)")
         }
-        
+        return currentUser
     }
     
     func retrieveCurrentEmail() -> String{
@@ -217,6 +218,37 @@ class UserController{
     }
 
     func updateUser(email:String, newUser:User){
+        //retrieve then set
+        let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest =  NSFetchRequest<NSManagedObject>(entityName: "CDUser")
+        fetchRequest.predicate = NSPredicate(format: "email = %@", email)
+        do{
+            let user = try context.fetch(fetchRequest)
+            let userobject = user[0]
+            userobject.setValue(newUser.Email, forKey: "email")
+            userobject.setValue(newUser.userName, forKey:"username")
+            userobject.setValue(newUser.Name, forKey: "name")
+            userobject.setValue(newUser.phoneNo, forKey: "phoneno")
+            userobject.setValue(newUser.Password, forKey: "password")
+            //appDelegate.saveContext()
+            do{
+                try context.save()
+                //try appDelegate.saveContext()
+            }
+            catch let error as NSError{
+                //print(error)
+                print("Could not update. \(error), \(error.userInfo)")
+            }
+            
+        } catch let error as NSError{
+            print("Could not update. \(error), \(error.userInfo)")
+        }
+        
+
+    }
+    
+    func updateCurrentUser(email:String, newUser:User){
         //retrieve then set
         let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
@@ -332,14 +364,13 @@ class UserController{
         return listingList
     }
 
-    func retrieveListingCountByUser(user:User) -> Int {
+    func retrieveListingCountByCurrentUser(user:User) -> Int {
         var count:Int = 0
         let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         //let entity = NSEntityDescription.entity(forEntityName: "CDMessage", in: context)!
         //let m = NSManagedObject(entity: entity, insertInto: context)
         var userList:[NSManagedObject] = []
-        var listingList:[Listing] = []
         //This message belongs to a friend
         //Hint: Fetch
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CDUser")
@@ -355,11 +386,8 @@ class UserController{
             for l in listings{
                 let user = l.value(forKeyPath: "owner")
                 if(u == user as! NSObject){
-                    let Title = l.value(forKeyPath: "title")  as! String
-                    let Content = l.value(forKeyPath: "content") as! String
-                    let Image = l.value(forKeyPath: "image") as! UIImage
-                    let location = l.value(forKeyPath: "location") as! String
-                    listingList.append(Listing(title: Title, content: Content, image: Image, location: location))
+                    count += 1
+                    
                 }
             }
             

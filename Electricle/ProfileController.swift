@@ -11,7 +11,9 @@ class ProfileController: UIViewController{
     private var spacing = CGFloat()
     
     let userController:UserController = UserController()
-    var userEmail:String = "";
+    var userEmail:String = ""
+    
+    
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -26,7 +28,7 @@ class ProfileController: UIViewController{
         collectionView.collectionViewLayout = layout
         collectionView.register(collectionViewCell.nib(), forCellWithReuseIdentifier: collectionViewCell.identifier)
         collectionView.delegate = self
-        collectionView.dataSource = self
+        collectionView.dataSource = self //done
         // Added code
         if UIScreen.main.bounds.width <= 375 {
             spacing = 16 // For the iPhone 7, 8, 11 Pro
@@ -44,7 +46,10 @@ extension ProfileController:UICollectionViewDataSource{
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        <#code#>
+        let email = userController.retrieveCurrentEmail()
+        let currentuser = userController.retrieveUser(currentemail: email)
+        let count = userController.retrieveListingCountByCurrentUser(user: currentuser)
+        return count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -59,7 +64,7 @@ extension ProfileController:UICollectionViewDataSource{
 
 extension ProfileController:UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 165, height: 253)
+        //return CGSize(width: 165, height: 253)
         // Change private let spacing: CGFloat = 20 to
 
 
@@ -68,11 +73,11 @@ extension ProfileController:UICollectionViewDelegateFlowLayout{
         let numberOfCellsPerRow = 2
         let oddEven = indexPath.row / numberOfCellsPerRow % 2
         let dimensions = CGFloat(Int(totalwidth) / numberOfCellsPerRow)
-        /*if (oddEven == 0) {
-            return CGSize(dimensions, dimensions)
+        if (oddEven == 0) {
+            return CGSize(width: dimensions, height: dimensions)
         } else {
-            return CGSizeMake(dimensions, dimensions / 2)
-        }*/
+            return CGSize(width: dimensions, height: dimensions/2)
+        }
     
     }
 
