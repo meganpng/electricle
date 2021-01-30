@@ -40,16 +40,7 @@ class AddListingController: UIViewController, UIImagePickerControllerDelegate & 
     
     @IBAction func ClickListItem(_ sender: Any) {
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+     
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
       
