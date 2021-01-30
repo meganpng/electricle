@@ -175,9 +175,53 @@ class UserController{
             print("Could not delete. \(error), \(error.userInfo)")
         }
     }
+    
+    func retrieveListingsByUser(user:User) -> [Listing] {
+        let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        //let entity = NSEntityDescription.entity(forEntityName: "CDMessage", in: context)!
+        //let m = NSManagedObject(entity: entity, insertInto: context)
+        var userList:[NSManagedObject] = []
+        var listingList:[Listing] = []
+        //This message belongs to a friend
+        //Hint: Fetch
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CDUser")
+        fetchRequest.predicate = NSPredicate(format: "email = %@", user.Email)
+        let fetchUser = NSFetchRequest<NSManagedObject>(entityName: "CDListing")
+        //fetchMessage.predicate = NSPredicate(format: "isSender = %@", friend.messages!.text!)
+        
+        do{
+            userList = try context.fetch(fetchRequest)
+            let u = userList[0]
+            //contact = try context.fetch(fetchRequest)
+            let listings = try context.fetch(fetchUser)
+            for l in listings{
+                let user = l.value(forKeyPath: "owner")
+                if(u == user as! NSObject){
+                    let Title = l.value(forKeyPath: "title")  as! String
+                    let Content = l.value(forKeyPath: "content") as! String
+                    let Image = l.value(forKeyPath: "image") as! UIImage
+                    let location = l.value(forKeyPath: "location") as! String
+                    listingList.append(Listing(title: Title, content: Content, image: Image, location: location))
+                }
+            }
+            
+        }
+        catch let error as NSError{
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+        return listingList
+    }
+
 }
 
-
+extension ProfileController:UICollectionViewDelegate{
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        
+        print("Item was selected")
+    }
+}
     
     
 

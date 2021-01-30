@@ -24,13 +24,6 @@ class ProfileController: UIViewController{
     
 }
 
-extension ProfileController:UICollectionViewDelegate{
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        collectionView.deselectItem(at: indexPath, animated: true)
-        
-        print("Item was selected")
-    }
-}
 
 extension ProfileController:UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -41,7 +34,7 @@ extension ProfileController:UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionViewCell.identifier, for: indexPath) as! collectionViewCell
-        cell.configure(with: UIImage(named: "image")!, String, String, UIImage(named: "icon")!, String)
+        //cell.configure()
         
         return cell
     }

@@ -11,19 +11,13 @@ import Foundation
 
 class Listing{
     var Title:String
-    var Description:String
+    var Content:String
     var Image:UIImage
-    var Location:CLLocation
-    var Email:String
-    var userName:String
-    var phoneNo:String
-    init(title:String, description:String, image:UIImage, location:CLLocation, email:String, username:String, phoneno:String) {
+    var Location:String
+    init(title:String, content:String, image:UIImage, location:String) {
         Title = title
-        Description = description
+        Content = content
         Image = image
         Location = location
-        Email = email
-        userName = username
-        phoneNo = phoneno
     }
 }
