@@ -44,6 +44,7 @@ class ListingController{
         
         let imageData = listing.Image.pngData()!
         
+        
         let item = NSManagedObject(entity: entity, insertInto: context)
         item.setValue(listing.Content, forKey: "content")
         item.setValue(imageData, forKey: "image")
@@ -52,6 +53,12 @@ class ListingController{
 
         let email = userController.retrieveCurrentEmail()
         
+        let user = userController.retrieveUser(currentemail: email)
+        var count = userController.retrieveListingCountByCurrentUser(user: user)
+        count += 1
+        
+        let id = email + String(count)
+        item.setValue(id, forKey: "id")
         
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CDUser")
         fetchRequest.predicate = NSPredicate(format: "email = %@", email)

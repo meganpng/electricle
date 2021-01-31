@@ -10,6 +10,8 @@ import UIKit
 
 class ShowListingController: UIViewController{
     
+    let listingController:ListingController = ListingController()
+    
     var getListing:DisplayListing = DisplayListing(Title: "", Content: "", Image: UIImage(), Location: "", UserName: "", Email: "", PhoneNo: "")
     
     var getLocation:String = ""
@@ -29,6 +31,7 @@ class ShowListingController: UIViewController{
     @IBOutlet weak var phoneNoLbl: UILabel!
     @IBOutlet weak var contentlbl: UILabel!
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         /*imageView.image = getImage
@@ -46,12 +49,13 @@ class ShowListingController: UIViewController{
         phoneNoLbl.text = getListing.PhoneNo
     }
     
+    
+    @IBAction func deleteListing(_ sender: Any) {
+        listingController.deleteListing(id: <#T##String#>)
+    }
+    
+
     let userController:UserController = UserController()
-    
-
-    
-
-    
     
     @IBAction func viewLocationBtn(_ sender: Any) {
         let location:String = locationLbl.text!

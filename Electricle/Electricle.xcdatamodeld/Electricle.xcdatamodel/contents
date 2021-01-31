@@ -9,6 +9,7 @@
     </entity>
     <entity name="CDListing" representedClassName="CDListing" syncable="YES" codeGenerationType="class">
         <attribute name="content" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="image" attributeType="Binary"/>
         <attribute name="location" attributeType="String"/>
         <attribute name="title" attributeType="String"/>
@@ -23,8 +24,8 @@
         <relationship name="listings" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDListing" inverseName="owner" inverseEntity="CDListing"/>
     </entity>
     <elements>
-        <element name="CDListing" positionX="-63" positionY="18" width="128" height="118"/>
-        <element name="CDUser" positionX="-337.671875" positionY="-30.0078125" width="128" height="133"/>
         <element name="CDCurrentUser" positionX="-198" positionY="36" width="128" height="118"/>
+        <element name="CDListing" positionX="-63" positionY="18" width="128" height="133"/>
+        <element name="CDUser" positionX="-337.671875" positionY="-30.0078125" width="128" height="133"/>
     </elements>
 </model>

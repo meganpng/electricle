@@ -334,6 +334,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Delete Listing" image="trash" catalog="system"/>
+                                <connections>
+                                    <action selector="deleteListing:" destination="QYA-rG-gb0" eventType="touchUpInside" id="ZT2-PN-fra"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="R5q-cu-ai2"/>
