@@ -4,10 +4,10 @@
 //
 //  Created by P. Megan on 30/1/21.
 //
-import Foundation 
+
 import UIKit
 
-class collectionViewCell: UICollectionViewCell {
+class collectionViewCell: UICollectionViewCell{
 
     @IBOutlet var imageView: UIImageView!
     @IBOutlet weak var listingTitle: UILabel!
@@ -21,6 +21,8 @@ class collectionViewCell: UICollectionViewCell {
         userName.text = display.UserName
         locationDistance.text = display.Location
     }
+    
+    
     
     /*static let identifier = "collectionViewCell"
     
