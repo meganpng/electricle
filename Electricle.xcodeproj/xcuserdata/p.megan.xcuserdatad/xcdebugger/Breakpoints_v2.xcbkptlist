@@ -20,5 +20,113 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "393A1C47-20CD-48A1-AA1D-7EE6CB521C42"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Electricle/collectionViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "collectionViewCell"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "393A1C47-20CD-48A1-AA1D-7EE6CB521C42 - 76be4f1e82c8b8cd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Electricle.collectionViewCell.listingTitle.getter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "Electricle"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/p.megan/Desktop/MAD2/Electricle/Electricle/collectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "393A1C47-20CD-48A1-AA1D-7EE6CB521C42 - e0f5ba34c8d45cd9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Electricle.collectionViewCell.listingTitle.setter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "Electricle"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/p.megan/Desktop/MAD2/Electricle/Electricle/collectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "155">
+               </Location>
+               <Location
+                  uuid = "393A1C47-20CD-48A1-AA1D-7EE6CB521C42 - 99403eeb1a88af46"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Electricle.collectionViewCell.listingTitle.modify : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "Electricle"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/p.megan/Desktop/MAD2/Electricle/Electricle/collectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "59">
+               </Location>
+               <Location
+                  uuid = "393A1C47-20CD-48A1-AA1D-7EE6CB521C42 - f647c9f0838f7e75"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Electricle.collectionViewCell.listingTitle.modify : Swift.Optional&lt;__C.UILabel&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Electricle"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/p.megan/Desktop/MAD2/Electricle/Electricle/collectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  uuid = "393A1C47-20CD-48A1-AA1D-7EE6CB521C42 - ab8b1d874386baca"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Electricle.collectionViewCell.init(frame: __C.CGRect) -&gt; Electricle.collectionViewCell"
+                  moduleName = "Electricle"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/p.megan/Desktop/MAD2/Electricle/Electricle/collectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "348">
+               </Location>
+               <Location
+                  uuid = "393A1C47-20CD-48A1-AA1D-7EE6CB521C42 - e7376a6381158292"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Electricle.collectionViewCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Electricle.collectionViewCell&gt;"
+                  moduleName = "Electricle"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/p.megan/Desktop/MAD2/Electricle/Electricle/collectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "315">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
