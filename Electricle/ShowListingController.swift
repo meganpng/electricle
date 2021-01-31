@@ -10,17 +10,54 @@ import UIKit
 
 class ShowListingController: UIViewController{
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+    var getListing:DisplayListing = DisplayListing(Title: "", Content: "", Image: UIImage(), Location: "", UserName: "", Email: "", PhoneNo: "")
     
+    var getLocation:String = ""
+    var getUsername:String = ""
+    var getEmail:String = ""
+    var getImage:UIImage = UIImage()
+    var getContent:String = ""
+    var getTitle:String = ""
+    var getPhoneNo:String = ""
+    
+    @IBOutlet weak var userNamelbl: UILabel!
+    @IBOutlet weak var titleLbl: UILabel!
+
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var locationLbl: UILabel!
     
+    @IBOutlet weak var phoneNoLbl: UILabel!
+    @IBOutlet weak var contentlbl: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        /*imageView.image = getImage
+        titleLbl.text = getTitle
+        userNamelbl.text = "From: " + getEmail
+        contentlbl.text = getContent
+        locationLbl.text = getLocation
+        phoneNoLbl.text = getPhoneNo*/
+        
+        imageView.image = getListing.Image
+        titleLbl.text = getListing.Title
+        userNamelbl.text = "From: " + getListing.UserName
+        contentlbl.text = getListing.Content
+        locationLbl.text = getListing.Location
+        phoneNoLbl.text = getListing.PhoneNo
+    }
+    
+    let userController:UserController = UserController()
+    
+
+    
+
     
     
     @IBAction func viewLocationBtn(_ sender: Any) {
         let location:String = locationLbl.text!
         
     }
+    
+
 }
 

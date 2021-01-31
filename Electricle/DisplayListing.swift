@@ -15,6 +15,9 @@ struct DisplayListing{
     let Image:UIImage
     let Location:String
     let UserName:String
+    let Email:String
+    let PhoneNo:String
+    
 }
 
 let userController:UserController = UserController()

@@ -7,7 +7,7 @@
 import UIKit
 import Foundation
 
-class ProfileController: UIViewController{
+class ProfileController: UIViewController, UICollectionViewDelegate{
     private var spacing = CGFloat()
     
     let userController:UserController = UserController()
@@ -21,9 +21,9 @@ class ProfileController: UIViewController{
         super.viewDidLoad()
         
         let layout = UICollectionViewFlowLayout()
-        //layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
-        //layout.minimumLineSpacing = spacing
-        //layout.minimumInteritemSpacing = spacing
+        layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
+        layout.minimumLineSpacing = spacing
+        layout.minimumInteritemSpacing = spacing
         //layout.itemSize = CGSize(width: 200, height: 300)
         collectionView.collectionViewLayout = layout
         collectionView.delegate = self
@@ -34,7 +34,19 @@ class ProfileController: UIViewController{
         } else {
             spacing = 20 // For the iPhone 7+, 8+ and 11 Pro Max
         }
+        super.viewDidLoad()
+        
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as?
+            ShowListingController, let index =
+            collectionView.indexPathsForSelectedItems?.first {
+            destination.getListing = displayList[index.row]
+        }
+    }
+    
+    
     
 }
 
@@ -51,13 +63,18 @@ extension ProfileController:UICollectionViewDataSource{
         return count
     }*/
     
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewCell", for: indexPath) as! collectionViewCell
-        
+
         //cell.configure()
         cell.setUp(with: displayList[indexPath.row])
+        
         return cell
     }
+    
+    
 }
 
 
@@ -82,8 +99,4 @@ extension ProfileController:UICollectionViewDelegateFlowLayout{
 
 }
 
-/*extension ProfileController: UICollectionViewDelegate{
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        <#code#>
-    }
-}*/
+ 

@@ -65,6 +65,7 @@ class ListingController{
             print("Error")
         }
         appDelegate.saveContext()
+        
     }
     
     func retrieveAllListings(){
