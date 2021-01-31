@@ -13,7 +13,7 @@ class ProfileController: UIViewController, UICollectionViewDelegate{
     let userController:UserController = UserController()
     var userEmail:String = ""
     
-    
+    var displayList = [DisplayListing]()
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -34,8 +34,13 @@ class ProfileController: UIViewController, UICollectionViewDelegate{
         } else {
             spacing = 20 // For the iPhone 7+, 8+ and 11 Pro Max
         }
-        super.viewDidLoad()
-        
+        displayList = userController.retrieveDisplayListingsByUser(user: currentUser)
+        collectionView.reloadData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        displayList = userController.retrieveDisplayListingsByUser(user: currentUser)
+        collectionView.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -43,10 +48,15 @@ class ProfileController: UIViewController, UICollectionViewDelegate{
             ShowListingController, let index =
             collectionView.indexPathsForSelectedItems?.first {
             destination.getListing = displayList[index.row]
+            
         }
+        
     }
     
-    
+    @IBAction func unwindToProfile(_ unwindSegue: UIStoryboardSegue) {
+        displayList = userController.retrieveDisplayListingsByUser(user: currentUser)
+        collectionView.reloadData()
+    }
     
 }
 
@@ -70,7 +80,7 @@ extension ProfileController:UICollectionViewDataSource{
 
         //cell.configure()
         cell.setUp(with: displayList[indexPath.row])
-        
+        cell.displayListing = displayList[indexPath.row]
         return cell
     }
     
@@ -80,7 +90,12 @@ extension ProfileController:UICollectionViewDataSource{
 
 extension ProfileController:UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 150, height: 231)
+        let phoneWidth = Int(self.view.frame.width)
+        let insets = 40
+        let cellsPerRow = 2
+        let dividingSpacesInset = (cellsPerRow - 1)*20
+        let cellWidth = (phoneWidth-insets-dividingSpacesInset)/cellsPerRow
+        return CGSize(width: cellWidth, height: 231)
         // Change private let spacing: CGFloat = 20 to
 
 

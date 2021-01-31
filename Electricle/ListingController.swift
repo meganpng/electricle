@@ -53,12 +53,12 @@ class ListingController{
 
         let email = userController.retrieveCurrentEmail()
         
-        let user = userController.retrieveUser(currentemail: email)
+        //let user = userController.retrieveUser(currentemail: email)
         //var count = userController.retrieveListingCountByCurrentUser(user: user)
-        var count = userController.retrieveListingsByUser(user: user).count
-        count += 1
+        //var count = userController.retrieveListingsByUser(user: user).count
+        //count += 1
         
-        let id = email + String(count)
+        let id = UUID().uuidString
         item.setValue(id, forKey: "id")
         
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CDUser")

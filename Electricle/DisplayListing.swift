@@ -25,4 +25,4 @@ var email:String = userController.retrieveCurrentEmail()
 
 var currentUser = userController.retrieveUser(currentemail: email)
 
-let displayList:[DisplayListing] = userController.retrieveDisplayListingsByUser(user: currentUser)
+

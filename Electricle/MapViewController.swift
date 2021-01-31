@@ -10,22 +10,17 @@ import MapKit
 import Foundation
 
 class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate{
+    
+    var getLocationListing:DisplayListing = DisplayListing(Title: "", Content: "", Image: UIImage(), Location: "", UserName: "", Email: "", PhoneNo: "", Id: "")
+    
     @IBOutlet weak var mapView: MKMapView!
+    
     let locationManager:CLLocationManager = CLLocationManager()
     let userController:UserController = UserController()
     let listingController:ListingController = ListingController()
     
     
     var locationString:String = ""
-    
-    
-    @IBAction func showLocation(_ sender: Any) {
-        print(locationManager.location!)
-        centreMapOnLocation(location: locationManager.location!.coordinate)
-        //mapView.showsUserLocation = true
-            }
-    
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,33 +31,26 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
         locationManager.startUpdatingHeading()
-        centreMapOnLocation(location: locationManager.location!.coordinate)
+        centreMapOnLocation(locationString: getLocationListing.Location)
     }
     
     let regionRadius:CLLocationDistance = 250
     
-    func centreMapOnLocation(location: CLLocationCoordinate2D){
-        let coordinateRegion = MKCoordinateRegion (center:location, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
-        //mapView.showsUserLocation = true
-        mapView.setRegion(coordinateRegion, animated: true)
-        
-        //let annotation = MKPointAnnotation()
-        //annotation.coordinate = location
-        //annotation.title = "Me"
-        //self.mapView.addAnnotation(annotation)
-        
+    func centreMapOnLocation(locationString: String){
         let geoCoder = CLGeocoder()
         geoCoder.geocodeAddressString(locationString, completionHandler: {p,e in
-            let lat = String(format: "Lat: %3.12f", p![0].location!.coordinate.latitude)
-            let long = String(format: "Long: %3.12f", p![0].location!.coordinate.longitude)
-            let nplocation = CLLocation(latitude: p![0].location!.coordinate.latitude, longitude: p![0].location!.coordinate.longitude)
+            let location = p![0].location!
+            let lat = String(format: "Lat: %3.12f", location.coordinate.latitude)
+            let long = String(format: "Long: %3.12f", location.coordinate.longitude)
+            let maplocation = CLLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
             
             let annotation = MKPointAnnotation()
-            annotation.coordinate = nplocation.coordinate
-            annotation.title = "Ngee Ann Polytechnic"
-            annotation.subtitle = "School Of ICT"
+            annotation.coordinate = maplocation.coordinate
+            annotation.title = self.getLocationListing.Location
             self.mapView.addAnnotation(annotation)
             print("\(lat), \(long)")
+            
+            self.mapView.setRegion(MKCoordinateRegion.init(center: location.coordinate, latitudinalMeters: self.regionRadius, longitudinalMeters: self.regionRadius), animated: true)
         })
         
         

@@ -14,6 +14,8 @@ class collectionViewCell: UICollectionViewCell, UICollectionViewDelegate {
     @IBOutlet weak var locationIcon: UIImageView!
     @IBOutlet weak var locationDistance: UILabel!
     
+    var displayListing: DisplayListing?
+    
     @IBInspectable var cornerRadius: CGFloat = 0{
         didSet{
             self.layer.cornerRadius = cornerRadius
@@ -43,7 +45,7 @@ class collectionViewCell: UICollectionViewCell, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //[indexPath.row]
 
-        let display:DisplayListing = displayList[indexPath.item]
+        let display:DisplayListing = displayListing!
         let destinationVC = ShowListingController()
         destinationVC.getEmail = display.Email
         destinationVC.getContent = display.Content

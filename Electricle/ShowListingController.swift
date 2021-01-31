@@ -58,7 +58,7 @@ class ShowListingController: UIViewController{
         alert.addAction(UIAlertAction(title: "Delete", style: .default, handler: { action in
             self.listingController.deleteListing(id: self.getListing.Id)
             print("Deleted" + self.getListing.Title)
-            let destination = ProfileController()
+            self.performSegue(withIdentifier: "unwindToProfile", sender: nil)
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) -> Void in
             print("Cancel button tapped")
@@ -68,6 +68,17 @@ class ShowListingController: UIViewController{
 
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as?
+                    MapViewController{
+            destination.getLocationListing = getListing
+        }
+    }
+    
+    @IBAction func exitBtn(_ sender: Any) {
+        self.performSegue(withIdentifier: "unwindToProfile", sender: nil)
+    }
+    
 
     let userController:UserController = UserController()
     
@@ -75,6 +86,8 @@ class ShowListingController: UIViewController{
         let location:String = locationLbl.text!
         
     }
+    
+    
     
 
 }
