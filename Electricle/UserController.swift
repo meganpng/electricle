@@ -374,6 +374,8 @@ class UserController{
         var displayList:[DisplayListing] = []
         //This message belongs to a friend
         let username = user.userName
+        let email = user.Email
+        let phoneno = user.phoneNo
         //Hint: Fetch
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CDUser")
         fetchRequest.predicate = NSPredicate(format: "email = %@", user.Email)
@@ -393,7 +395,8 @@ class UserController{
                     let imgData = l.value(forKeyPath: "image") as! Data
                     let Image:UIImage = UIImage(data: imgData)!
                     let location = l.value(forKeyPath: "location") as! String
-                    displayList.append(DisplayListing(Title: Title, Content: Content, Image: Image, Location: location, UserName: username))
+                    
+                    displayList.append(DisplayListing(Title: Title, Content: Content, Image: Image, Location: location, UserName: username, Email: email, PhoneNo: phoneno))
                 }
             }
             
@@ -440,13 +443,6 @@ class UserController{
 
 }
 
-extension ProfileController:UICollectionViewDelegate{
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        collectionView.deselectItem(at: indexPath, animated: true)
-        
-        print("Item was selected")
-    }
-}
     
     
 

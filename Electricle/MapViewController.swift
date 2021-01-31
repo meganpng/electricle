@@ -15,7 +15,10 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     let userController:UserController = UserController()
     let listingController:ListingController = ListingController()
     
-    var location:String = ""
+    
+    var locationString:String = ""
+    
+    
     @IBAction func showLocation(_ sender: Any) {
         print(locationManager.location!)
         centreMapOnLocation(location: locationManager.location!.coordinate)
@@ -43,22 +46,22 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         //mapView.showsUserLocation = true
         mapView.setRegion(coordinateRegion, animated: true)
         
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = location
-        annotation.title = "Me"
-        self.mapView.addAnnotation(annotation)
+        //let annotation = MKPointAnnotation()
+        //annotation.coordinate = location
+        //annotation.title = "Me"
+        //self.mapView.addAnnotation(annotation)
         
         let geoCoder = CLGeocoder()
-        geoCoder.geocodeAddressString("535 Clementi Road Singapore 599489", completionHandler: {p,e in
+        geoCoder.geocodeAddressString(locationString, completionHandler: {p,e in
             let lat = String(format: "Lat: %3.12f", p![0].location!.coordinate.latitude)
             let long = String(format: "Long: %3.12f", p![0].location!.coordinate.longitude)
             let nplocation = CLLocation(latitude: p![0].location!.coordinate.latitude, longitude: p![0].location!.coordinate.longitude)
             
-            let annotation2 = MKPointAnnotation()
-            annotation2.coordinate = nplocation.coordinate
-            annotation2.title = "Ngee Ann Polytechnic"
-            annotation2.subtitle = "School Of ICT"
-            self.mapView.addAnnotation(annotation2)
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = nplocation.coordinate
+            annotation.title = "Ngee Ann Polytechnic"
+            annotation.subtitle = "School Of ICT"
+            self.mapView.addAnnotation(annotation)
             print("\(lat), \(long)")
         })
         

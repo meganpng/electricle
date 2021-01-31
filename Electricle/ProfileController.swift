@@ -7,7 +7,7 @@
 import UIKit
 import Foundation
 
-class ProfileController: UIViewController{
+class ProfileController: UIViewController, UICollectionViewDelegate{
     private var spacing = CGFloat()
     
     let userController:UserController = UserController()
@@ -34,7 +34,11 @@ class ProfileController: UIViewController{
         } else {
             spacing = 20 // For the iPhone 7+, 8+ and 11 Pro Max
         }
+        super.viewDidLoad()
+        
     }
+    
+    
     
 }
 
@@ -51,13 +55,18 @@ extension ProfileController:UICollectionViewDataSource{
         return count
     }*/
     
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewCell", for: indexPath) as! collectionViewCell
-        
+
         //cell.configure()
         cell.setUp(with: displayList[indexPath.row])
+        
         return cell
     }
+    
+    
 }
 
 
@@ -82,8 +91,4 @@ extension ProfileController:UICollectionViewDelegateFlowLayout{
 
 }
 
-/*extension ProfileController: UICollectionViewDelegate{
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        <#code#>
-    }
-}*/
+ 

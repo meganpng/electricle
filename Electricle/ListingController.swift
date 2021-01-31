@@ -55,7 +55,7 @@ class ListingController{
         let user = userController.retrieveUser(currentemail: email)
         
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CDUser")
-        fetchRequest.predicate = NSPredicate(format: "name = %@", user.Name)
+        fetchRequest.predicate = NSPredicate(format: "email = %@", user.Email)
         
         
         do{
@@ -66,6 +66,7 @@ class ListingController{
             print("Error")
         }
         appDelegate.saveContext()
+        
     }
     
 //    func retrieveAllListings() -> [Listing]{

@@ -4,10 +4,9 @@
 //
 //  Created by P. Megan on 30/1/21.
 //
-
 import UIKit
 
-class collectionViewCell: UICollectionViewCell{
+class collectionViewCell: UICollectionViewCell, UICollectionViewDelegate {
 
     @IBOutlet var imageView: UIImageView!
     @IBOutlet weak var listingTitle: UILabel!
@@ -23,23 +22,22 @@ class collectionViewCell: UICollectionViewCell{
     }
     
     
-    
-    /*static let identifier = "collectionViewCell"
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //[indexPath.row]
+
+        let display:DisplayListing = displayList[indexPath.item]
+        let destinationVC = ShowListingController()
+        destinationVC.getEmail = display.Email
+        destinationVC.getContent = display.Content
+        destinationVC.getTitle = display.Title
+        destinationVC.getImage = display.Image
+        destinationVC.getLocation = display.Location
+        destinationVC.getUsername = display.UserName
+        destinationVC.getPhoneNo = display.PhoneNo
+            // Let's assume that the segue name is called playerSegue
+            // This will perform the segue and pre-load the variable for you to use
+        destinationVC.performSegue(withIdentifier: "showListingSegue", sender: self)
     }
     
-    public func configure(with image:UIImage, title:String, username:String, icon:UIImage, distance:String){
-        imageView.image = image
-        listingTitle.text = title
-        userName.text = username
-        locationIcon.image = icon
-        locationDistance.text = distance
-    }
-    
-    static func nib() -> UINib{
-        return UINib(nibName: "collectionViewCell", bundle: nil)
-    }*/
+
 }
