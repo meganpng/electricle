@@ -75,9 +75,6 @@ class AddListingController: UIViewController, UIImagePickerControllerDelegate , 
             validateAddress()
 
         }
-           
-            
-        
 
     }
     

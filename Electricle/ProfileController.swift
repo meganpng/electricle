@@ -21,9 +21,9 @@ class ProfileController: UIViewController, UICollectionViewDelegate{
         super.viewDidLoad()
         
         let layout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
-        layout.minimumLineSpacing = spacing
-        layout.minimumInteritemSpacing = spacing
+        //layout.sectionInset = UIEdgeInsets(top: 0, left: spacing, bottom: 0, right: 0)
+        //layout.minimumLineSpacing = spacing
+        //layout.minimumInteritemSpacing = spacing
         //layout.itemSize = CGSize(width: 200, height: 300)
         collectionView.collectionViewLayout = layout
         collectionView.delegate = self
