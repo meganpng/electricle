@@ -54,7 +54,8 @@ class ListingController{
         let email = userController.retrieveCurrentEmail()
         
         let user = userController.retrieveUser(currentemail: email)
-        var count = userController.retrieveListingCountByCurrentUser(user: user)
+        //var count = userController.retrieveListingCountByCurrentUser(user: user)
+        var count = userController.retrieveListingsByUser(user: user).count
         count += 1
         
         let id = email + String(count)
@@ -109,8 +110,8 @@ class ListingController{
                             let imgData = l.value(forKeyPath: "image") as! Data
                             let Image:UIImage = UIImage(data: imgData)!
                             let location = l.value(forKeyPath: "location") as! String
-                            
-                            displayList.append(DisplayListing(Title: Title, Content: Content, Image: Image, Location: location, UserName: username, Email: email, PhoneNo: phoneno))
+                            let id = l.value(forKeyPath: "id") as! String
+                            displayList.append(DisplayListing(Title: Title, Content: Content, Image: Image, Location: location, UserName: username, Email: email, PhoneNo: phoneno, Id: id))
                         }
                     }
                     
@@ -157,8 +158,8 @@ class ListingController{
                             let imgData = l.value(forKeyPath: "image") as! Data
                             let Image:UIImage = UIImage(data: imgData)!
                             let location = l.value(forKeyPath: "location") as! String
-                            
-                            displayList.append(DisplayListing(Title: Title, Content: Content, Image: Image, Location: location, UserName: username, Email: email, PhoneNo: phoneno))
+                            let id = l.value(forKeyPath: "id") as! String
+                            displayList.append(DisplayListing(Title: Title, Content: Content, Image: Image, Location: location, UserName: username, Email: email, PhoneNo: phoneno, Id: id))
                         }
                     }
                     
@@ -241,4 +242,6 @@ class ListingController{
             print("Could not delete. \(error), \(error.userInfo)")
         }
     }
+    
+    
 }

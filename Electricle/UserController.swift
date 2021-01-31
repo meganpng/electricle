@@ -348,13 +348,17 @@ class UserController{
             let listings = try context.fetch(fetchUser)
             for l in listings{
                 let user = l.value(forKeyPath: "owner")
-                if(u == user as! NSObject){
+                if(user == nil){
+                    return listingList
+                }
+                else if(u == user as! NSObject){
                     let Title = l.value(forKeyPath: "title")  as! String
                     let Content = l.value(forKeyPath: "content") as! String
                     let imgData = l.value(forKeyPath: "image") as! Data
                     let Image:UIImage = UIImage(data: imgData)!
                     let location = l.value(forKeyPath: "location") as! String
-                    listingList.append(Listing(title: Title, content: Content, image: Image, location: location))
+                    let id = l.value(forKeyPath: "id") as! String
+                    listingList.append(Listing(title: Title, content: Content, image: Image, location: location, id: id))
                 }
             }
             
@@ -395,8 +399,8 @@ class UserController{
                     let imgData = l.value(forKeyPath: "image") as! Data
                     let Image:UIImage = UIImage(data: imgData)!
                     let location = l.value(forKeyPath: "location") as! String
-                    
-                    displayList.append(DisplayListing(Title: Title, Content: Content, Image: Image, Location: location, UserName: username, Email: email, PhoneNo: phoneno))
+                    let id = l.value(forKeyPath: "id") as! String
+                    displayList.append(DisplayListing(Title: Title, Content: Content, Image: Image, Location: location, UserName: username, Email: email, PhoneNo: phoneno, Id: id))
                 }
             }
             
@@ -407,7 +411,7 @@ class UserController{
         return displayList
     }
 
-    func retrieveListingCountByCurrentUser(user:User) -> Int {
+    /*func retrieveListingCountByCurrentUser(user:User) -> Int {
         var count:Int = 0
         let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
@@ -439,7 +443,7 @@ class UserController{
             print("Could not fetch. \(error), \(error.userInfo)")
         }
         return count
-    }
+    }*/
 
 }
 

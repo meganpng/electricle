@@ -135,7 +135,7 @@ class AddListingController: UIViewController, UIImagePickerControllerDelegate , 
             if let placemark = placemarks?.first{
                 
                 print("Status: Location Exists")
-                let listingobject = Listing(title: title, content: desc, image: image, location: location)
+                let listingobject = Listing(title: title, content: desc, image: image, location: location, id: "")
                 
                 self.listingController.AddListing(listing: listingobject)
                 

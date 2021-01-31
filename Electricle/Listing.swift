@@ -14,11 +14,13 @@ class Listing{
     var Content:String
     var Image:UIImage
     var Location:String
-    init(title:String, content:String, image:UIImage, location:String) {
+    var Id:String
+    init(title:String, content:String, image:UIImage, location:String, id:String) {
         Title = title
         Content = content
         Image = image
         Location = location
+        Id = id
     }
 }
 

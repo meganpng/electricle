@@ -52,6 +52,7 @@ class collectionViewCell: UICollectionViewCell, UICollectionViewDelegate {
         destinationVC.getLocation = display.Location
         destinationVC.getUsername = display.UserName
         destinationVC.getPhoneNo = display.PhoneNo
+        destinationVC.getId = display.Id
             // Let's assume that the segue name is called playerSegue
             // This will perform the segue and pre-load the variable for you to use
         destinationVC.performSegue(withIdentifier: "showListingSegue", sender: self)

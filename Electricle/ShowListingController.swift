@@ -12,7 +12,7 @@ class ShowListingController: UIViewController{
     
     let listingController:ListingController = ListingController()
     
-    var getListing:DisplayListing = DisplayListing(Title: "", Content: "", Image: UIImage(), Location: "", UserName: "", Email: "", PhoneNo: "")
+    var getListing:DisplayListing = DisplayListing(Title: "", Content: "", Image: UIImage(), Location: "", UserName: "", Email: "", PhoneNo: "", Id: "")
     
     var getLocation:String = ""
     var getUsername:String = ""
@@ -21,6 +21,7 @@ class ShowListingController: UIViewController{
     var getContent:String = ""
     var getTitle:String = ""
     var getPhoneNo:String = ""
+    var getId:String = ""
     
     @IBOutlet weak var userNamelbl: UILabel!
     @IBOutlet weak var titleLbl: UILabel!
@@ -46,12 +47,25 @@ class ShowListingController: UIViewController{
         userNamelbl.text = "From: " + getListing.UserName
         contentlbl.text = getListing.Content
         locationLbl.text = getListing.Location
-        phoneNoLbl.text = getListing.PhoneNo
+        phoneNoLbl.text = "Phone No: " + getListing.PhoneNo
     }
     
     
     @IBAction func deleteListing(_ sender: Any) {
-        listingController.deleteListing(id: <#T##String#>)
+
+        let alert = UIAlertController(title: "Delete Listing?", message: "Are you sure you want to delete your listing?", preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "Delete", style: .default, handler: { action in
+            self.listingController.deleteListing(id: self.getListing.Id)
+            print("Deleted" + self.getListing.Title)
+            let destination = ProfileController()
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) -> Void in
+            print("Cancel button tapped")
+         }))
+
+        self.present(alert, animated: true)
+
     }
     
 
