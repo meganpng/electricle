@@ -7,6 +7,7 @@
 import Foundation 
 import UIKit
 
+@IBDesignable
 class collectionViewCell: UICollectionViewCell {
 
     @IBOutlet var imageView: UIImageView!
@@ -14,6 +15,24 @@ class collectionViewCell: UICollectionViewCell {
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var locationIcon: UIImageView!
     @IBOutlet weak var locationDistance: UILabel!
+    
+    @IBInspectable var cornerRadius: CGFloat = 0{
+        didSet{
+            self.layer.cornerRadius = cornerRadius
+        }
+    }
+    
+    @IBInspectable var borderColor: UIColor = UIColor.clear{
+        didSet{
+            self.layer.borderColor = borderColor.cgColor
+        }
+    }
+    
+    @IBInspectable var borderWidth: CGFloat = 0{
+        didSet{
+            self.layer.borderWidth = borderWidth
+        }
+    }
     
     func setUp(with display:DisplayListing){
         imageView.image = display.Image
@@ -40,4 +59,19 @@ class collectionViewCell: UICollectionViewCell {
     static func nib() -> UINib{
         return UINib(nibName: "collectionViewCell", bundle: nil)
     }*/
+}
+
+@IBDesignable
+class collectionViewCellImage:UIImageView{
+    @IBInspectable var borderColor: UIColor = UIColor.clear{
+        didSet{
+            self.layer.borderColor = borderColor.cgColor
+        }
+    }
+    
+    @IBInspectable var borderWidth: CGFloat = 0{
+        didSet{
+            self.layer.borderWidth = borderWidth
+        }
+    }
 }

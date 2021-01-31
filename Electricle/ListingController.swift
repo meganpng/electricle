@@ -67,6 +67,26 @@ class ListingController{
         appDelegate.saveContext()
     }
     
+    func retrieveAllListings(){
+        let currentUserEmail = userController.retrieveCurrentEmail()
+        
+        
+        let allUsers = userController.retrieveAllUser()
+        
+        for u in allUsers{
+            if(u.Email != currentUserEmail){
+                let allListings = userController.retrieveDisplayListingsByUser(user: u)
+            }
+        }
+        
+        
+        
+        
+    }
+
+    
+    
+    
 //    func retrieveAllListings() -> [Listing]{
 //        var listing:[NSManagedObject] = []
 //        var listingList:[Listing] = []

@@ -63,7 +63,7 @@ extension ProfileController:UICollectionViewDataSource{
 
 extension ProfileController:UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 200, height: 300)
+        return CGSize(width: 150, height: 231)
         // Change private let spacing: CGFloat = 20 to
 
 
