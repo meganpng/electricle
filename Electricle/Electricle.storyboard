@@ -167,7 +167,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" restorationIdentifier="collectionViewCell" reuseIdentifier="collectionViewCell" id="HkX-uP-9EQ" customClass="collectionViewCell" customModule="Electricle" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" contentMode="center" restorationIdentifier="collectionViewCell" reuseIdentifier="collectionViewCell" id="HkX-uP-9EQ" customClass="collectionViewCell" customModule="Electricle" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="140" height="231"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="QwY-q7-ilw">
@@ -229,7 +229,7 @@
                                             <outlet property="locationDistance" destination="2ks-Ce-buh" id="qSh-vq-fJx"/>
                                             <outlet property="locationIcon" destination="Ca8-aL-ngD" id="Pho-pC-KUJ"/>
                                             <outlet property="userName" destination="o7E-zv-Ihr" id="Q0g-Y7-J7T"/>
-                                            <segue destination="QYA-rG-gb0" kind="show" id="wW3-hv-H2q"/>
+                                            <segue destination="QYA-rG-gb0" kind="show" identifier="showListingSegue" id="wW3-hv-H2q"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -325,7 +325,7 @@
                     <navigationItem key="navigationItem" id="63f-we-EkA"/>
                     <connections>
                         <outlet property="contentlbl" destination="cR9-be-hV0" id="WrL-kx-YaB"/>
-                        <outlet property="imageView" destination="HIE-50-DCW" id="dNo-qF-gmb"/>
+                        <outlet property="imageView" destination="c9L-pa-RSP" id="PzU-dM-TlH"/>
                         <outlet property="locationLbl" destination="SLC-82-CbW" id="9Ac-GM-1cl"/>
                         <outlet property="phoneNoLbl" destination="lLU-ni-AVm" id="VTW-ci-BSR"/>
                         <outlet property="titleLbl" destination="PhZ-Zn-pEH" id="cTY-2y-HqY"/>
