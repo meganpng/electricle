@@ -52,10 +52,9 @@ class ListingController{
 
         let email = userController.retrieveCurrentEmail()
         
-        let user = userController.retrieveUser(currentemail: email)
         
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CDUser")
-        fetchRequest.predicate = NSPredicate(format: "name = %@", user.Name)
+        fetchRequest.predicate = NSPredicate(format: "email = %@", email)
         
         
         do{

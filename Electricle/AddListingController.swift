@@ -26,9 +26,6 @@ class AddListingController: UIViewController, UIImagePickerControllerDelegate , 
     
     let locationManager = CLLocationManager()
     
-    var latitude = 1.0
-    
-    var longitude = 1.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,14 +47,9 @@ class AddListingController: UIViewController, UIImagePickerControllerDelegate , 
     @IBAction func ClickListItem(_ sender: Any) {
         setupLocationManager()
         
-       
-
-        
-        let image = AddImgBtn.currentImage!
         let title = ListingTitle.text!
         let desc = ListingDesc.text!
         let location = ListingLocation.text!
-        validateAddress(address: location)
         
         let emptyBool:Bool =
         checkFields(title: title, description: desc, address: location)
@@ -77,42 +69,11 @@ class AddListingController: UIViewController, UIImagePickerControllerDelegate , 
              self.present(dialogMessage, animated: true, completion: nil)
         }
         
-        else if(latitude==0.0 && longitude == 0.0){
-            self.latitude = 1.0
-            self.longitude = 1.0
-           
-            
-            let dialogMessage = UIAlertController(title: "Invalid Location", message: "Please enter a valid location.", preferredStyle: .alert)
-            
-             
-             // Create OK button with action handler
-             let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
-                 print("Ok button tapped")
-                
-              })
-             
-             //Add OK button to a dialog message
-             dialogMessage.addAction(ok)
-             // Present Alert to
-             self.present(dialogMessage, animated: true, completion: nil)
-        }
-        
-        else{
-            
-            
-            let listingobject = Listing(title: title, content: desc, image: image, location: location)
-            
-            listingController.AddListing(listing: listingobject)
-            
-            AddImgBtn.setImage(UIImage(systemName: "plus"), for: .normal)
-            
-            ListingTitle.text = ""
-            ListingDesc.text = ""
-            ListingLocation.text = ""
-            
-        }
-        
+        else {
+            validateAddress()
 
+        }
+           
     }
     
     
@@ -141,17 +102,51 @@ class AddListingController: UIViewController, UIImagePickerControllerDelegate , 
         locationManager.startUpdatingHeading()
     }
     
-    func validateAddress(address:String) {
+    func validateAddress(){
         let geoCoder = CLGeocoder()
-        geoCoder.geocodeAddressString(address, completionHandler: {(placemarks, error) in
+        let image = AddImgBtn.currentImage!
+        let title = ListingTitle.text!
+        let desc = ListingDesc.text!
+        let location = ListingLocation.text!
+
+        geoCoder.geocodeAddressString(location,in:nil,completionHandler:  {(placemarks, error) in
+            
             
             if(error != nil){
-                print("Error: \(error)")
-                self.latitude = 0.0
-                self.longitude = 0.0
+               
+                print("Status: Invalid Location")
+                let dialogMessage = UIAlertController(title: "Invalid Location", message: "Please enter a valid location.", preferredStyle: .alert)
+                
+                 
+                 // Create OK button with action handler
+                 let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+                     print("Ok button tapped")
+                    
+                  })
+                 
+                 //Add OK button to a dialog message
+                 dialogMessage.addAction(ok)
+                 // Present Alert to
+                 self.present(dialogMessage, animated: true, completion: nil)
+                
+            }
+            if let placemark = placemarks?.first{
+                
+                print("Status: Location Exists")
+                let listingobject = Listing(title: title, content: desc, image: image, location: location)
+                
+                self.listingController.AddListing(listing: listingobject)
+                
+                self.AddImgBtn.setImage(UIImage(systemName: "plus"), for: .normal)
+                
+                self.ListingTitle.text = ""
+                self.ListingDesc.text = ""
+                self.ListingLocation.text = ""
+
             }
         
         })
+                
         
         }
     
