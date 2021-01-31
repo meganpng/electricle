@@ -77,50 +77,6 @@ class AddListingController: UIViewController, UIImagePickerControllerDelegate , 
         }
            
             
-            let dialogMessage = UIAlertController(title: "Invalid Location", message: "Please enter a valid location.", preferredStyle: .alert)
-            
-             
-             // Create OK button with action handler
-             let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
-                 print("Ok button tapped")
-                
-              })
-             
-             //Add OK button to a dialog message
-             dialogMessage.addAction(ok)
-             // Present Alert to
-             self.present(dialogMessage, animated: true, completion: nil)
-        }
-        
-        else{
-            
-            let email = userController.retrieveCurrentEmail()
-            
-            print("\(email), \(title), \(desc), \(image)")
-            
-            let listingobject = Listing(title: title, content: desc, image: image, location: location)
-            
-            listingController.AddListing(listing: listingobject)
-            
-            let dialogMessage = UIAlertController(title: "Successful Listing", message: "You have sucessfully uploaded your listing!", preferredStyle: .alert)
-             
-             // Create OK button with action handler
-             let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
-                 print("Ok button tapped")
-              })
-             
-             //Add OK button to a dialog message
-             dialogMessage.addAction(ok)
-             // Present Alert to
-             self.present(dialogMessage, animated: true, completion: nil)
-            
-            AddImgBtn.setImage(UIImage(systemName: "plus"), for: .normal)
-            
-            ListingTitle.text = ""
-            ListingDesc.text = ""
-            ListingLocation.text = ""
-            
-        }
         
 
     }
