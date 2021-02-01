@@ -41,7 +41,8 @@ class UpdateProfileController: UIViewController{
 
     }
     
-    func exit(){
-        self.dismiss(animated: true, completion: nil)
+    
+    @IBAction func exitButton(_ sender: Any) {
+        performSegue(withIdentifier: “unwindToProfileDetails”, sender: self)
     }
 }
