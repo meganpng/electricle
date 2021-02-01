@@ -76,6 +76,13 @@ class ProfileController: UIViewController, UICollectionViewDelegate{
         
     }
     
+    @IBAction func viewDetailsBtn(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Electricle", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "ChangePwdController") as UIViewController
+        vc.modalPresentationStyle = .fullScreen //try without fullscreen
+        present(vc, animated: true, completion: nil)
+    }
+
 }
 
 
