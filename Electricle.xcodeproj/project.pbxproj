@@ -30,6 +30,8 @@
 		FDB13E3C25C1983E00633D9A /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB13E3B25C1983E00633D9A /* UserController.swift */; };
 		FDB13E4425C1CE0600633D9A /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB13E4325C1CE0600633D9A /* LoginController.swift */; };
 		FDB13E4925C1CE6900633D9A /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB13E4825C1CE6900633D9A /* SignUpController.swift */; };
+		FDCF499025C7B73C00A41725 /* UpdateProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCF498F25C7B73C00A41725 /* UpdateProfileController.swift */; };
+		FDCF499525C7B75200A41725 /* ChangePwdController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCF499425C7B75200A41725 /* ChangePwdController.swift */; };
 		FDFA5B2125C4692D007D1E0E /* collectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFA5B1F25C4692D007D1E0E /* collectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +82,8 @@
 		FDB13E3B25C1983E00633D9A /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		FDB13E4325C1CE0600633D9A /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		FDB13E4825C1CE6900633D9A /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
+		FDCF498F25C7B73C00A41725 /* UpdateProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileController.swift; sourceTree = "<group>"; };
+		FDCF499425C7B75200A41725 /* ChangePwdController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePwdController.swift; sourceTree = "<group>"; };
 		FDFA5B1F25C4692D007D1E0E /* collectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = collectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,6 +146,8 @@
 				FD02B11325C04E8A00980E45 /* Main.storyboard */,
 				FD6B99EF25C2BF51002C0C6C /* Electricle.storyboard */,
 				FD20661B25C593880076EF6B /* ShowListingController.swift */,
+				FDCF498F25C7B73C00A41725 /* UpdateProfileController.swift */,
+				FDCF499425C7B75200A41725 /* ChangePwdController.swift */,
 				FD20662025C596090076EF6B /* MapViewController.swift */,
 				FD15BE0125C4122A000741DC /* ProfileController.swift */,
 				FD42A20925C56D02003C960E /* DisplayListing.swift */,
@@ -307,6 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDCF499025C7B73C00A41725 /* UpdateProfileController.swift in Sources */,
 				FDFA5B2125C4692D007D1E0E /* collectionViewCell.swift in Sources */,
 				7A8F70D525C40C7100B738F2 /* AddListingController.swift in Sources */,
 				FD5E925325C2F11500F5CBE1 /* Listing.swift in Sources */,
@@ -315,6 +322,7 @@
 				FD02B11225C04E8A00980E45 /* ViewController.swift in Sources */,
 				FDAE6C1625C316E500523EBC /* ListingController.swift in Sources */,
 				FDB13E4925C1CE6900633D9A /* SignUpController.swift in Sources */,
+				FDCF499525C7B75200A41725 /* ChangePwdController.swift in Sources */,
 				FD02B10E25C04E8A00980E45 /* AppDelegate.swift in Sources */,
 				FD6B99F525C2BFFF002C0C6C /* HomeController.swift in Sources */,
 				FD42A1FF25C5458E003C960E /* CurrentUser.swift in Sources */,

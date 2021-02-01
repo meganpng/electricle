@@ -8,7 +8,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "0D994998-3B81-4E96-861A-FED3E4C17EDA"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Electricle/ProfileController.swift"
@@ -56,7 +56,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "59CF414A-4E1A-4DBC-98FC-6CF1225D6F04"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Electricle/ProfileController.swift"
@@ -66,6 +66,54 @@
             endingLineNumber = "66"
             landmarkName = "collectionView(_:numberOfItemsInSection:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B459E21A-14FB-4700-9FD1-530419938D6E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Electricle/ShowListingController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "exitButton(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B459E21A-14FB-4700-9FD1-530419938D6E - bc5800c595bcc8e8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Electricle.ShowListingController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Electricle.ShowListingController"
+                  moduleName = "Electricle"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/p.megan/Desktop/MAD2/Electricle/Electricle/ShowListingController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "85"
+                  endingLineNumber = "85"
+                  offsetFromSymbolStart = "3173">
+               </Location>
+               <Location
+                  uuid = "B459E21A-14FB-4700-9FD1-530419938D6E - f293e5fb3db676ca"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Electricle.ShowListingController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Electricle.ShowListingController&gt;"
+                  moduleName = "Electricle"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/p.megan/Desktop/MAD2/Electricle/Electricle/ShowListingController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "85"
+                  endingLineNumber = "85"
+                  offsetFromSymbolStart = "3112">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

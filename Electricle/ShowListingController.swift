@@ -74,10 +74,12 @@ class ShowListingController: UIViewController{
             destination.getLocationListing = getListing
         }
     }
+
     
-    @IBAction func exitBtn(_ sender: Any) {
-        self.performSegue(withIdentifier: "unwindToProfile", sender: nil)
-    }
+    /*@IBAction func exitButton(_ sender: Any) {
+        //self.performSegue(withIdentifier: "unwindToShowListing", sender: nil)
+        self.dismiss(animated: true, completion: nil)
+    }*/
     
 
     let userController:UserController = UserController()
