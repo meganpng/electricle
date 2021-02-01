@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 class UserController{
+
     
     func AddUser(newUser: User){
         let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
@@ -323,11 +324,12 @@ class UserController{
     }
     
     
-    func changePassword(email:String, password:String){
+    func changePassword(currentUser:User, password:String){
         //retrieve then set
         let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest =  NSFetchRequest<NSManagedObject>(entityName: "CDUser")
+        let email = currentUser.Email
         fetchRequest.predicate = NSPredicate(format: "email = %@", email)
         do{
             let user = try context.fetch(fetchRequest)
@@ -352,11 +354,13 @@ class UserController{
     
     
     
-    func changeCurrentPassword(email:String, password:String){
+    func changeCurrentPassword(currentUser:User, password:String){
         //retrieve then set
         let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest =  NSFetchRequest<NSManagedObject>(entityName: "CDCurrentUser")
+        
+        let email = currentUser.Email
         fetchRequest.predicate = NSPredicate(format: "email = %@", email)
         do{
             let user = try context.fetch(fetchRequest)

@@ -20,36 +20,32 @@ class ProfileDetailsController: UIViewController{
     @IBOutlet weak var phonenoLbl: UILabel!
     
     @IBAction func editProfileBtb(_ sender: Any) {
+        
     }
     
     
     @IBAction func changePwdBtn(_ sender: Any) {
+   
     }
     
     @IBAction func exitBtn(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
         let email:String = userController.retrieveCurrentEmail()
         let user:User = userController.retrieveUser(currentemail: email)
-        //emailLbl.text = user.Email
-        //usernameLbl.text = user.userName
-        //nameLbl.text = user.Name
-        //phonenoLbl.text = user.phoneNo
+        emailFld.text! = user.Email
+        usernameFld.text! = user.userName
+        nameLbl.text = user.Name
+        phonenoLbl.text = user.phoneNo
         super.viewDidLoad()
         
     }
     
-    func updateProfileButton(){
-        
-    }
-    
-    func changePwd(){
-        
-    }
-    
+
     func exitBtn(){
-        self.dismiss(animated: true, completion: nil)
+        
     }
     
     @IBAction func unwindFromUpdate( _ seg: UIStoryboardSegue) {
