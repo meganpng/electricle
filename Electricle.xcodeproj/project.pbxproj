@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7A8F70D525C40C7100B738F2 /* AddListingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8F70D425C40C7100B738F2 /* AddListingController.swift */; };
+		7AAE040A25C81C92009394F5 /* ShowSelectedListingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAE040925C81C92009394F5 /* ShowSelectedListingController.swift */; };
 		7AC55AAA25C7DD3D00463CE7 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC55AA925C7DD3D00463CE7 /* HomeCollectionViewCell.swift */; };
 		FD02B10E25C04E8A00980E45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD02B10D25C04E8A00980E45 /* AppDelegate.swift */; };
 		FD02B11025C04E8A00980E45 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD02B10F25C04E8A00980E45 /* SceneDelegate.swift */; };
@@ -56,6 +57,7 @@
 
 /* Begin PBXFileReference section */
 		7A8F70D425C40C7100B738F2 /* AddListingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListingController.swift; sourceTree = "<group>"; };
+		7AAE040925C81C92009394F5 /* ShowSelectedListingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowSelectedListingController.swift; sourceTree = "<group>"; };
 		7AC55AA925C7DD3D00463CE7 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		FD02B10A25C04E8A00980E45 /* Electricle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Electricle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD02B10D25C04E8A00980E45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				FDB13E3525C1946A00633D9A /* Electricle.xcdatamodeld */,
 				FDFA5B1F25C4692D007D1E0E /* collectionViewCell.swift */,
 				7AC55AA925C7DD3D00463CE7 /* HomeCollectionViewCell.swift */,
+				7AAE040925C81C92009394F5 /* ShowSelectedListingController.swift */,
 			);
 			path = Electricle;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				FDAE6C1625C316E500523EBC /* ListingController.swift in Sources */,
 				FDB13E4925C1CE6900633D9A /* SignUpController.swift in Sources */,
 				FDCF499525C7B75200A41725 /* ChangePwdController.swift in Sources */,
+				7AAE040A25C81C92009394F5 /* ShowSelectedListingController.swift in Sources */,
 				FD02B10E25C04E8A00980E45 /* AppDelegate.swift in Sources */,
 				FD12E56D25C7DED200EFC123 /* ProfileDetailsController.swift in Sources */,
 				FD6B99F525C2BFFF002C0C6C /* HomeController.swift in Sources */,

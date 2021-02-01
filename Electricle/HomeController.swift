@@ -30,10 +30,7 @@ class HomeController: UIViewController, UICollectionViewDelegate{
 
         
         let layout = UICollectionViewFlowLayout()
-        //layout.sectionInset = UIEdgeInsets(top: 0, left: spacing, bottom: 0, right: 0)
-        //layout.minimumLineSpacing = spacing
-        //layout.minimumInteritemSpacing = spacing
-        //layout.itemSize = CGSize(width: 200, height: 300)
+       
         ExploreCollectionView.collectionViewLayout = layout
         ExploreCollectionView.delegate = self
         ExploreCollectionView.dataSource = self //done
@@ -61,13 +58,13 @@ class HomeController: UIViewController, UICollectionViewDelegate{
      
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let destination = segue.destination as?
-//            ShowListingController, let index =
-//            collectionView.indexPathsForSelectedItems?.first {
-//            destination.getListing = displayList[index.row]
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as?
+            ShowSelectedListingController, let index =
+            ExploreCollectionView.indexPathsForSelectedItems?.first {
+            destination.getListing = resultsList[index.row]
+        }
+    }
     
     
     
@@ -80,13 +77,7 @@ extension HomeController:UICollectionViewDataSource{
         return resultsList.count
     }
     
-    /*func numberOfSections(in collectionView: UICollectionView) -> Int {
-        let email = userController.retrieveCurrentEmail()
-        let currentuser = userController.retrieveUser(currentemail: email)
-        let count = userController.retrieveListingCountByCurrentUser(user: currentuser)
-        return count
-    }*/
-    
+  
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
@@ -105,26 +96,12 @@ extension HomeController:UICollectionViewDataSource{
 
 extension HomeController:UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        let phoneWidth = Int(self.view.frame.width)
-//        let insets = 40
-//        let cellsPerRow = 2
-//        let dividingSpacesInset = (cellsPerRow - 1)*20
-//        let cellWidth = (phoneWidth-insets-dividingSpacesInset)/cellsPerRow
+
         return CGSize(width: 170, height: 260)
-        // Change private let spacing: CGFloat = 20 to
+       
 
 
-        
-        /*let totalwidth = collectionView.bounds.size.width;
-        let numberOfCellsPerRow = 2
-        let oddEven = indexPath.row / numberOfCellsPerRow % 2
-        let dimensions = CGFloat(Int(totalwidth) / numberOfCellsPerRow)
-        if (oddEven == 0) {
-            return CGSize(width: dimensions, height: dimensions)
-        } else {
-            return CGSize(width: dimensions, height: dimensions/2)
-        }*/
-    
+  
     }
 
 }

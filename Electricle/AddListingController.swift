@@ -139,6 +139,20 @@ class AddListingController: UIViewController, UIImagePickerControllerDelegate , 
                 
                 self.listingController.AddListing(listing: listingobject)
                 
+                let dialogMessage = UIAlertController(title: "Listed", message: "Your Listing was successful!", preferredStyle: .alert)
+                
+                 
+                 // Create OK button with action handler
+                 let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+                     print("Ok button tapped")
+                    
+                  })
+                 
+                 //Add OK button to a dialog message
+                 dialogMessage.addAction(ok)
+                 // Present Alert to
+                 self.present(dialogMessage, animated: true, completion: nil)
+                
                 self.AddImgBtn.setImage(UIImage(systemName: "plus"), for: .normal)
                 
                 self.ListingTitle.text = ""
