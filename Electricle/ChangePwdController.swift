@@ -11,7 +11,17 @@ import UIKit
 class ChangePwdController:UIViewController{
     let userController:UserController = UserController()
 
+    @IBAction func exitBtn(_ sender: Any) {
+    }
     
+    @IBOutlet weak var currentFld: UITextField!
+    @IBOutlet weak var newFld: UITextField!
+    
+    @IBAction func resetBtn(_ sender: Any) {
+    }
+    
+    @IBAction func changePwdBtn(_ sender: Any) {
+    }
     var password:String = ""
     
     func changePwd(){

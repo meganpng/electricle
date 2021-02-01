@@ -16,6 +16,19 @@ class UpdateProfileController: UIViewController{
     var name:String = ""
     var phoneno:String = ""
     var password:String = ""
+
+    
+    @IBOutlet weak var usernameFld: UITextField!
+    
+    @IBOutlet weak var nameFld: UITextField!
+    
+    @IBOutlet var phonenoFld: UIView!
+    @IBAction func resetBtn(_ sender: Any) {
+    }
+    
+    @IBAction func editProfileBtn(_ sender: Any) {
+    }
+    
     
     
     func update(){
