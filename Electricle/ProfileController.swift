@@ -57,6 +57,24 @@ class ProfileController: UIViewController, UICollectionViewDelegate{
         displayList = userController.retrieveDisplayListingsByUser(user: currentUser)
         collectionView.reloadData()
     }
+  
+    @IBAction func logOutBtn(_ sender: Any) {
+        let alert = UIAlertController(title: "Log Out?", message: "Are you sure you want to log out?", preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "Log Out", style: .default, handler: { action in
+            let email = self.userController.retrieveCurrentEmail()
+            self.userController.deleteUser(email: email)
+            self.userController.deleteCurrentUser(email: email)
+            print("Logged out " + email)
+            self.performSegue(withIdentifier: "unwindToWelcome", sender: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) -> Void in
+            print("Cancel button tapped")
+         }))
+
+        self.present(alert, animated: true)
+        
+    }
     
 }
 

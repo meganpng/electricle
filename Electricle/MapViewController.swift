@@ -57,6 +57,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     }
     
     @IBAction func exitBtn(_ sender: Any) {
-        self.performSegue(withIdentifier: "unwindToProfile", sender: nil)
+        self.dismiss(animated: true, completion: nil)
     }
 }

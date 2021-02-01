@@ -76,10 +76,10 @@ class ShowListingController: UIViewController{
     }
 
     
-    /*@IBAction func exitButton(_ sender: Any) {
-        //self.performSegue(withIdentifier: "unwindToShowListing", sender: nil)
+    @IBAction func exitButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
-    }*/
+
+    }
     
 
     let userController:UserController = UserController()

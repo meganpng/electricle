@@ -250,13 +250,24 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2s-sf-Dfj">
+                                <rect key="frame" x="331" y="44" width="55" height="30"/>
+                                <state key="normal" title="Log Out"/>
+                                <connections>
+                                    <action selector="logOutBtn:" destination="gW6-kH-POL" eventType="touchUpInside" id="9xx-fU-lgJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ReB-R8-ND9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="W2s-sf-Dfj" firstAttribute="leading" secondItem="ReB-R8-ND9" secondAttribute="leading" constant="331" id="8iB-TD-PYM"/>
                             <constraint firstItem="QUs-gt-pYK" firstAttribute="leading" secondItem="ReB-R8-ND9" secondAttribute="leading" constant="34" id="K2O-lG-OYl"/>
+                            <constraint firstItem="W2s-sf-Dfj" firstAttribute="top" secondItem="ReB-R8-ND9" secondAttribute="top" id="Mli-7u-hZe"/>
                             <constraint firstItem="ReB-R8-ND9" firstAttribute="trailing" secondItem="1lX-Ea-l5U" secondAttribute="trailing" constant="20" id="NYA-Do-IBB"/>
                             <constraint firstItem="1lX-Ea-l5U" firstAttribute="top" secondItem="KwJ-jq-pU1" secondAttribute="bottom" constant="20" id="Zz3-A9-06S"/>
+                            <constraint firstItem="ReB-R8-ND9" firstAttribute="trailing" secondItem="W2s-sf-Dfj" secondAttribute="trailing" constant="28" id="dDB-rQ-wwS"/>
+                            <constraint firstItem="Twz-VX-Ge4" firstAttribute="top" secondItem="W2s-sf-Dfj" secondAttribute="bottom" constant="13" id="dV5-Jq-gm6"/>
                             <constraint firstItem="Twz-VX-Ge4" firstAttribute="leading" secondItem="ReB-R8-ND9" secondAttribute="leading" constant="34" id="eMZ-3H-7Z3"/>
                             <constraint firstItem="ReB-R8-ND9" firstAttribute="trailing" secondItem="Twz-VX-Ge4" secondAttribute="trailing" constant="33" id="h3R-xe-5Ms"/>
                             <constraint firstItem="1lX-Ea-l5U" firstAttribute="bottom" secondItem="ReB-R8-ND9" secondAttribute="bottom" id="mpX-qH-1BJ"/>
@@ -270,6 +281,7 @@
                     <tabBarItem key="tabBarItem" title="Profile" image="person.crop.circle.fill" catalog="system" id="GLH-Pn-lD0"/>
                     <connections>
                         <outlet property="collectionView" destination="1lX-Ea-l5U" id="wgB-vQ-A0i"/>
+                        <segue destination="t1J-FM-P4C" kind="unwind" identifier="unwindToWelcome" unwindAction="unwind:" id="ZkU-Aa-HnK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wid-li-58a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -360,7 +372,7 @@
                                     <imageReference key="image" image="multiply" catalog="system" symbolScale="large"/>
                                 </state>
                                 <connections>
-                                    <action selector="exitBtn:" destination="QYA-rG-gb0" eventType="touchUpInside" id="Z4l-Sn-weU"/>
+                                    <action selector="exitButton:" destination="QYA-rG-gb0" eventType="touchUpInside" id="NX7-2F-va0"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cR9-be-hV0">
@@ -437,7 +449,7 @@
                                     <imageReference key="image" image="multiply" catalog="system" symbolScale="large"/>
                                 </state>
                                 <connections>
-                                    <action selector="exitBtn:" destination="QYA-rG-gb0" eventType="touchUpInside" id="EH3-rf-VRc"/>
+                                    <action selector="exitBtn:" destination="2dq-qs-gyS" eventType="touchUpInside" id="IIX-Na-cFt"/>
                                 </connections>
                             </button>
                         </subviews>
