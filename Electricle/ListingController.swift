@@ -131,8 +131,10 @@ class ListingController{
     func retriveAllListingsBySearch(search:String) -> [DisplayListing] {
            let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
            let context = appDelegate.persistentContainer.viewContext
+        
+        let lowerSearch = search.lowercased()
            
-           let searchResults = search.components(separatedBy: " ")
+           let searchResults = lowerSearch.components(separatedBy: " ")
            
            var userList:[NSManagedObject] = []
            var displayList:[DisplayListing] = []
@@ -165,9 +167,11 @@ class ListingController{
                                let Image:UIImage = UIImage(data: imgData)!
                                let location = l.value(forKeyPath: "location") as! String
                                let id = l.value(forKeyPath: "id") as! String
+                            
+                            let lowerTitle = Title.lowercased()
                                
-                               for results in searchResults{
-                                   if(Title.contains(results)){
+                            for results in searchResults{
+                                   if(lowerTitle.contains(results)){
                                        displayList.append(DisplayListing(Title: Title, Content: Content, Image: Image, Location: location, UserName: username, Email: email, PhoneNo: phoneno, Id: id))
                                    }
                                    
