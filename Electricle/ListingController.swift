@@ -99,6 +99,7 @@ class ListingController{
                     }
                 }
                 }
+        displayList.reverse()
             
             return displayList
             }
@@ -162,6 +163,7 @@ class ListingController{
                    }
                }
                }
+        displayList.reverse()
            return displayList
            }
 
