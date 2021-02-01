@@ -43,6 +43,6 @@ class UpdateProfileController: UIViewController{
     
     
     @IBAction func exitButton(_ sender: Any) {
-        performSegue(withIdentifier: “unwindToProfileDetails”, sender: self)
+        //performSegue(withIdentifier: “unwindToProfileDetails”, sender: self)
     }
 }

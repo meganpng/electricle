@@ -507,6 +507,94 @@ class UserController{
         return listingList
     }
     
+    func retrieveListingsByCurrentUser(user:User) -> [Listing] {
+        let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        //let entity = NSEntityDescription.entity(forEntityName: "CDMessage", in: context)!
+        //let m = NSManagedObject(entity: entity, insertInto: context)
+        var userList:[NSManagedObject] = []
+        var listingList:[Listing] = []
+        //This message belongs to a friend
+        //Hint: Fetch
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CDUser")
+        fetchRequest.predicate = NSPredicate(format: "email = %@", user.Email)
+        //let fetchUser = NSFetchRequest<NSManagedObject>(entityName: "CDListing")
+        //fetchMessage.predicate = NSPredicate(format: "isSender = %@", friend.messages!.text!)
+        
+        do{
+            userList = try context.fetch(fetchRequest)
+            let u = userList[0] as! CDUser
+            let listings = u.listings!.allObjects as! [CDListing]
+            //contact = try context.fetch(fetchRequest)
+            for l in listings{
+                let user = l.value(forKeyPath: "owner")
+                if(user == nil){
+                    return listingList
+                }
+                else if(u == user as! NSObject){
+                    let Title = l.value(forKeyPath: "title")  as! String
+                    let Content = l.value(forKeyPath: "content") as! String
+                    let imgData = l.value(forKeyPath: "image") as! Data
+                    let Image:UIImage = UIImage(data: imgData)!
+                    let location = l.value(forKeyPath: "location") as! String
+                    let id = l.value(forKeyPath: "id") as! String
+                    listingList.append(Listing(title: Title, content: Content, image: Image, location: location, id: id))
+                }
+            }
+            
+        }
+        catch let error as NSError{
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+        return listingList
+    }
+    
+    func retrieveDisplayListingsByCurrentUser(user:User) -> [DisplayListing] {
+        let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        //let entity = NSEntityDescription.entity(forEntityName: "CDMessage", in: context)!
+        //let m = NSManagedObject(entity: entity, insertInto: context)
+        var userList:[NSManagedObject] = []
+        var listingList:[DisplayListing] = []
+        //This message belongs to a friend
+        //Hint: Fetch
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CDUser")
+        fetchRequest.predicate = NSPredicate(format: "email = %@", user.Email)
+        //let fetchUser = NSFetchRequest<NSManagedObject>(entityName: "CDListing")
+        //fetchMessage.predicate = NSPredicate(format: "isSender = %@", friend.messages!.text!)
+        let username = user.userName
+        let email = user.Email
+        let phoneno = user.phoneNo
+        
+        do{
+            userList = try context.fetch(fetchRequest)
+            let u = userList[0] as! CDUser
+            let listings = u.listings!.allObjects as! [CDListing]
+            //contact = try context.fetch(fetchRequest)
+            for l in listings{
+                let user = l.value(forKeyPath: "owner")
+                if(user == nil){
+                    return listingList
+                }
+                else if(u == user as! NSObject){
+                    let Title = l.value(forKeyPath: "title")  as! String
+                    let Content = l.value(forKeyPath: "content") as! String
+                    let imgData = l.value(forKeyPath: "image") as! Data
+                    let Image:UIImage = UIImage(data: imgData)!
+                    let location = l.value(forKeyPath: "location") as! String
+                    let id = l.value(forKeyPath: "id") as! String
+                    listingList.append(DisplayListing(Title: Title, Content: Content, Image: Image, Location: location, UserName: username, Email: email, PhoneNo: phoneno, Id: id))
+                }
+            }
+            
+        }
+        catch let error as NSError{
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+        return listingList
+    }
+    
+    
     func retrieveDisplayListingsByUser(user:User) -> [DisplayListing] {
         let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
