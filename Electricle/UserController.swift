@@ -259,9 +259,6 @@ class UserController{
             let userobject = user[0]
   
             //appDelegate.saveContext()
-            if(newUser.Email != ""){
-                userobject.setValue(newUser.Email, forKey: "email")
-            }
             if(newUser.userName != ""){
                 userobject.setValue(newUser.userName, forKey:"username")
             }
@@ -299,9 +296,6 @@ class UserController{
             let userobject = user[0]
   
             //appDelegate.saveContext()
-            if(newUser.Email != ""){
-                userobject.setValue(newUser.Email, forKey: "email")
-            }
             if(newUser.userName != ""){
                 userobject.setValue(newUser.userName, forKey:"username")
             }
