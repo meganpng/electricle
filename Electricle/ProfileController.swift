@@ -63,7 +63,6 @@ class ProfileController: UIViewController, UICollectionViewDelegate{
 
         alert.addAction(UIAlertAction(title: "Log Out", style: .default, handler: { action in
             let email = self.userController.retrieveCurrentEmail()
-            self.userController.deleteUser(email: email)
             self.userController.deleteCurrentUser(email: email)
             print("Logged out " + email)
             self.performSegue(withIdentifier: "unwindToWelcome", sender: nil)
