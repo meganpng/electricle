@@ -34,12 +34,13 @@ class ProfileController: UIViewController, UICollectionViewDelegate{
         } else {
             spacing = 20 // For the iPhone 7+, 8+ and 11 Pro Max
         }
-        displayList = userController.retrieveDisplayListingsByUser(user: currentUser)
+        currentUser = userController.retrieveUser(currentemail: userController.retrieveCurrentEmail())
+        displayList = userController.retrieveDisplayListingsByCurrentUser(user: currentUser)
         collectionView.reloadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        displayList = userController.retrieveDisplayListingsByUser(user: currentUser)
+        displayList = userController.retrieveDisplayListingsByCurrentUser(user: currentUser)
         collectionView.reloadData()
     }
     
@@ -54,7 +55,7 @@ class ProfileController: UIViewController, UICollectionViewDelegate{
     }
     
     @IBAction func unwindToProfile(_ unwindSegue: UIStoryboardSegue) {
-        displayList = userController.retrieveDisplayListingsByUser(user: currentUser)
+        displayList = userController.retrieveDisplayListingsByCurrentUser(user: currentUser)
         collectionView.reloadData()
     }
   
