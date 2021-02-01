@@ -11,6 +11,24 @@ import UIKit
 class ProfileDetailsController: UIViewController{
     let userController:UserController = UserController()
     
+    @IBOutlet weak var emailFld: UILabel!
+    
+    @IBOutlet weak var usernameFld: UILabel!
+    
+    @IBOutlet weak var nameLbl: UILabel!
+    
+    @IBOutlet weak var phonenoLbl: UILabel!
+    
+    @IBAction func editProfileBtb(_ sender: Any) {
+    }
+    
+    
+    @IBAction func changePwdBtn(_ sender: Any) {
+    }
+    
+    @IBAction func exitBtn(_ sender: Any) {
+    }
+    
     override func viewDidLoad() {
         let email:String = userController.retrieveCurrentEmail()
         let user:User = userController.retrieveUser(currentemail: email)
@@ -40,6 +58,14 @@ class ProfileDetailsController: UIViewController{
         //nameLbl.reloadData()
         //phonenoLbl.reloadData()
     }
+    
+    @IBAction func unwindFromPwd( _ seg: UIStoryboardSegue) {
+        //emailLbl.reloadData()
+        //usernameLbl.reloadData()
+        //nameLbl.reloadData()
+        //phonenoLbl.reloadData()
+    }
+    
 }
 
 
