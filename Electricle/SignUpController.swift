@@ -127,6 +127,7 @@ class SignUpController: UIViewController{
         nameField.text = ""
         phoneField.text = ""
         passwordField.text = ""
+        confirmField.text = ""
     }
     
     func checkFields(email:String, username:String, name:String, phoneno:String, pwd:String, confirmpwd:String) -> Bool{

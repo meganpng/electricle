@@ -13,12 +13,16 @@ class ProfileController: UIViewController, UICollectionViewDelegate{
     let userController:UserController = UserController()
     var userEmail:String = ""
     
+    @IBOutlet weak var hiUser: UILabel!
+    
     var displayList = [DisplayListing]()
     
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         let layout = UICollectionViewFlowLayout()
         //layout.sectionInset = UIEdgeInsets(top: 0, left: spacing, bottom: 0, right: 0)
@@ -37,6 +41,8 @@ class ProfileController: UIViewController, UICollectionViewDelegate{
         currentUser = userController.retrieveUser(currentemail: userController.retrieveCurrentEmail())
         displayList = userController.retrieveDisplayListingsByCurrentUser(user: currentUser)
         collectionView.reloadData()
+        
+        hiUser.text = "Hi, " + currentUser.Name + "!"
     }
     
     override func viewDidAppear(_ animated: Bool) {
