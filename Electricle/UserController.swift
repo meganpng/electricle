@@ -288,7 +288,48 @@ class UserController{
 
     }
     
-    func changePassword(password:String){
+    func updateCurrentProfile(email:String, newUser:User){
+        //retrieve then set
+        let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest =  NSFetchRequest<NSManagedObject>(entityName: "CDCurrentUser")
+        fetchRequest.predicate = NSPredicate(format: "email = %@", email)
+        do{
+            let user = try context.fetch(fetchRequest)
+            let userobject = user[0]
+  
+            //appDelegate.saveContext()
+            if(newUser.Email != ""){
+                userobject.setValue(newUser.Email, forKey: "email")
+            }
+            if(newUser.userName != ""){
+                userobject.setValue(newUser.userName, forKey:"username")
+            }
+            if(newUser.Name != ""){
+                userobject.setValue(newUser.Name, forKey: "name")
+            }
+            if(newUser.phoneNo != ""){
+                userobject.setValue(newUser.phoneNo, forKey: "phoneno")
+            }
+            
+            do{
+                try context.save()
+                //try appDelegate.saveContext()
+            }
+            catch let error as NSError{
+                //print(error)
+                print("Could not update. \(error), \(error.userInfo)")
+            }
+            
+        } catch let error as NSError{
+            print("Could not update. \(error), \(error.userInfo)")
+        }
+        
+
+    }
+    
+    
+    func changePassword(email:String, password:String){
         //retrieve then set
         let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
@@ -314,6 +355,36 @@ class UserController{
         
 
     }
+    
+    
+    
+    func changeCurrentPassword(email:String, password:String){
+        //retrieve then set
+        let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest =  NSFetchRequest<NSManagedObject>(entityName: "CDCurrentUser")
+        fetchRequest.predicate = NSPredicate(format: "email = %@", email)
+        do{
+            let user = try context.fetch(fetchRequest)
+            let userobject = user[0]
+            userobject.setValue(password, forKey: "password")
+            //appDelegate.saveContext()
+            do{
+                try context.save()
+                //try appDelegate.saveContext()
+            }
+            catch let error as NSError{
+                //print(error)
+                print("Could not update. \(error), \(error.userInfo)")
+            }
+            
+        } catch let error as NSError{
+            print("Could not update. \(error), \(error.userInfo)")
+        }
+        
+
+    }
+    
     
     func updateCurrentUser(email:String, newUser:User){
         //retrieve then set
