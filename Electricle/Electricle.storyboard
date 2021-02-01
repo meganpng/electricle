@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -147,7 +147,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="View Profile Details"/>
                                 <connections>
-                                    <segue destination="yid-1m-Jhw" kind="show" id="BzV-H7-LAV"/>
+                                    <action selector="viewDetailsBtn:" destination="gW6-kH-POL" eventType="touchUpInside" id="TPT-t1-f0O"/>
+                                    <segue destination="yid-1m-Jhw" kind="show" identifier="profileDetailSegue" id="BzV-H7-LAV"/>
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1lX-Ea-l5U">
@@ -435,7 +436,7 @@
         <!--Update Profile Controller-->
         <scene sceneID="BoV-MR-3jc">
             <objects>
-                <viewController id="Sag-kl-Kp2" customClass="UpdateProfileController" customModule="Electricle" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UpdateProfileController" id="Sag-kl-Kp2" customClass="UpdateProfileController" customModule="Electricle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AnS-Ys-a4g">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -461,9 +462,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Edit Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Z5-JQ-Qa2">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Edit Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Z5-JQ-Qa2">
                                 <rect key="frame" x="51" y="73" width="187" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="41"/>
                                 <color key="textColor" red="0.2428747416" green="0.65713113550000002" blue="0.47448664899999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -477,7 +477,7 @@
                                     <action selector="editProfileBtn:" destination="Sag-kl-Kp2" eventType="touchUpInside" id="sAx-hZ-IcE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xou-I3-JuB">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xou-I3-JuB">
                                 <rect key="frame" x="350" y="37" width="44" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="3s1-E6-bDh"/>
@@ -502,13 +502,19 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ebC-7A-mgE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ebC-7A-mgE" firstAttribute="bottom" secondItem="xou-I3-JuB" secondAttribute="bottom" constant="727" id="9DH-1N-ZIw"/>
+                            <constraint firstItem="xou-I3-JuB" firstAttribute="leading" secondItem="9Z5-JQ-Qa2" secondAttribute="trailing" constant="112" id="ANT-uk-lSJ"/>
+                            <constraint firstItem="ebC-7A-mgE" firstAttribute="trailing" secondItem="xou-I3-JuB" secondAttribute="trailing" constant="20" id="lBo-ho-MfF"/>
+                            <constraint firstItem="xou-I3-JuB" firstAttribute="top" secondItem="ebC-7A-mgE" secondAttribute="top" constant="37" id="o4h-Zm-z46"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="eH2-L8-VgI"/>
                     <connections>
                         <outlet property="nameFld" destination="23R-Ii-PYS" id="dub-qM-Ltp"/>
-                        <outlet property="phonenoFld" destination="AnS-Ys-a4g" id="g44-ie-39Y"/>
+                        <outlet property="phoneNoFld" destination="QIP-JW-LGJ" id="j24-5B-FBe"/>
                         <outlet property="usernameFld" destination="B57-jv-iID" id="TiM-MC-oYW"/>
-                        <segue destination="Sco-9O-kC4" kind="unwind" unwindAction="unwindFromUpdate:" id="Atl-a4-b5P"/>
+                        <segue destination="Sco-9O-kC4" kind="unwind" identifier="unwindToProfileDetailsUpdate" unwindAction="unwindFromUpdate:" id="Atl-a4-b5P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lun-R8-Lae" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -519,14 +525,13 @@
         <!--Profile Details Controller-->
         <scene sceneID="x2A-nT-aLM">
             <objects>
-                <viewController id="yid-1m-Jhw" customClass="ProfileDetailsController" customModule="Electricle" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileDetailsController" id="yid-1m-Jhw" customClass="ProfileDetailsController" customModule="Electricle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UH3-LG-mSk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Profile Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3DE-i1-kZd">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Profile Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3DE-i1-kZd">
                                 <rect key="frame" x="42" y="53" width="239" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="41"/>
                                 <color key="textColor" red="0.2428747416" green="0.65713113550000002" blue="0.47448664899999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -565,8 +570,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Edit Profile"/>
                                 <connections>
-                                    <action selector="editProfileBtb:" destination="yid-1m-Jhw" eventType="touchUpInside" id="tHy-lz-YZs"/>
-                                    <segue destination="Sag-kl-Kp2" kind="show" id="Zhs-wt-yWg"/>
+                                    <action selector="editProfileBtn:" destination="yid-1m-Jhw" eventType="touchUpInside" id="jxb-GV-eug"/>
+                                    <segue destination="Sag-kl-Kp2" kind="show" identifier="editProfileSegue" id="Zhs-wt-yWg"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Lf-ri-S9k">
@@ -576,10 +581,10 @@
                                 <state key="normal" title="Change Password"/>
                                 <connections>
                                     <action selector="changePwdBtn:" destination="yid-1m-Jhw" eventType="touchUpInside" id="db2-hN-F80"/>
-                                    <segue destination="maC-fB-uGZ" kind="show" id="h8d-dV-U4u"/>
+                                    <segue destination="maC-fB-uGZ" kind="show" identifier="changePwdSegue" id="h8d-dV-U4u"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Vh-Sc-7NM">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Vh-Sc-7NM">
                                 <rect key="frame" x="350" y="20" width="44" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="3BK-2Z-6uA"/>
@@ -595,14 +600,20 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="beS-yk-TjY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1Vh-Sc-7NM" firstAttribute="leading" secondItem="3DE-i1-kZd" secondAttribute="trailing" constant="69" id="77i-i1-D7h"/>
+                            <constraint firstItem="beS-yk-TjY" firstAttribute="trailing" secondItem="1Vh-Sc-7NM" secondAttribute="trailing" constant="20" id="mEj-tD-hi6"/>
+                            <constraint firstItem="beS-yk-TjY" firstAttribute="bottom" secondItem="1Vh-Sc-7NM" secondAttribute="bottom" constant="744" id="nhT-XW-WIJ"/>
+                            <constraint firstItem="1Vh-Sc-7NM" firstAttribute="top" secondItem="beS-yk-TjY" secondAttribute="top" constant="20" id="tCQ-x8-8k3"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dZH-sH-chj"/>
                     <connections>
-                        <outlet property="emailFld" destination="QDi-D1-V6z" id="GwL-iA-vl0"/>
+                        <outlet property="emailLbl" destination="QDi-D1-V6z" id="yXY-nO-tC2"/>
                         <outlet property="nameLbl" destination="3gl-qq-ucH" id="Gil-yB-Z7c"/>
                         <outlet property="phonenoLbl" destination="26H-wN-sKb" id="zUG-eI-SUC"/>
-                        <outlet property="usernameFld" destination="1sb-lr-NQt" id="UDu-DF-3yX"/>
-                        <segue destination="zWD-ZB-iPr" kind="unwind" unwindAction="unwindToProfile:" id="y5h-tu-InA"/>
+                        <outlet property="usernameLbl" destination="1sb-lr-NQt" id="YP5-B5-NoB"/>
+                        <segue destination="zWD-ZB-iPr" kind="unwind" identifier="unwindToUserProfile" unwindAction="unwindToProfile:" id="y5h-tu-InA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dq4-4G-bKA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -613,7 +624,7 @@
         <!--Change Pwd Controller-->
         <scene sceneID="qgU-Po-11Y">
             <objects>
-                <viewController id="maC-fB-uGZ" customClass="ChangePwdController" customModule="Electricle" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChangePwdController" id="maC-fB-uGZ" customClass="ChangePwdController" customModule="Electricle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sIC-bZ-SpR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -657,7 +668,7 @@
                                     <action selector="resetBtn:" destination="maC-fB-uGZ" eventType="touchUpInside" id="MDM-xV-L79"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZE-38-4ZV">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZE-38-4ZV">
                                 <rect key="frame" x="350" y="32" width="44" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="YZP-hB-sHa"/>
@@ -673,18 +684,24 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Iq2-8B-A30"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hZE-38-4ZV" firstAttribute="leading" secondItem="Iq2-8B-A30" secondAttribute="leading" constant="350" id="4dt-JJ-vXy"/>
+                            <constraint firstItem="hZE-38-4ZV" firstAttribute="top" secondItem="Iq2-8B-A30" secondAttribute="top" constant="32" id="qed-Ro-iWa"/>
+                            <constraint firstItem="Iq2-8B-A30" firstAttribute="trailing" secondItem="hZE-38-4ZV" secondAttribute="trailing" constant="20" id="xtN-kV-y2u"/>
+                            <constraint firstItem="Iq2-8B-A30" firstAttribute="bottom" secondItem="hZE-38-4ZV" secondAttribute="bottom" constant="732" id="zNF-ik-mZk"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Zip-aY-Ubi"/>
                     <connections>
                         <outlet property="currentFld" destination="uH2-X1-tHy" id="QXu-up-X2p"/>
                         <outlet property="newFld" destination="j2A-1Y-vFr" id="9fU-VG-IM8"/>
-                        <segue destination="Czv-Yi-TFJ" kind="unwind" unwindAction="unwindFromPwd:" id="c0f-u0-hYw"/>
+                        <segue destination="Czv-Yi-TFJ" kind="unwind" identifier="unwindToDetailsPwd" unwindAction="unwindFromPwd:" id="c0f-u0-hYw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DzS-zq-pyA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="Czv-Yi-TFJ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-1668" y="1152"/>
+            <point key="canvasLocation" x="-1668" y="1205"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="GVv-nA-LX6">
@@ -1078,7 +1095,7 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="4GX-wj-oeR"/>
+        <segue reference="Lhe-w4-NX2"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>

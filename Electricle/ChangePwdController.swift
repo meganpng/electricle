@@ -12,7 +12,8 @@ class ChangePwdController:UIViewController{
     let userController:UserController = UserController()
 
     @IBAction func exitBtn(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        //self.dismiss(animated: true, completion: nil)
+        performSegue(withIdentifier: "unwindToDetailsPwd", sender: self)
     }
     
     @IBOutlet weak var currentFld: UITextField!
@@ -30,7 +31,7 @@ class ChangePwdController:UIViewController{
         let newpwd = newFld.text!
         let password = user.Password
         
-        if(currentpwd == password){
+        if(password == currentpwd){
             let alert = UIAlertController(title: "Change Password?", message: "Are you sure you want to change your password?", preferredStyle: .alert)
 
             alert.addAction(UIAlertAction(title: "Update", style: .default, handler: { action in

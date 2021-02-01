@@ -16,20 +16,25 @@ class UpdateProfileController: UIViewController{
     var name:String = ""
     var phoneno:String = ""
     //var password:String = ""
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
 
+    override func viewDidAppear(_ animated: Bool) {
+        
+    }
     
     @IBOutlet weak var usernameFld: UITextField!
     
     @IBOutlet weak var nameFld: UITextField!
-    
-    @IBOutlet var phonenoFld: UIView!
     
     @IBOutlet var phoneNoFld: UITextField!
     
     @IBAction func resetBtn(_ sender: Any) {
         usernameFld.text! = ""
         nameFld.text! = ""
-        //phoneNoFld.text! = ""
+        phoneNoFld.text! = ""
         
     }
     
@@ -39,13 +44,14 @@ class UpdateProfileController: UIViewController{
         alert.addAction(UIAlertAction(title: "Update", style: .default, handler: { action in
             let currentemail:String = self.userController.retrieveCurrentEmail()
             let currentuser:User = self.userController.retrieveUser(currentemail: email)
-            let user:User = User(email: currentemail, username: self.usernameFld.text! , name: self.nameFld.text! , phoneno: currentuser.phoneNo, password: currentuser.Password)
+            let user:User = User(email: currentemail, username: self.usernameFld.text! , name: self.nameFld.text! , phoneno: self.phoneNoFld.text! , password: currentuser.Password)
             
             self.userController.updateProfile(email: currentemail, newUser: user)
             self.userController.updateCurrentProfile(email: currentemail, newUser: user)
             print("Updated " + currentemail)
             self.usernameFld.text = ""
             self.nameFld.text = ""
+            self.phoneNoFld.text = ""
             //nameLbl.text = ""
             //phoneNoLbl.text = ""
         }))
@@ -58,7 +64,7 @@ class UpdateProfileController: UIViewController{
     
     
     @IBAction func exitButton(_ sender: Any) {
-        //performSegue(withIdentifier: “unwindToProfileDetailsUpdate”, sender: self)
-        self.dismiss(animated: true, completion: nil)
+        performSegue(withIdentifier: "unwindToProfileDetailsUpdate", sender: self)
+        //self.dismiss(animated: true, completion: nil)
     }
 }
