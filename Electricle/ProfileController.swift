@@ -94,7 +94,6 @@ extension ProfileController:UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewCell", for: indexPath) as! collectionViewCell
-
         //cell.configure()
         cell.setUp(with: displayList[indexPath.row])
         cell.displayListing = displayList[indexPath.row]

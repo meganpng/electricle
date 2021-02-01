@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -494,7 +494,7 @@
                                     <constraint firstAttribute="width" constant="63" id="UqJ-qm-jfa"/>
                                     <constraint firstAttribute="height" constant="34" id="jxU-ce-amA"/>
                                 </constraints>
-                                <state key="normal" title="Go">
+                                <state key="normal" title="Find">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -502,6 +502,9 @@
                                         <real key="value" value="6"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="searchQuery:" destination="VPp-fz-gi4" eventType="touchUpInside" id="FRt-l4-TA4"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Listings near you" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yps-oj-l1N">
                                 <rect key="frame" x="20" y="132" width="223" height="32"/>
@@ -509,8 +512,8 @@
                                 <color key="textColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TPt-FV-ISe">
-                                <rect key="frame" x="20" y="203" width="374" height="610"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TPt-FV-ISe">
+                                <rect key="frame" x="20" y="194" width="374" height="619"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TsW-Gi-h9w">
                                     <size key="itemSize" width="128" height="128"/>
@@ -519,15 +522,15 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Mqc-Z2-jRb" customClass="collectionViewCell" customModule="Electricle" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="150" height="231"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="homeCollectionViewCell" id="Mqc-Z2-jRb" customClass="HomeCollectionViewCell" customModule="Electricle" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="170" height="260"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="vIp-LK-skd">
-                                            <rect key="frame" x="0.0" y="0.0" width="150" height="231"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="170" height="260"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O49-gH-A46" customClass="collectionViewCellImage" customModule="Electricle" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="135"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O49-gH-A46" customClass="collectionViewCellImage" customModule="Electricle" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="170" height="140"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -538,10 +541,53 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mappin.and.ellipse" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="voE-iW-v8d">
+                                                    <rect key="frame" x="8" y="226.5" width="19" height="25"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="tintColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iqX-jH-yrN">
+                                                    <rect key="frame" x="8" y="170" width="154" height="25"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" systemColor="systemGrayColor"/>
+                                                    <color key="highlightedColor" systemColor="systemGrayColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EVi-8u-8Gf">
+                                                    <rect key="frame" x="8" y="144" width="154" height="24"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hmo-w2-WPU">
+                                                    <rect key="frame" x="29" y="227" width="133" height="25"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <size key="customSize" width="150" height="231"/>
+                                        <size key="customSize" width="170" height="260"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.20000000000000001" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="listingImage" destination="O49-gH-A46" id="ef8-fd-TZL"/>
+                                            <outlet property="listingLocation" destination="Hmo-w2-WPU" id="861-gb-9be"/>
+                                            <outlet property="listingTitle" destination="EVi-8u-8Gf" id="qee-mI-ULX"/>
+                                            <outlet property="listingUser" destination="iqX-jH-yrN" id="7K0-et-fTX"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -551,17 +597,22 @@
                         <constraints>
                             <constraint firstItem="sI8-Nb-Yda" firstAttribute="trailing" secondItem="TPt-FV-ISe" secondAttribute="trailing" constant="20" id="30d-P5-ZZH"/>
                             <constraint firstItem="yps-oj-l1N" firstAttribute="top" secondItem="5Ta-m8-YbO" secondAttribute="bottom" constant="30" id="4yu-3c-era"/>
+                            <constraint firstItem="TPt-FV-ISe" firstAttribute="top" secondItem="yps-oj-l1N" secondAttribute="bottom" constant="30" id="GcF-7x-Ong"/>
                             <constraint firstItem="FWd-JD-Ein" firstAttribute="leading" secondItem="5Ta-m8-YbO" secondAttribute="trailing" constant="8" symbolic="YES" id="P6m-9c-D48"/>
                             <constraint firstItem="5Ta-m8-YbO" firstAttribute="top" secondItem="sI8-Nb-Yda" secondAttribute="top" constant="24" id="TLf-uN-Y4m"/>
                             <constraint firstItem="TPt-FV-ISe" firstAttribute="leading" secondItem="sI8-Nb-Yda" secondAttribute="leading" constant="20" id="YCK-Wz-FJl"/>
                             <constraint firstItem="yps-oj-l1N" firstAttribute="leading" secondItem="sI8-Nb-Yda" secondAttribute="leading" constant="20" id="a5X-al-j6s"/>
                             <constraint firstItem="5Ta-m8-YbO" firstAttribute="leading" secondItem="sI8-Nb-Yda" secondAttribute="leading" constant="20" id="jNk-bs-Vlm"/>
                             <constraint firstItem="sI8-Nb-Yda" firstAttribute="trailing" secondItem="FWd-JD-Ein" secondAttribute="trailing" constant="20" id="lG0-Bh-2Rw"/>
-                            <constraint firstItem="TPt-FV-ISe" firstAttribute="top" secondItem="yps-oj-l1N" secondAttribute="bottom" constant="20" id="pgx-Ov-v1B"/>
+                            <constraint firstItem="TPt-FV-ISe" firstAttribute="bottom" secondItem="sI8-Nb-Yda" secondAttribute="bottom" id="nyG-Sm-4p7"/>
                             <constraint firstItem="FWd-JD-Ein" firstAttribute="top" secondItem="sI8-Nb-Yda" secondAttribute="top" constant="24" id="szy-iq-zVq"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Explore" image="magnifyingglass" catalog="system" id="QZg-eR-IWo"/>
+                    <connections>
+                        <outlet property="ExploreCollectionView" destination="TPt-FV-ISe" id="wyT-Bi-MaS"/>
+                        <outlet property="search" destination="5Ta-m8-YbO" id="AG3-ys-9Iv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hxy-K0-doG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -589,12 +640,13 @@
     </scenes>
     <designables>
         <designable name="FWd-JD-Ein">
-            <size key="intrinsicContentSize" width="30" height="34"/>
+            <size key="intrinsicContentSize" width="35" height="34"/>
         </designable>
     </designables>
     <resources>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="mappin" catalog="system" width="105" height="128"/>
+        <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
         <image name="multiply" catalog="system" width="128" height="111"/>
         <image name="person.crop.circle.fill" catalog="system" width="128" height="121"/>
         <image name="plus" catalog="system" width="128" height="113"/>
@@ -605,6 +657,9 @@
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
