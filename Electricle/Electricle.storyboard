@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -42,7 +42,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Describe what your item is and include any detials users might be interested in." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6zy-Oe-hgI">
+                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Describe what your item is." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6zy-Oe-hgI">
                                 <rect key="frame" x="20" y="482" width="374" height="34"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -848,6 +848,24 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41j-dK-fr5" customClass="RoundButton" customModule="Electricle" customModuleProvider="target">
+                                <rect key="frame" x="274" y="134" width="120" height="30"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="Zj1-Fn-O64"/>
+                                </constraints>
+                                <state key="normal" title="Cancel Search">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="cancelSearching:" destination="VPp-fz-gi4" eventType="touchUpInside" id="agR-jI-g5P"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="sI8-Nb-Yda"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -858,16 +876,19 @@
                             <constraint firstItem="FWd-JD-Ein" firstAttribute="leading" secondItem="5Ta-m8-YbO" secondAttribute="trailing" constant="8" symbolic="YES" id="P6m-9c-D48"/>
                             <constraint firstItem="5Ta-m8-YbO" firstAttribute="top" secondItem="sI8-Nb-Yda" secondAttribute="top" constant="24" id="TLf-uN-Y4m"/>
                             <constraint firstItem="TPt-FV-ISe" firstAttribute="leading" secondItem="sI8-Nb-Yda" secondAttribute="leading" constant="20" id="YCK-Wz-FJl"/>
+                            <constraint firstItem="sI8-Nb-Yda" firstAttribute="trailing" secondItem="41j-dK-fr5" secondAttribute="trailing" constant="20" id="Z9l-US-XMB"/>
                             <constraint firstItem="yps-oj-l1N" firstAttribute="leading" secondItem="sI8-Nb-Yda" secondAttribute="leading" constant="20" id="a5X-al-j6s"/>
                             <constraint firstItem="5Ta-m8-YbO" firstAttribute="leading" secondItem="sI8-Nb-Yda" secondAttribute="leading" constant="20" id="jNk-bs-Vlm"/>
                             <constraint firstItem="sI8-Nb-Yda" firstAttribute="trailing" secondItem="FWd-JD-Ein" secondAttribute="trailing" constant="20" id="lG0-Bh-2Rw"/>
                             <constraint firstItem="TPt-FV-ISe" firstAttribute="bottom" secondItem="sI8-Nb-Yda" secondAttribute="bottom" id="nyG-Sm-4p7"/>
                             <constraint firstItem="FWd-JD-Ein" firstAttribute="top" secondItem="sI8-Nb-Yda" secondAttribute="top" constant="24" id="szy-iq-zVq"/>
+                            <constraint firstItem="41j-dK-fr5" firstAttribute="top" secondItem="5Ta-m8-YbO" secondAttribute="bottom" constant="32" id="tXl-qR-XXd"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Explore" image="magnifyingglass" catalog="system" id="QZg-eR-IWo"/>
                     <connections>
                         <outlet property="ExploreCollectionView" destination="TPt-FV-ISe" id="wyT-Bi-MaS"/>
+                        <outlet property="cancelBtn" destination="41j-dK-fr5" id="rdG-w8-dZh"/>
                         <outlet property="search" destination="5Ta-m8-YbO" id="AG3-ys-9Iv"/>
                     </connections>
                 </viewController>
@@ -1043,6 +1064,9 @@
         </scene>
     </scenes>
     <designables>
+        <designable name="41j-dK-fr5">
+            <size key="intrinsicContentSize" width="99" height="30"/>
+        </designable>
         <designable name="FWd-JD-Ein">
             <size key="intrinsicContentSize" width="35" height="34"/>
         </designable>
@@ -1054,7 +1078,7 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="Lhe-w4-NX2"/>
+        <segue reference="4GX-wj-oeR"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>

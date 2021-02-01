@@ -9,8 +9,10 @@ import Foundation
 import UIKit
 import CoreData
 
-class HomeController: UIViewController, UICollectionViewDelegate{
+class HomeController: UIViewController, UICollectionViewDelegate, CLLocationManagerDelegate{
     private var spacing = CGFloat()
+    
+    
     
     @IBOutlet weak var ExploreCollectionView: UICollectionView!
     
@@ -18,16 +20,20 @@ class HomeController: UIViewController, UICollectionViewDelegate{
     @IBOutlet weak var search: UITextField!
     
     
+    @IBOutlet weak var cancelBtn: RoundButton!
     
     let listingController:ListingController = ListingController()
     
     var resultsList=[DisplayListing]()
     
+    let locationManager = CLLocationManager()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        cancelBtn.isHidden = true
         
         let layout = UICollectionViewFlowLayout()
        
@@ -42,6 +48,8 @@ class HomeController: UIViewController, UICollectionViewDelegate{
         }
         resultsList = listingController.retriveAllListings()
         ExploreCollectionView.reloadData()
+        
+        setupLocationManager()
 
         
     }
@@ -52,11 +60,40 @@ class HomeController: UIViewController, UICollectionViewDelegate{
     }
     
     
+    func setupLocationManager(){
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+            print("locations = \(locValue.latitude) \(locValue.longitude)")
+    }
+    
+    
     @IBAction func searchQuery(_ sender: Any) {
+        
+        cancelBtn.isHidden = false
+        
         resultsList = listingController.retriveAllListingsBySearch(search:search.text!)
         ExploreCollectionView.reloadData()
      
     }
+    
+    
+    @IBAction func cancelSearching(_ sender: Any) {
+        resultsList = listingController.retriveAllListings()
+        ExploreCollectionView.reloadData()
+        
+        search.text = ""
+        
+        cancelBtn.isHidden = true
+
+    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as?
@@ -82,7 +119,6 @@ extension HomeController:UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let listingCell = collectionView.dequeueReusableCell(withReuseIdentifier: "homeCollectionViewCell", for: indexPath) as! HomeCollectionViewCell
-        print("method called")
         //cell.configure()
         listingCell.setUpCells(with: resultsList[indexPath.row])
         
