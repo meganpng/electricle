@@ -10,12 +10,11 @@ import UIKit
 class UpdateProfileController: UIViewController{
     
     let userController:UserController = UserController()
-    
-    //var email:String = ""
+
     var username:String = ""
     var name:String = ""
     var phoneno:String = ""
-    //var password:String = ""
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +30,7 @@ class UpdateProfileController: UIViewController{
     
     @IBOutlet var phoneNoFld: UITextField!
     
+    //this resets the text fields
     @IBAction func resetBtn(_ sender: Any) {
         usernameFld.text! = ""
         nameFld.text! = ""
@@ -38,6 +38,7 @@ class UpdateProfileController: UIViewController{
         
     }
     
+    //this edits the profile details
     @IBAction func editProfileBtn(_ sender: Any) {
         let alert = UIAlertController(title: "Update Profile?", message: "Are you sure you want to update your profile details?", preferredStyle: .alert)
 
@@ -62,7 +63,7 @@ class UpdateProfileController: UIViewController{
         self.present(alert, animated: true)
     }
     
-    
+    //this lets the user exit
     @IBAction func exitButton(_ sender: Any) {
         performSegue(withIdentifier: "unwindToProfileDetailsUpdate", sender: self)
         //self.dismiss(animated: true, completion: nil)

@@ -22,6 +22,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     var locationString:String = ""
     
+    //this loads the map location
     override func viewDidLoad() {
         super.viewDidLoad()
         //mapView.showsUserLocation = true
@@ -34,8 +35,10 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         centreMapOnLocation(locationString: getLocationListing.Location)
     }
     
+    //this sets the region radius
     let regionRadius:CLLocationDistance = 250
     
+    //this centers the map on the location of the listing
     func centreMapOnLocation(locationString: String){
         let geoCoder = CLGeocoder()
         geoCoder.geocodeAddressString(locationString, completionHandler: {p,e in
@@ -54,7 +57,10 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         })
         
         
+        
     }
+    
+    //this returns the user to the listing details page
     
     @IBAction func exitBtn(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)

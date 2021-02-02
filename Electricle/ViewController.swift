@@ -10,11 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    //this controller displays the main page
     
+    //this directs the user to the login page
     @IBAction func loginButton(_ sender: Any) {
     
     }
     
+    //this directs the user to the sign up page with a storyboard segue
     @IBAction func signUpButton(_ sender: Any) {
     }
     

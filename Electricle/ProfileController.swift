@@ -19,25 +19,16 @@ class ProfileController: UIViewController, UICollectionViewDelegate{
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    //this displays the user's listings and name
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
         let layout = UICollectionViewFlowLayout()
-        //layout.sectionInset = UIEdgeInsets(top: 0, left: spacing, bottom: 0, right: 0)
-        //layout.minimumLineSpacing = spacing
-        //layout.minimumInteritemSpacing = spacing
-        //layout.itemSize = CGSize(width: 200, height: 300)
         collectionView.collectionViewLayout = layout
         collectionView.delegate = self
         collectionView.dataSource = self //done
-        // Added code
-        if UIScreen.main.bounds.width <= 375 {
-            spacing = 16 // For the iPhone 7, 8, 11 Pro
-        } else {
-            spacing = 20 // For the iPhone 7+, 8+ and 11 Pro Max
-        }
+
         currentUser = userController.retrieveUser(currentemail: userController.retrieveCurrentEmail())
         displayList = userController.retrieveDisplayListingsByCurrentUser(user: currentUser)
         collectionView.reloadData()
@@ -45,6 +36,7 @@ class ProfileController: UIViewController, UICollectionViewDelegate{
         hiUser.text = "Hi, " + currentUser.Name + "!"
     }
     
+    //this reloads the user data
     override func viewDidAppear(_ animated: Bool) {
         displayList = userController.retrieveDisplayListingsByCurrentUser(user: currentUser)
         collectionView.reloadData()
@@ -53,6 +45,8 @@ class ProfileController: UIViewController, UICollectionViewDelegate{
 
     }
     
+    
+    //this redirects the user to the listing details page
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as?
             ShowListingController, let index =
@@ -68,6 +62,7 @@ class ProfileController: UIViewController, UICollectionViewDelegate{
         collectionView.reloadData()
     }
   
+    //this allows the user to log out
     @IBAction func logOutBtn(_ sender: Any) {
         let alert = UIAlertController(title: "Log Out?", message: "Are you sure you want to log out?", preferredStyle: .alert)
 
@@ -85,29 +80,20 @@ class ProfileController: UIViewController, UICollectionViewDelegate{
         
     }
     
+    //this redirects the user to the profile details page
     @IBAction func viewDetailsBtn(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Electricle", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "ChangePwdController") as UIViewController
-        vc.modalPresentationStyle = .fullScreen //try without fullscreen
-        present(vc, animated: true, completion: nil)
     }
 
 }
 
 
 extension ProfileController:UICollectionViewDataSource{
+    //this sets the number of items in a section
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return displayList.count
     }
     
-    /*func numberOfSections(in collectionView: UICollectionView) -> Int {
-        let email = userController.retrieveCurrentEmail()
-        let currentuser = userController.retrieveUser(currentemail: email)
-        let count = userController.retrieveListingCountByCurrentUser(user: currentuser)
-        return count
-    }*/
-    
-    
+    //this formats the cell
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewCell", for: indexPath) as! collectionViewCell
@@ -120,7 +106,7 @@ extension ProfileController:UICollectionViewDataSource{
     
 }
 
-
+//this sets the layout of the cell
 extension ProfileController:UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let phoneWidth = Int(self.view.frame.width)
@@ -129,20 +115,7 @@ extension ProfileController:UICollectionViewDelegateFlowLayout{
         let dividingSpacesInset = (cellsPerRow - 1)*20
         let cellWidth = (phoneWidth-insets-dividingSpacesInset)/cellsPerRow
         return CGSize(width: cellWidth, height: 231)
-        // Change private let spacing: CGFloat = 20 to
-
-
         
-        /*let totalwidth = collectionView.bounds.size.width;
-        let numberOfCellsPerRow = 2
-        let oddEven = indexPath.row / numberOfCellsPerRow % 2
-        let dimensions = CGFloat(Int(totalwidth) / numberOfCellsPerRow)
-        if (oddEven == 0) {
-            return CGSize(width: dimensions, height: dimensions)
-        } else {
-            return CGSize(width: dimensions, height: dimensions/2)
-        }*/
-    
     }
 
 }

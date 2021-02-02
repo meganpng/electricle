@@ -34,6 +34,7 @@ class collectionViewCell: UICollectionViewCell, UICollectionViewDelegate {
         }
     }
     
+    //this sets up the listing cell
     func setUp(with display:DisplayListing){
         imageView.image = display.Image
         listingTitle.text = display.Title
@@ -41,10 +42,9 @@ class collectionViewCell: UICollectionViewCell, UICollectionViewDelegate {
         locationDistance.text = display.Location
     }
     
-    
+    //this opens the listing details when the cell is selected
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //[indexPath.row]
-
+//this segues the user to the listing details
         let display:DisplayListing = displayListing!
         let destinationVC = ShowListingController()
         destinationVC.getEmail = display.Email
@@ -55,14 +55,14 @@ class collectionViewCell: UICollectionViewCell, UICollectionViewDelegate {
         destinationVC.getUsername = display.UserName
         destinationVC.getPhoneNo = display.PhoneNo
         destinationVC.getId = display.Id
-            // Let's assume that the segue name is called playerSegue
-            // This will perform the segue and pre-load the variable for you to use
+
         destinationVC.performSegue(withIdentifier: "showListingSegue", sender: self)
     }
     
 
 }
 
+//this customises the cell
 @IBDesignable
 class collectionViewCellImage:UIImageView{
     @IBInspectable var borderColor: UIColor = UIColor.clear{
