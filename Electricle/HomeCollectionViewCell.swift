@@ -24,7 +24,7 @@ class HomeCollectionViewCell:UICollectionViewCell, UICollectionViewDelegate{
     
     var displayListing: DisplayListing?
 
-    
+    //To change cell's radius, border color and width
     @IBInspectable var cornerRadius: CGFloat = 0{
             didSet{
                 self.layer.cornerRadius = cornerRadius
@@ -43,6 +43,7 @@ class HomeCollectionViewCell:UICollectionViewCell, UICollectionViewDelegate{
             }
         }
 
+    //Configures cells
     func setUpCells(with display:DisplayListing){
         
         
@@ -50,9 +51,7 @@ class HomeCollectionViewCell:UICollectionViewCell, UICollectionViewDelegate{
         listingTitle.text = display.Title 
         listingUser.text = display.UserName
         listingLocation.text = display.Location
-        
-        print(listingTitle.text, " ", listingLocation )
-
+    
         
     }
     

@@ -35,7 +35,7 @@ class AddListingController: UIViewController, UIImagePickerControllerDelegate , 
       
     }
     
-    
+    //Opens up Image Picker
     @IBAction func ClickImage(_ sender: Any) {
         let imagepckr = UIImagePickerController()
         imagepckr.sourceType = .photoLibrary
@@ -45,7 +45,7 @@ class AddListingController: UIViewController, UIImagePickerControllerDelegate , 
     }
     
     
-    
+    //Adds Inputted info into CDListing Core Data
     @IBAction func ClickListItem(_ sender: Any) {
         setupLocationManager()
         
@@ -56,7 +56,7 @@ class AddListingController: UIViewController, UIImagePickerControllerDelegate , 
         let emptyBool:Bool =
         checkFields(title: title, description: desc, address: location)
     
-        
+        //A field is empty
         if(emptyBool == true){
             let dialogMessage = UIAlertController(title: "Empty Fields", message: "Please fill up all fields.", preferredStyle: .alert)
              
@@ -70,7 +70,7 @@ class AddListingController: UIViewController, UIImagePickerControllerDelegate , 
              // Present Alert to
              self.present(dialogMessage, animated: true, completion: nil)
         }
-        
+        //All fields have input
         else {
             validateAddress()
 
@@ -78,8 +78,9 @@ class AddListingController: UIViewController, UIImagePickerControllerDelegate , 
 
     }
     
-    
+    //Checks if all fields have input
     func checkFields(title:String, description:String, address:String) -> Bool{
+        //If AddImgBtn is '+', an image has not been added
         if (AddImgBtn.currentImage == UIImage(systemName:"plus")){
              return true
             }
@@ -96,6 +97,7 @@ class AddListingController: UIViewController, UIImagePickerControllerDelegate , 
         return false
     }
     
+    //sets up location manager functions
     func setupLocationManager(){
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -104,6 +106,7 @@ class AddListingController: UIViewController, UIImagePickerControllerDelegate , 
         locationManager.startUpdatingHeading()
     }
     
+    //Validates the address that the user has inputted
     func validateAddress(){
         let geoCoder = CLGeocoder()
         let image = AddImgBtn.currentImage!
@@ -113,7 +116,7 @@ class AddListingController: UIViewController, UIImagePickerControllerDelegate , 
 
         geoCoder.geocodeAddressString(location,in:nil,completionHandler:  {(placemarks, error) in
             
-            
+            //Location is invalid
             if(error != nil){
                
                 print("Status: Invalid Location")
@@ -132,11 +135,13 @@ class AddListingController: UIViewController, UIImagePickerControllerDelegate , 
                  self.present(dialogMessage, animated: true, completion: nil)
                 
             }
+            //Location is valid
             if let placemark = placemarks?.first{
                 
                 print("Status: Location Exists")
                 let listingobject = Listing(title: title, content: desc, image: image, location: location, id: "")
                 
+            
                 self.listingController.AddListing(listing: listingobject)
                 
                 let dialogMessage = UIAlertController(title: "Listed", message: "Your Listing was successful!", preferredStyle: .alert)
@@ -152,6 +157,8 @@ class AddListingController: UIViewController, UIImagePickerControllerDelegate , 
                  dialogMessage.addAction(ok)
                  // Present Alert to
                  self.present(dialogMessage, animated: true, completion: nil)
+                
+                //Clears fields
                 
                 self.AddImgBtn.setImage(UIImage(systemName: "plus"), for: .normal)
                 
@@ -171,7 +178,7 @@ class AddListingController: UIViewController, UIImagePickerControllerDelegate , 
     
     
      
-    
+    //Image picker selection function
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
       
         if let image = info[UIImagePickerController.InfoKey(rawValue:"UIImagePickerControllerEditedImage")] as? UIImage {
@@ -184,6 +191,7 @@ class AddListingController: UIViewController, UIImagePickerControllerDelegate , 
         
     }
     
+    //Cancel image picker function
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
