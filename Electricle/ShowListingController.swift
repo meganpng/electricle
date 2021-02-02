@@ -35,13 +35,8 @@ class ShowListingController: UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        /*imageView.image = getImage
-        titleLbl.text = getTitle
-        userNamelbl.text = "From: " + getEmail
-        contentlbl.text = getContent
-        locationLbl.text = getLocation
-        phoneNoLbl.text = getPhoneNo*/
-        
+
+        //this retrieves data from the listing and displays
         imageView.image = getListing.Image
         titleLbl.text = getListing.Title
         userNamelbl.text = getListing.UserName
@@ -50,7 +45,7 @@ class ShowListingController: UIViewController{
         phoneNoLbl.text = getListing.PhoneNo
     }
     
-    
+    //this deletes the listing
     @IBAction func deleteListing(_ sender: Any) {
 
         let alert = UIAlertController(title: "Delete Listing?", message: "Are you sure you want to delete your listing?", preferredStyle: .alert)
@@ -68,6 +63,7 @@ class ShowListingController: UIViewController{
 
     }
     
+    //this redirects the user to the map view
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as?
                     MapViewController{
@@ -75,7 +71,7 @@ class ShowListingController: UIViewController{
         }
     }
 
-    
+    //this lets the user exit
     @IBAction func exitButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
 
@@ -83,6 +79,7 @@ class ShowListingController: UIViewController{
     
 
     let userController:UserController = UserController()
+    
     
     @IBAction func viewLocationBtn(_ sender: Any) {
         let location:String = locationLbl.text!

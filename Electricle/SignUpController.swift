@@ -29,10 +29,12 @@ class SignUpController: UIViewController{
         
     }
     
+    //this redirects the user back to the home page
     @IBAction func Cancel(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
+    //this submits the sign up details
     @IBAction func onSubmit(_ sender: Any) {
         let email = emailField.text!
         let username = userNameField.text!
@@ -41,11 +43,15 @@ class SignUpController: UIViewController{
         let password = passwordField.text!
         let confirmpwd = confirmField.text!
 
+        
         let emptyBool:Bool = checkFields(email: email, username: username, name: name, phoneno: phoneno, pwd: password, confirmpwd: confirmpwd)
         
         let numberBool:Bool = validatePhoneNumber(phoneno: phoneno)
         
         let flag:Bool = userController.validateUserEmail(input: email)
+        
+        //this sends a empty fields alert if the fields are empty
+        
         if(emptyBool == true){
             let dialogMessage = UIAlertController(title: "Empty Fields", message: "Please fill up all fields.", preferredStyle: .alert)
              
@@ -59,6 +65,8 @@ class SignUpController: UIViewController{
              // Present Alert to
              self.present(dialogMessage, animated: true, completion: nil)
         }
+        
+        //this sends an alert if the email entered exists in the database
         else if(flag == true){
             emailField.text = ""
             userNameField.text = ""
@@ -77,7 +85,8 @@ class SignUpController: UIViewController{
              // Present Alert to
              self.present(dialogMessage, animated: true, completion: nil)
         }
-        else if(numberBool == true){
+        //this sends an alert if the number is incorrect
+        else if(numberBool == false){
             let dialogMessage = UIAlertController(title: "Invalid Number", message: "Please enter valid number.", preferredStyle: .alert)
              
              // Create OK button with action handler
@@ -90,7 +99,7 @@ class SignUpController: UIViewController{
              // Present Alert to
              self.present(dialogMessage, animated: true, completion: nil)
         }
-
+        //this sends an alert if the two password fields do not match
         else if(password != confirmpwd){
             phoneField.text = ""
             passwordField.text = ""
@@ -109,6 +118,7 @@ class SignUpController: UIViewController{
 
 
         else{
+            //this adds the user and current user to the database and redirects the user to the home page
             print("\(email), \(username), \(name), \(phoneno), \(password)")
             let userobject = User(email: email, username: username, name: name, phoneno: phoneno, password: password)
             let currentobject = CurrentUser(email: email, username: username, name: name, phoneno: phoneno, password: password)
@@ -121,6 +131,7 @@ class SignUpController: UIViewController{
         }
     }
     
+    //this resets the fields
     @IBAction func onReset(_ sender: Any) {
         emailField.text = ""
         userNameField.text = ""
@@ -130,6 +141,7 @@ class SignUpController: UIViewController{
         confirmField.text = ""
     }
     
+    //this checks if the fields are empty
     func checkFields(email:String, username:String, name:String, phoneno:String, pwd:String, confirmpwd:String) -> Bool{
         let dataList:[String] = [email, username, name, phoneno, pwd, confirmpwd]
         for d in dataList{
@@ -141,6 +153,7 @@ class SignUpController: UIViewController{
         
     }
     
+    //this validates the phone number
     func validatePhoneNumber(phoneno:String) ->Bool{
 
         let flag:Bool = validateIsNumber(phoneno: phoneno)
@@ -163,6 +176,7 @@ class SignUpController: UIViewController{
         return true
     }
     
+    //this checks if letters were entered
     func validateIsNumber(phoneno:String)->(Bool){
         let charArray = Array(phoneno)
         let numberArray = Array(arrayLiteral: "0", "1", "2","3","4","5","6","7","8","9")
