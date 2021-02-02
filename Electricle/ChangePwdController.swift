@@ -30,8 +30,8 @@ class ChangePwdController:UIViewController{
     @IBAction func changePwdBtn(_ sender: Any) {
         let email = userController.retrieveCurrentEmail()
         let user = userController.retrieveUser(currentemail: email)
-        let currentpwd = currentFld.text!
-        let newpwd = newFld.text!
+        let currentpwd = currentFld.text!.trimmingCharacters(in: .whitespaces)
+        let newpwd = newFld.text!.trimmingCharacters(in: .whitespaces)
         let password = user.Password
         
         //this checks if the current password entered is correct

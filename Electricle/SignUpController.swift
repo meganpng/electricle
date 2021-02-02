@@ -36,15 +36,16 @@ class SignUpController: UIViewController{
     
     //this submits the sign up details
     @IBAction func onSubmit(_ sender: Any) {
-        let email = emailField.text!
-        let username = userNameField.text!
-        let name = nameField.text!
-        let phoneno = phoneField.text!
-        let password = passwordField.text!
-        let confirmpwd = confirmField.text!
+        let email = emailField.text!.trimmingCharacters(in: .whitespaces)
+        let username = userNameField.text!.trimmingCharacters(in: .whitespaces)
+        let name = nameField.text!.trimmingCharacters(in: .whitespaces)
+        let phoneno = phoneField.text!.trimmingCharacters(in: .whitespaces)
+        let password = passwordField.text!.trimmingCharacters(in: .whitespaces)
+        let confirmpwd = confirmField.text!.trimmingCharacters(in: .whitespaces)
 
         
         let emptyBool:Bool = checkFields(email: email, username: username, name: name, phoneno: phoneno, pwd: password, confirmpwd: confirmpwd)
+        
         
         let numberBool:Bool = validatePhoneNumber(phoneno: phoneno)
         
@@ -152,6 +153,7 @@ class SignUpController: UIViewController{
         return false
         
     }
+    
     
     //this validates the phone number
     func validatePhoneNumber(phoneno:String) ->Bool{

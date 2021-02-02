@@ -49,17 +49,16 @@ class AddListingController: UIViewController, UIImagePickerControllerDelegate , 
     @IBAction func ClickListItem(_ sender: Any) {
         setupLocationManager()
         
-        let title = ListingTitle.text!
-        let desc = ListingDesc.text!
-        let location = ListingLocation.text!
+        let title = ListingTitle.text!.trimmingCharacters(in: .whitespaces)
+        let desc = ListingDesc.text!.trimmingCharacters(in: .whitespaces)
+        let location = ListingLocation.text!.trimmingCharacters(in: .whitespaces)
         
         let emptyBool:Bool =
         checkFields(title: title, description: desc, address: location)
         
-        let spaceBool:Bool = checkIfSpaces(title: title, description: desc)
     
         //A field is empty
-        if(emptyBool == true || spaceBool == true){
+        if(emptyBool == true){
             let dialogMessage = UIAlertController(title: "Empty Fields", message: "Please fill up all fields.", preferredStyle: .alert)
              
              // Create OK button with action handler
@@ -99,20 +98,6 @@ class AddListingController: UIViewController, UIImagePickerControllerDelegate , 
         return false
     }
     
-    func checkIfSpaces(title:String,description:String) -> Bool{
-        let titleNoSpace = title.trimmingCharacters(in: .whitespaces)
-        let descNoSpace = description.trimmingCharacters(in: .whitespaces)
-                
-        if (titleNoSpace.count == 0){
-            return true
-        }
-        
-        if(descNoSpace.count == 0){
-            return true
-        }
-        
-        return false
-    }
     
     //sets up location manager functions
     func setupLocationManager(){

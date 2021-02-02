@@ -64,7 +64,7 @@ class HomeController: UIViewController, UICollectionViewDelegate, CLLocationMana
     @IBAction func searchQuery(_ sender: Any) {
         
         //Only search in searchfield is not blank
-        if(search.text != ""){
+        if(search.text!.trimmingCharacters(in: .whitespaces).count != 0){
             cancelBtn.isHidden = false
             
             resultsList = listingController.retriveAllListingsBySearch(search:search.text!)

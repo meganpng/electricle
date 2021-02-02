@@ -29,8 +29,8 @@ class LoginController: UIViewController{
     
     @IBAction func onSubmit(_ sender: Any) {
         //this gets the text field input
-        let email = emailField.text!
-        let pwd = passwordField.text!
+        let email = emailField.text!.trimmingCharacters(in: .whitespaces)
+        let pwd = passwordField.text!.trimmingCharacters(in: .whitespaces)
 
         let flag:Bool = userController.validateUserEmail(input: email)
         let flagtwo:Bool = userController.validateUserPassword(input: pwd)
@@ -97,6 +97,7 @@ class LoginController: UIViewController{
         emailField.text = ""
         passwordField.text = ""
     }
+    
     
 }
 

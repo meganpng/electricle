@@ -38,14 +38,17 @@ class UpdateProfileController: UIViewController{
         
     }
     
+  
+    
     //this edits the profile details
     @IBAction func editProfileBtn(_ sender: Any) {
+      
         let alert = UIAlertController(title: "Update Profile?", message: "Are you sure you want to update your profile details?", preferredStyle: .alert)
 
         alert.addAction(UIAlertAction(title: "Update", style: .default, handler: { action in
             let currentemail:String = self.userController.retrieveCurrentEmail()
             let currentuser:User = self.userController.retrieveUser(currentemail: email)
-            let user:User = User(email: currentemail, username: self.usernameFld.text! , name: self.nameFld.text! , phoneno: self.phoneNoFld.text! , password: currentuser.Password)
+            let user:User = User(email: currentemail, username: self.usernameFld.text!.trimmingCharacters(in: .whitespaces) , name: self.nameFld.text!.trimmingCharacters(in: .whitespaces) , phoneno: self.phoneNoFld.text!.trimmingCharacters(in: .whitespaces) , password: currentuser.Password)
             
             self.userController.updateProfile(email: currentemail, newUser: user)
             self.userController.updateCurrentProfile(email: currentemail, newUser: user)
@@ -62,6 +65,7 @@ class UpdateProfileController: UIViewController{
 
         self.present(alert, animated: true)
     }
+    
     
     //this lets the user exit
     @IBAction func exitButton(_ sender: Any) {
