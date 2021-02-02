@@ -59,10 +59,14 @@ class HomeController: UIViewController, UICollectionViewDelegate, CLLocationMana
     
     @IBAction func searchQuery(_ sender: Any) {
         
-        cancelBtn.isHidden = false
+        if(search.text != ""){
+            cancelBtn.isHidden = false
+            
+            resultsList = listingController.retriveAllListingsBySearch(search:search.text!)
+            ExploreCollectionView.reloadData()
+        }
         
-        resultsList = listingController.retriveAllListingsBySearch(search:search.text!)
-        ExploreCollectionView.reloadData()
+       
      
     }
     

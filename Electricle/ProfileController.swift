@@ -48,6 +48,9 @@ class ProfileController: UIViewController, UICollectionViewDelegate{
     override func viewDidAppear(_ animated: Bool) {
         displayList = userController.retrieveDisplayListingsByCurrentUser(user: currentUser)
         collectionView.reloadData()
+        
+        hiUser.text = "Hi, " + currentUser.Name + "!"
+
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
