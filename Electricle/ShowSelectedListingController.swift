@@ -10,7 +10,6 @@ import UIKit
 
 class ShowSelectedListingController: UIViewController{
     
-    let listingController:ListingController = ListingController()
     
     var getListing:DisplayListing = DisplayListing(Title: "", Content: "", Image: UIImage(), Location: "", UserName: "", Email: "", PhoneNo: "", Id: "")
     
@@ -38,7 +37,7 @@ class ShowSelectedListingController: UIViewController{
     
     @IBOutlet weak var listingLocation: UILabel!
     
-    
+    //Sets up the layout
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -59,7 +58,7 @@ class ShowSelectedListingController: UIViewController{
     
     
     
-    
+    //Segue to MapViewController
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as?
                     MapViewController{
@@ -69,7 +68,7 @@ class ShowSelectedListingController: UIViewController{
     
     
     
-    
+    //Dismiss the listing and return to HomeController
     @IBAction func dismissListing(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -77,6 +76,5 @@ class ShowSelectedListingController: UIViewController{
     
     
 
-    let userController:UserController = UserController()
     
 }

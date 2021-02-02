@@ -13,6 +13,8 @@ class ListingController{
     
     let userController:UserController = UserController()
     
+    
+    //Adds a listing to CDListing Core Data
     func AddListing(listing:Listing){
         let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
@@ -52,6 +54,8 @@ class ListingController{
         
     }
     
+    
+    //Retreieve all Listings in CDListing
     func retriveAllListings() -> [DisplayListing] {
             let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
             let context = appDelegate.persistentContainer.viewContext
@@ -99,18 +103,21 @@ class ListingController{
                     }
                 }
                 }
+        //Sorts latest lisiting to be the first in the array
         displayList.reverse()
             
             return displayList
             }
     
-    
+    //Retrives the Listings which match the user's search
     func retriveAllListingsBySearch(search:String) -> [DisplayListing] {
            let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
            let context = appDelegate.persistentContainer.viewContext
         
+        //lower cases the search results
         let lowerSearch = search.lowercased()
            
+            //Splits the search result into separate words
            let searchResults = lowerSearch.components(separatedBy: " ")
            
            var userList:[NSManagedObject] = []
@@ -145,8 +152,10 @@ class ListingController{
                                let location = l.value(forKeyPath: "location") as! String
                                let id = l.value(forKeyPath: "id") as! String
                             
+                            //lower cases the title
                             let lowerTitle = Title.lowercased()
-                               
+                            
+                            //Only listings with characters that match the search inputs are appended to the array
                             for results in searchResults{
                                    if(lowerTitle.contains(results)){
                                        displayList.append(DisplayListing(Title: Title, Content: Content, Image: Image, Location: location, UserName: username, Email: email, PhoneNo: phoneno, Id: id))
@@ -163,11 +172,13 @@ class ListingController{
                    }
                }
                }
+        //sorts array to show latest CDListing as the first
         displayList.reverse()
            return displayList
            }
 
     
+    //Delete a CDListing
     func deleteListing(id:String){
         let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
@@ -191,10 +202,7 @@ class ListingController{
             print("Could not delete. \(error), \(error.userInfo)")
         }
     }
-    
-//    func distance(from location:CLLocation) -> CLLocationDistance {
-//        
-//    }
+
     
     
 }
