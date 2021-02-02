@@ -72,6 +72,9 @@ class HomeController: UIViewController, UICollectionViewDelegate, CLLocationMana
         }
         //if search field is empty reload normal layout
         else{
+            
+            cancelBtn.isHidden = true
+
             resultsList = listingController.retriveAllListings()
             ExploreCollectionView.reloadData()
         }

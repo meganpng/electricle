@@ -55,9 +55,11 @@ class AddListingController: UIViewController, UIImagePickerControllerDelegate , 
         
         let emptyBool:Bool =
         checkFields(title: title, description: desc, address: location)
+        
+        let spaceBool:Bool = checkIfSpaces(title: title, description: desc)
     
         //A field is empty
-        if(emptyBool == true){
+        if(emptyBool == true || spaceBool == true){
             let dialogMessage = UIAlertController(title: "Empty Fields", message: "Please fill up all fields.", preferredStyle: .alert)
              
              // Create OK button with action handler
@@ -92,6 +94,21 @@ class AddListingController: UIViewController, UIImagePickerControllerDelegate , 
                 return true
                 
             }
+        }
+        
+        return false
+    }
+    
+    func checkIfSpaces(title:String,description:String) -> Bool{
+        let titleNoSpace = title.trimmingCharacters(in: .whitespaces)
+        let descNoSpace = description.trimmingCharacters(in: .whitespaces)
+                
+        if (titleNoSpace.count == 0){
+            return true
+        }
+        
+        if(descNoSpace.count == 0){
+            return true
         }
         
         return false
