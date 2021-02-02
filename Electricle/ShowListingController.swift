@@ -44,10 +44,10 @@ class ShowListingController: UIViewController{
         
         imageView.image = getListing.Image
         titleLbl.text = getListing.Title
-        userNamelbl.text = "From: " + getListing.UserName
+        userNamelbl.text = getListing.UserName
         contentlbl.text = getListing.Content
         locationLbl.text = getListing.Location
-        phoneNoLbl.text = "Phone No: " + getListing.PhoneNo
+        phoneNoLbl.text = getListing.PhoneNo
     }
     
     

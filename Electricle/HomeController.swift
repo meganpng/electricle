@@ -25,9 +25,7 @@ class HomeController: UIViewController, UICollectionViewDelegate, CLLocationMana
     let listingController:ListingController = ListingController()
     
     var resultsList=[DisplayListing]()
-    
-    let locationManager = CLLocationManager()
-    
+        
     
     
     override func viewDidLoad() {
@@ -49,7 +47,6 @@ class HomeController: UIViewController, UICollectionViewDelegate, CLLocationMana
         resultsList = listingController.retriveAllListings()
         ExploreCollectionView.reloadData()
         
-        setupLocationManager()
 
         
     }
@@ -57,20 +54,6 @@ class HomeController: UIViewController, UICollectionViewDelegate, CLLocationMana
     override func viewDidAppear(_ animated: Bool) {
         resultsList = listingController.retriveAllListings()
         ExploreCollectionView.reloadData()
-    }
-    
-    
-    func setupLocationManager(){
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
-        
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
-            print("locations = \(locValue.latitude) \(locValue.longitude)")
     }
     
     
