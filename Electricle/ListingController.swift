@@ -155,14 +155,21 @@ class ListingController{
                             //lower cases the title
                             let lowerTitle = Title.lowercased()
                             
+                            var x  = 0
+                            
                             //Only listings with characters that match the search inputs are appended to the array
                             for results in searchResults{
                                    if(lowerTitle.contains(results)){
-                                       displayList.append(DisplayListing(Title: Title, Content: Content, Image: Image, Location: location, UserName: username, Email: email, PhoneNo: phoneno, Id: id))
+                                     x = x + 1
                                    }
                                    
                                }
-                          
+                            if (x > 0){
+                                displayList.append(DisplayListing(Title: Title, Content: Content, Image: Image, Location: location, UserName: username, Email: email, PhoneNo: phoneno, Id: id))
+                               
+                            }
+                            x = 0
+                         
                            }
                        }
                        

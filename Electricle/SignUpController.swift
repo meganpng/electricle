@@ -10,6 +10,11 @@ import Foundation
 
 class SignUpController: UIViewController{
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches, with: event)
+    }
+    
     @IBOutlet weak var userNameField: UITextField!
     
     @IBOutlet weak var emailField: UITextField!

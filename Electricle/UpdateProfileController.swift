@@ -9,6 +9,11 @@ import Foundation
 import UIKit
 class UpdateProfileController: UIViewController{
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches, with: event)
+    }
+    
     let userController:UserController = UserController()
 
     var username:String = ""

@@ -12,6 +12,11 @@ import CoreLocation
 
 class AddListingController: UIViewController, UIImagePickerControllerDelegate , CLLocationManagerDelegate, UINavigationControllerDelegate{
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches, with: event)
+    }
+    
     let listingController:ListingController = ListingController()
     let userController:UserController = UserController()
     

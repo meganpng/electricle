@@ -8,6 +8,12 @@ import CoreData
 import UIKit
 import Foundation
 class LoginController: UIViewController{
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches, with: event)
+    }
+    
     //this is the email text field
     @IBOutlet weak var emailField: UITextField!
     
