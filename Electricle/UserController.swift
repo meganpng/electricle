@@ -189,14 +189,14 @@ class UserController{
                 let email = u.value(forKeyPath: "email") as? String
                 print("\(email!)")
                 if(input == email){
-                    return true
+                    return false
                 }
             }
 
         } catch let error as NSError{
             print("Could not fetch. \(error), \(error.userInfo)")
         }
-        return false
+        return true
     }
     
     //this checks if the input matches the user password
@@ -214,14 +214,14 @@ class UserController{
                 let pwd = u.value(forKeyPath: "password") as? String
                 print("\(pwd!)")
                 if(input == pwd){
-                    return true
+                    return false
                 }
             }
 
         } catch let error as NSError{
             print("Could not fetch. \(error), \(error.userInfo)")
         }
-        return false
+        return true
     }
 
     //this updates the user's details

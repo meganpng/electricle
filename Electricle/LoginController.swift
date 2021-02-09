@@ -56,7 +56,7 @@ class LoginController: UIViewController{
              self.present(dialogMessage, animated: true, completion: nil)
         }
         //this validates if the email is false and sends an alert
-        else if (flag == false){
+        else if (flag == true){
             emailField.text = ""
             passwordField.text = ""
             let dialogMessage = UIAlertController(title: "Invalid Email", message: "Please re-enter your email correctly or sign up if you do not have an account.", preferredStyle: .alert)
@@ -70,7 +70,7 @@ class LoginController: UIViewController{
             self.present(dialogMessage, animated: true, completion: nil)
         }
         //this validates if the password is false and sends an alert
-        else if(flagtwo == false){
+        else if(flagtwo == true){
             passwordField.text = ""
             let dialogMessage = UIAlertController(title: "Invalid Password", message: "Please re-enter your password correctly.", preferredStyle: .alert)
              

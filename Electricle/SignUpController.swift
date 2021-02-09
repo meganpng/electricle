@@ -73,7 +73,7 @@ class SignUpController: UIViewController{
         }
         
         //this sends an alert if the email entered exists in the database
-        else if(flag == true){
+        else if(flag == false){
             emailField.text = ""
             userNameField.text = ""
             nameField.text = ""
@@ -165,19 +165,13 @@ class SignUpController: UIViewController{
 
         let flag:Bool = validateIsNumber(phoneno: phoneno)
         
-        if(phoneno.count == 8){
+        if(phoneno.count != 8){
             return false
         }
-        else if(flag == true){
+        else if(flag == false){
             return false
         }
-        else if(phoneno.prefix(1) == "6"){
-            return false
-        }
-        else if(phoneno.prefix(1) == "8"){
-            return false
-        }
-        else if(phoneno.prefix(1) == "9"){
+        else if(phoneno.prefix(1) != "6" && phoneno.prefix(1) != "8" && phoneno.prefix(1) != "9"){
             return false
         }
         return true
@@ -185,15 +179,38 @@ class SignUpController: UIViewController{
     
     //this checks if letters were entered
     func validateIsNumber(phoneno:String)->(Bool){
-        let charArray = Array(phoneno)
-        let numberArray = Array(arrayLiteral: "0", "1", "2","3","4","5","6","7","8","9")
-        for c in charArray{
-            for n in numberArray{
-                if(String(c) != String(n)){
-                    return true
-                }
+        let charArray: Array<Character> = Array(phoneno)
+        for char in charArray {
+            if Int(String(char)) == nil {
+                return false
             }
         }
-        return false
+        return true
+        /*
+        let charArray:Array<Character> = Array(phoneno)
+        let numberArray:Array<Character> = Array(arrayLiteral: "0", "1", "2","3","4","5","6","7","8","9")
+        var flag:Bool = false
+        for c in charArray{
+            var bool:Bool = false
+            for n in numberArray{
+                if(c == n){
+                    bool = true
+                    break
+                }
+            }
+            if(bool == true){
+                flag = true
+            }
+            else{
+                flag = false
+            }
+        }
+        if(flag == true){
+            return true
+        }
+        else{
+            return false
+        }
+ */
     }
 }
